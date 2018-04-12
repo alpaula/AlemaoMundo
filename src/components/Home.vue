@@ -2,95 +2,95 @@
 	<div class="body">
 		<header>
 			<aside class="header__aside">
-				<img class="header__logo" src="../../Assets/alemao-para-o-mundo_logo.svg">
+				<img class="header__logo" src="../../static/assets/alemao-para-o-mundo_logo.svg">
 				<nav class="header__nav">
 					<div class="headerNav__box">
 						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?">
 						<button class="navBox__button" @click="">
-							<img class="boxButton__logo" src="../../Assets/Lupa-busca.svg">
+							<img class="boxButton__logo" src="../../static/assets/Lupa-busca.svg">
 						</button>
 					</div>
 					<div class="headerNav__list">
 						<button class="navList__item" @click="">
 							alimentação
-							<img class="listItem__logo" src="../../Assets/alimentacao.svg">
+							<img class="listItem__logo" src="../../static/assets/alimentacao.svg">
 						</button>
 						<button class="navList__item" @click="">
 							arte e cultura
-							<img class="listItem__logo" src="../../Assets/arteEcultura.svg">
+							<img class="listItem__logo" src="../../static/assets/arteEcultura.svg">
 						</button>
 						<button class="navList__item" @click="">
 							beleza e estética
-							<img class="listItem__logo" src="../../Assets/belezaEestetica.svg">
+							<img class="listItem__logo" src="../../static/assets/belezaEestetica.svg">
 						</button>
 						<button class="navList__item" @click="">
 							coletivos
-							<img class="listItem__logo" src="../../Assets/coletivos.svg">
+							<img class="listItem__logo" src="../../static/assets/coletivos.svg">
 						</button>
 						<button class="navList__item" @click="">
 							educação
-							<img class="listItem__logo" src="../../Assets/educacao.svg">
+							<img class="listItem__logo" src="../../static/assets/educacao.svg">
 						</button>
 						<button class="navList__item" @click="">
 							esportes e atividade física
-							<img class="listItem__logo" src="../../Assets/esportes.svg">
+							<img class="listItem__logo" src="../../static/assets/esportes.svg">
 						</button>
 						<button class="navList__item" @click="">
 							ong's
-							<img class="listItem__logo" src="../../Assets/ongs.svg">
+							<img class="listItem__logo" src="../../static/assets/ongs.svg">
 						</button>
 						<button class="navList__item" @click="">
 							saúde
-							<img class="listItem__logo" src="../../Assets/saude.svg">
+							<img class="listItem__logo" src="../../static/assets/saude.svg">
 						</button>
 						<button class="navList__item" @click="">
 							serviços
-							<img class="listItem__logo" src="../../Assets/servicos.svg">
+							<img class="listItem__logo" src="../../static/assets/servicos.svg">
 						</button>
 						<button class="navList__item" @click="">
 							transporte
-							<img class="listItem__logo" src="../../Assets/transporte.svg">
+							<img class="listItem__logo" src="../../static/assets/transporte.svg">
 						</button>
 					</div>
 					<div class="headerNav__list--mobile">
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/alimentacao.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/alimentacao.svg">
 							alimentação
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/arteEcultura.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/arteEcultura.svg">
 							arte e cultura
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/belezaEestetica.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/belezaEestetica.svg">
 							beleza e estética
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/coletivos.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/coletivos.svg">
 							coletivos
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/educacao.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/educacao.svg">
 							educação
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/esportes.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/esportes.svg">
 							esportes e atividade física
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/ongs.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/ongs.svg">
 							ong's
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/saude.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/saude.svg">
 							saúde
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/servicos.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/servicos.svg">
 							serviços
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../Assets/transporte.svg">
+							<img class="listItem__logo--mobile" src="../../static/assets/transporte.svg">
 							transporte
 						</button>
 					</div>
@@ -108,7 +108,7 @@
 				</p>
 			</section>
 			<section class="main__section">
-				<img class="mainSection__logo" src="../../Assets/vai-na-web_logo.svg">
+				<img class="mainSection__logo" src="../../static/assets/vai-na-web_logo.svg">
 				<p class="mainSection__paragraph">
 					O Vai na Web é um curso de programação e desenvolvimento web realizado dentro de organizações de base comunitária para jovens de 16 a 29 anos. Atualmente, acontece em dois polos: Complexo do Alemão (Educap) e Morro dos Prazeres (Proa), contando com 53 alunos capacitados até o momento. Dos 12 formados pela turma piloto, 4 foram contratados e já estão trabalhando na área.
 				</p>
@@ -118,13 +118,14 @@
 				<button class="mainSection__button">fique por dentro</button>
 			</section>
 			<footer class="main__footer">
-				<img class="mainFooter__logo mainFooter__logo1" src="../../Assets/1sti_logo.svg">
-				<img class="mainFooter__logo mainFooter__logo2" src="../../Assets/educap_logo.svg">
-				<img class="mainFooter__logo mainFooter__logo3" src="../../Assets/precisa-ser_logo.svg">
+				<img class="mainFooter__logo mainFooter__logo1" src="../../static/assets/1sti_logo.svg">
+				<img class="mainFooter__logo mainFooter__logo2" src="../../static/assets/educap_logo.svg">
+				<img class="mainFooter__logo mainFooter__logo3" src="../../static/assets/precisa-ser_logo.svg">
 			</footer>
 		</main>
 	</div>
 </template>
+
 <script>
 export default{
 	name: 'Home',
@@ -135,16 +136,12 @@ export default{
 	}
 }
 </script>
-<style scoped>
-	
 
-img{
-	width: 50px;
-}
+<style scoped>
 header{
 	width: 100%;
 	height: 140vh;
-	background: #fcae1b url(../../Assets/background.svg) no-repeat bottom;
+	background: #fcae1b url(../../static/assets/background.svg) no-repeat bottom;
 	background-size: 100%;
 }
 @media (max-width: 640px){
@@ -203,7 +200,7 @@ header{
 	border: none;
 }
 .boxButton__logo{
-	width: 80%;
+	width: 70%;
 }
 @media (max-width: 640px){
 	.headerNav__list{
