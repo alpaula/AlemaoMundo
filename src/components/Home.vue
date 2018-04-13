@@ -13,84 +13,124 @@
 					<div class="headerNav__list">
 						<button class="navList__item" @click="">
 							alimentação
-							<img class="listItem__logo" src="../../static/assets/alimentacao.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/alimentacao.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							arte e cultura
-							<img class="listItem__logo" src="../../static/assets/arteEcultura.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/arteEcultura.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							beleza e estética
-							<img class="listItem__logo" src="../../static/assets/belezaEestetica.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/belezaEestetica.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							coletivos
-							<img class="listItem__logo" src="../../static/assets/coletivos.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/coletivos.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							educação
-							<img class="listItem__logo" src="../../static/assets/educacao.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/educacao.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							esportes e atividade física
-							<img class="listItem__logo" src="../../static/assets/esportes.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/esportes.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							ong's
-							<img class="listItem__logo" src="../../static/assets/ongs.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/ongs.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							saúde
-							<img class="listItem__logo" src="../../static/assets/saude.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/saude.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							serviços
-							<img class="listItem__logo" src="../../static/assets/servicos.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/servicos.svg">
+							</div>
 						</button>
 						<button class="navList__item" @click="">
 							transporte
-							<img class="listItem__logo" src="../../static/assets/transporte.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo" src="../../static/assets/transporte.svg">
+							</div>
 						</button>
 					</div>
 					<div class="headerNav__list--mobile">
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/alimentacao.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/alimentacao.svg">
+							</div>
 							alimentação
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/arteEcultura.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/arteEcultura.svg">
+							</div>
 							arte e cultura
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/belezaEestetica.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/belezaEestetica.svg">
+							</div>
 							beleza e estética
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/coletivos.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/coletivos.svg">
+							</div>
 							coletivos
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/educacao.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/educacao.svg">
+							</div>
 							educação
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/esportes.svg">
-							esportes e atividade física
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/esportes.svg">
+							</div>
+							esportes e atividade
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/ongs.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/ongs.svg">
+							</div>
 							ong's
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/saude.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/saude.svg">
+							</div>
 							saúde
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/servicos.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/servicos.svg">
+							</div>
 							serviços
 						</button>
 						<button class="navList__item--mobile" @click="">
-							<img class="listItem__logo--mobile" src="../../static/assets/transporte.svg">
+							<div class="listItem__box">
+								<img class="listItem__logo--mobile" src="../../static/assets/transporte.svg">
+							</div>
 							transporte
 						</button>
 					</div>
@@ -108,7 +148,10 @@
 				</p>
 			</section>
 			<section class="main__section">
-				<img class="mainSection__logo" src="../../static/assets/vai-na-web_logo.svg">
+				<div class="main__section--box">
+					<img class="mainSection__logo" src="../../static/assets/vai-na-web_logo.svg">
+					<button class="mainSection__button--mobile">fique por dentro</button>
+				</div>
 				<p class="mainSection__paragraph">
 					O Vai na Web é um curso de programação e desenvolvimento web realizado dentro de organizações de base comunitária para jovens de 16 a 29 anos. Atualmente, acontece em dois polos: Complexo do Alemão (Educap) e Morro dos Prazeres (Proa), contando com 53 alunos capacitados até o momento. Dos 12 formados pela turma piloto, 4 foram contratados e já estão trabalhando na área.
 				</p>
@@ -146,6 +189,7 @@ header{
 }
 @media (max-width: 640px){
 	header{
+		min-height: 165vh;
 		display: flex;
 		justify-content: center;
 	}
@@ -174,7 +218,7 @@ header{
 }
 .headerNav__box{
 	width: 100%;
-	height: 7vh;
+	height: 8vh;
 	border-radius: 30px;
 	background-color: #fff;
 	display: flex;
@@ -182,10 +226,13 @@ header{
 	align-items: center;
 }
 @media (max-width: 640px){
-	
+	.headerNav__box{
+		height: 9vh;
+	}
 }
 .navBox__input{
 	width: 84%;
+	height: 6vh;
 	border: none;
 	font-size: 1.2em;
 	color: #2e3192;
@@ -195,7 +242,7 @@ header{
 }
 .navBox__button{
 	width: 10%;
-	height: 6vh;
+	height: 7vh;
 	background: #fff;
 	border: none;
 }
@@ -215,6 +262,7 @@ header{
 	.headerNav__list--mobile{
 		width: 100%;
 		min-height: 70vh; 
+		margin: 2% 0;
 		display: flex;
 		justify-content: space-around;
 		flex-flow: row wrap;
@@ -227,8 +275,8 @@ header{
 	border: solid 8px #fcae1b;
 	border-radius: 30px;
 	background-color: #f26522;
-	font-size: 1em;
 	color: #fff;
+	font-size: 1em;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -237,25 +285,36 @@ header{
 	align-items: center;
 }
 .navList__item--mobile{
-	width: 50%;
+	width: 35%;
 	background-color: transparent;
 	border: none;
 	color: #fff;
+	font-size: 1em;
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	text-align: right;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+}
+.listItem__box{
+	width: 50px;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 .listItem__logo{
 	height: 4vh;
 }
 .listItem__logo--mobile{
-	height: 5vh;
+	height: 6vh;
 }
 main{
 	width: 100%;
 	min-height: 70vh;
 	margin-top: -1%;
-	padding: 2% 0 2% 2%;
+	padding: 2% 0 6% 2%;
 	background-color: #f26522;
 	display: flex;
 	justify-content: space-around;
@@ -266,14 +325,26 @@ main{
 	width: 33%;
 	min-width: 350px;
 }
+@media(max-width: 640px){
+	.main__section{
+		width: 90%;
+		margin: 5% 0;
+	}
+}
 .mainSection__title{
 	margin-bottom: 3%;
-	font-size: 3.1vw;
 	color: #2e3192;
+	font-size: 2.63em;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 700;
 	text-align: left;
+	text-transform: uppercase;
+}
+@media(max-width: 640px){
+	.mainSection__title{
+		font-size: 1.6em;
+	}
 }
 .mainSection__paragraph{
 	margin-bottom: 3%;
@@ -284,9 +355,24 @@ main{
 	font-weight: 300;
 	text-align: left;
 }
+@media(max-width: 640px){
+	.mainSection__paragraph{
+		font-size: 1em;
+	}
+}
+.main__section--box{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
 .mainSection__logo{
 	width: 54%;
 	margin-bottom: 3%;
+}
+@media(max-width: 640px){
+	.mainSection__logo{
+		width: 41%;
+	}
 }
 .mainSection__button{
 	width: 50%;
@@ -301,25 +387,63 @@ main{
 	font-size: 1.2em;
 	color: #fff;
 }
+@media(max-width: 640px){
+	.mainSection__button{
+		display: none;
+	}
+}
+.mainSection__button--mobile{
+	width: 45%;
+	padding: 3% 0;
+	margin: 5% 0;
+	background-color: #f26522;
+	border: solid 5px #fff;
+	border-radius: 40px;
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.3em;
+	color: #fff;
+	display: none;
+}
+@media(max-width: 640px){
+	.mainSection__button--mobile{
+		display: block;
+	}
+}
 .main__footer{
 	width: 20%;
 	min-width: 250px;
-	height: 75vh;
+	height: 90vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
 }
+@media(max-width: 640px){
+	.main__footer{
+		width: 100%;
+		height: 35vh;
+		flex-direction: row;
+		justify-content: center;
+	}
+}
 .mainFooter__logo{
-	margin: 7% 0;
+	width: 55%;
+	margin-top: 40%;
+}
+@media(max-width: 640px){
+	.mainFooter__logo{
+		width: 25%;
+		margin: 3%;
+	}
 }
 .mainFooter__logo1{
 	width: 30%;
 }
-.mainFooter__logo2{
-	width: 55%;
-}
-.mainFooter__logo3{
-	width: 55%;
+@media(max-width: 640px){
+	.mainFooter__logo1{
+		width: 12%;
+	}
 }
 </style>
