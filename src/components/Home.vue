@@ -11,61 +11,61 @@
 						</button>
 					</div>
 					<div class="headerNav__list">
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Alimentação')">
 							alimentação
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/alimentacao.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Arte e Cultura')">
 							arte e cultura
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/arteEcultura.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Beleza e Estética')">
 							beleza e estética
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/belezaEestetica.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Coletivos')">
 							coletivos
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/coletivos.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Educação')">
 							educação
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/educacao.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Esportes e Atividades Físicas')">
 							esportes e atividade física
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/esportes.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Ong')">
 							ong's
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/ongs.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Saúde')">
 							saúde
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/saude.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Serviços')">
 							serviços
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/servicos.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="">
+						<button class="navList__item" @click="setCategory('Transporte')">
 							transporte
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/transporte.svg">
@@ -183,14 +183,14 @@ import AlexandreSilvaD from '../../static/assets/AlexandreSilva - D.jpg'
 import AlexandreSilvaM from '../../static/assets/AlexandreSilva - M.jpg'
 import PelaMisericordia from '../../static/assets/Aliança Pela Misericórdia.jpg'
 import AnaMoura from '../../static/assets/Ana Moura.jpg'
-import BrigadeiroLogo from '../../static/assets/Brigadeiros Literários.jpg'
+import BrigadeiroLogo from '../../static/assets/Brigadeiros Literários.png'
 import BrigadeiroLiterarioD from '../../static/assets/BrigadeiroLiterario - D.jpg'
 import BrigadeiroLiterarioM from '../../static/assets/BrigadeiroLiterario - M.jpg'
 import CarolMunizLogo from '../../static/assets/Carol Muniz.jpg'
 import CarolMunizD from '../../static/assets/carolMuniz - D.jpg'
 import CarolMunizM from '../../static/assets/carolMuniz - M.jpg'
 import CasaBrotaLogo from '../../static/assets/Casa Brota.jpg'
-import CasaPrimasLogo from '../../static/assets/Casa Das Primas.jpg'
+import CasaPrimasLogo from '../../static/assets/Casa Das Primas.png'
 import CasaPrimasD from '../../static/assets/casadasPrimas - D.jpg'
 import CasaPrimasM from '../../static/assets/casadasPrimas - M.jpg'
 import CineCariocaD from '../../static/assets/cinecarioca - D.jpg'
@@ -201,18 +201,18 @@ import ClasseDM from '../../static/assets/classe - M.jpg'
 import ClubeLutasD from '../../static/assets/clubedelutas - D.jpg'
 import ClubeLutasM from '../../static/assets/clubedelutas - M.jpg'
 import ContraBandoLogo from '../../static/assets/Contra Bando Logo.jpg'
-import ContraBandoD from '../../static/assets/contrabando - D.jpg'
-import ContraBandoM from '../../static/assets/contrabando - M.jpg'
+import ContraBandoD from '../../static/assets/contraBando - D.jpg'
+import ContraBandoM from '../../static/assets/contraBando - M.jpg'
 import CriancasFelizesLogo from '../../static/assets/Crianças Felizes.jpg'
 import CriancasFelizesD from '../../static/assets/criancasfelizes - D.jpg'
 import CRJLogo from '../../static/assets/CRJ Alemão.jpg'
 import CRJD from '../../static/assets/CRJ - D.jpg'
 import CRJM from '../../static/assets/CRJ - M.jpg'
 import DancaCiaLogo from '../../static/assets/dança-cia.jpg'
-import DancaArtD from '../../static/assets/DancaArt - D.jpg'
-import DancaArtM from '../../static/assets/DancaArt - M.jpg'
+import DancaArtD from '../../static/assets/DançaArt - D.png'
+import DancaArtM from '../../static/assets/DançaArt - M.png'
 import DeboraAmorimD from '../../static/assets/deboraAmorim - D.jpg'
-import DeboraAmorimM from '../../static/assets/DeboraAmorim - M.jpg'
+import DeboraAmorimM from '../../static/assets/deboraAmorim - M.jpg'
 import DescolandoIdeias from '../../static/assets/Descolando Ideias.jpg'
 import DocesMomentosLogo from '../../static/assets/Doces e Momentos.jpg'
 import DocesMomentosD from '../../static/assets/docesMomentos - D.jpg'
@@ -227,16 +227,16 @@ import EricaMartinM from '../../static/assets/ericaMartin - M.jpg'
 import FamiliaPerninhaD from '../../static/assets/familiaPerninha - D.jpg'
 import FamiliaPerninhaM from '../../static/assets/familiaPerninha - M.jpg'
 import FavelaFashionLogo from '../../static/assets/Favela Fashion.jpg'
-import FavelaFashionD from '../../static/assets/favelaFeshion - D.jpg'
-import FavelaFashionM from '../../static/assets/favelaFeshion - M.jpg'
-import Favelagrafia from '../../static/assets/Favelagrafia.jpg'
+import FavelaFashionD from '../../static/assets/favelaFashion - D.jpg'
+import FavelaFashionM from '../../static/assets/favelaFashion - M.jpg'
+import Favelagrafia from '../../static/assets/Favelagrafia.png'
 import FotoClubeLogo from '../../static/assets/Foto Clube.jpg'
 import FotoClubeD from '../../static/assets/fotoclube - D.jpg'
 import FotoClubeM from '../../static/assets/fotoclube - M.jpg'
 import FuturoMovimento from '../../static/assets/FuturoMovimento.jpg'
 import GasD from '../../static/assets/gas - D.jpg'
 import GasM from '../../static/assets/gas - M.jpg'
-import GatoMidiaLogo from '../../static/assets/Gato Midia.png'
+import GatoMidiaLogo from '../../static/assets/Gato Mídia.png'
 import GatoMidiaD from '../../static/assets/gatomidia - D.jpg'
 import GatoMidiaM from '../../static/assets/gatomidia - M.jpg'
 import JogaCriaLogo from '../../static/assets/Joga Cria.png'
@@ -246,11 +246,11 @@ import JoseanaFotoD from '../../static/assets/joseanafoto - D.jpg'
 import JoseanaFotoM from '../../static/assets/joseanafoto - M.jpg'
 import LMLanchesLogo from '../../static/assets/LM Lanches.jpg'
 import MarcosCarolinnoLogo from '../../static/assets/marcos-carolinno.png'
-import MarcosCarolinnoD from '../../static/assets/MarcosCarolinno - D.jpg'
-import MarcosCarolinnoM from '../../static/assets/MarcosCarolinno - M.jpg'
+import MarcosCarolinnoD from '../../static/assets/MarcosCarolino - D.jpg'
+import MarcosCarolinnoM from '../../static/assets/MarcosCarolino - M.jpg'
 import MotoTaxiD from '../../static/assets/mototaxi - D.jpg'
 import MotoTaxiM from '../../static/assets/mototaxi - M.jpg'
-import MovimentoVidaLogo from '../../static/assets/Movimento_Vida.jpg'
+import MovimentoVidaLogo from '../../static/assets/Movimento _ Vida.jpg'
 import NaveConhecimentoLogo from '../../static/assets/NaveConhecimento.png'
 import NaveConhecimentoD from '../../static/assets/navedoconhecimento - D.jpg'
 import NaveConhecimentoM from '../../static/assets/navedoconhecimento - M.jpg'
@@ -285,7 +285,140 @@ export default{
 	name: 'Home',
 	data(){
 		return{
+			category:'',
+			atividades:[
+				{
+					name:'Brigadeiros Literários',
+					categoria:'Alimentação',
+					subcategoria:'Doceria',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/brigadeirosliterarios',
+					faceLink:'https://www.facebook.com/brigadeirosliterarios',
+					instagram:'@brigadeirosliterarios',
+					instaLink:'https://www.instagram.com/brigadeirosliterarios/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'brigadeiroslisterarios@gmail.com',
+					telefone:'21 96686-2218',
+					endereço:'Complexo do Alemão - Rio de janeiro',
+					description:[
+						'Os Brigadeiros Literários não é só um empreendimento, é um convite para uma experiência gustativa.',
+						'Um veículo de divulgação da palavra escrita, uma possibilidade de comunicação, de reflexão, de carinho, trocas que estão em sintonia com o jeito de ser de quem está envolvido neste projeto.'
+					],
+				},
+				{
+					name:'Casa das Primas Doceria ',
+					categoria:'Alimentação',
+					subcategoria:'Doceria',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/casadasprimasdoceria',
+					faceLink:'https://www.facebook.com/casadasprimasdoceria',
+					instagram:'@casadasprimasdoceria',
+					instaLink:'https://www.instagram.com/casadasprimasdoceria',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'null',
+					telefone:'21 97344-1959',
+					endereço:'Estrada do Itararé, 341 - Loja 20 ',
+					description:[
+						'recente point aberto no Complexo do Alemão, onde tem como especialidades brownies, tortas, sorvetes e milk sheik." Aqui você pode se sentir o último brownie do pacote."'
+					]
+				},
+				{
+					name:'Festas',
+					categoria:'Alimentação',
+					subcategoria:'Festas',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'docesemomentosjoana',
+					faceLink:'https://www.facebook.com/docesemomentosjoana',
+					instagram:'@docesemomentosjoana',
+					instaLink:'https://www.instagram.com/docesemomentosjoana',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'null',
+					telefone:'21 98062-1818',
+					endereço:'Rua da Assembléia - Próximo a Estação do teleférico itararé',
+					description:[
+						'A confeitaria Doces e Momentos, é da empreendedoa Joana, cuja qual realiza verdadeiras obras de artes em seus bolos, trabalhando há mais de um ano com doces, sonhos, planos e momentos marcantes na vida de nossos clientes.',
+						'“Expresse e demonstre seus sentimentos com nossos Doces e Momentos!'
+					]
+				},
+				{
+					name:'AfroLaje ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Dança',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'afrolaje',
+					faceLink:'https://www.facebook.com/afrolaje',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'null',
+					telefone:'21 98403-4178',
+					endereço:'Travessa São José, n°13 - Oca dos Curumins',
+					description:[
+						'A Associação Cultural Afrolaje  é um grupo cultural que atua fazendo a disseminação do jongo com quem tem o interesse em aprender esta cultura popular que é oriunda do Rio de Janeiro.',
+						'O grupo tem sede no Engenho de dentro e faz uma grande atuação pela Zona Norte.',
+						'Consolidou uma grande parceria no Centro Cultural Oca dos Curumins, promovendo a primeira roda de jongo do Complexo do Alemão.'
+					]
+				},
+				{
+					name:'Coletivo de Grafite NoixQFaz ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Graffiti',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'noixqfazcpx',
+					faceLink:'https://www.facebook.com/noixqfazcpx',
+					instagram:'@annyvii',
+					instaLink:'https://www.instagram.com/annyvii/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'vivianyribeiroart@gmail.com',
+					telefone:'21 99958-2597',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'É um grupo de grafiteiros, moradores do Complexo do Alemão cujo os quais resolveram se reunir para revitalizar espaços que precisam de reparos.',
+						'Batizado de "Noix Q Faz #Cpx", escolheram a quadra da comunidade do Reservatório para começar o trabalho, tendo todo material de tintas, jets, pincéis custeado pelos próprios moradores.',
+						'Uma das missões do coletivo é levar ação à  lugares que estejam precisando de uma transformação e permitir que o grafite se multiplique pela favela.',
+						'Realizam oficinas em ações sociais de revitalização de espaços e ambientes usando a arte do graffiti como ferramenta fundamental.',
+						'Desenvolvem projetos coletivos como o Arte e Transformação para crianças a partir de 06 anos, adolescentes, jovens e, quem quiser interagir e aprender, nas oficinas, workshop de artistas convidados, e bate papo de conhecimento sobre culturas urbanas e os elementos do hip hop.'
+					]
+				},
+				]
+		}
+	},
+	computed:{
+		filterActivity(){
+			const list = this.atividades
 
+			if (this.category) {
+				console.log('test',list)
+				list.filter(atividade => atividade.categoria === this.category)
+				return list
+			}
+
+			return null
+		}
+	},
+	methods:{
+		setCategory(value){
+			this.category = value
 		}
 	}
 }
@@ -298,7 +431,7 @@ header{
 	background: #fcae1b url(../../static/assets/background.svg) no-repeat bottom;
 	background-size: 100%;
 }
-@media (max-width: 640px){
+;@media (max-width: 640px){
 	header{
 		min-height: 165vh;
 		display: flex;
