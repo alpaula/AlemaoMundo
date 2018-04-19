@@ -136,6 +136,8 @@
 					</div>
 				</nav>
 			</aside>
+			<ListaAtividades></ListaAtividades>
+			<!-- <Atividades></Atividades> -->
 		</header>
 		<main>
 			<section class="main__section">
@@ -281,6 +283,9 @@ import Vidancar from '../../static/assets/Vidançar.jpg'
 import VidancarD from '../../static/assets/vidancar - D.jpg'
 import VidancarM from '../../static/assets/vidancar - M.jpg'
 
+import Atividades from './Atividades.vue'
+import ListaAtividades from './ListaAtividades.vue'
+
 export default{
 	name: 'Home',
 	data(){
@@ -400,7 +405,872 @@ export default{
 						'Desenvolvem projetos coletivos como o Arte e Transformação para crianças a partir de 06 anos, adolescentes, jovens e, quem quiser interagir e aprender, nas oficinas, workshop de artistas convidados, e bate papo de conhecimento sobre culturas urbanas e os elementos do hip hop.'
 					]
 				},
-				]
+				{
+					name:'Contra Bando de Teatro ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Teatro',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/ContraBandodeTeatro',
+					faceLink:'https://www.facebook.com/Contra-Bando-de-Teatro-1438195543130396',
+					instagram:'@contrabandodeteatro',
+					instaLink:'https://www.instagram.com/contrabandodeteatro/',
+					twitter:'null',
+					twitLink:'null',
+					site:'http://contra-bando.wixsite.com/',
+					email:'contrabandodeteatro@gmail.com',
+					telefone:'21 99265-1517',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'O Contra Bando de teatro é um grupo formado em 2013 por jovens moradores com alma artística do Complexo do Alemão.',
+						'Com sua arte amplia olhares e o mais importante, faz o público refletir sobre diversos assuntos.',
+						'Gera questionamento sobre como vivemos e até que ponto as coisas são justas.'
+					]
+				},
+				{
+					name:'CRJ - Alemão ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Educação',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'crj.alemao.50',
+					faceLink:'https://www.facebook.com/crj.alemao.50',
+					instagram:'@crjalemao',
+					instaLink:'https://www.instagram.com/crjalemao/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'alemaocrj@gmail.com',
+					telefone:'21 2334-7971',
+					endereço:'Estrada do Itararé, 690 - Complexo do Alemão',
+					description:[
+						'O Centro de Referência para Juventude oferece cursos e atividades GRATUITAS.',
+						'Além disso, disponibiliza seus espaços para que projetos e pessoas que não tenha um local para estudar, ensaiar ou acessar a internet utilize-o totalmente em seu horário de funcionamento.',
+						'Está aberto de segunda a sexta 09h às 21h e aos sábados de 09h às 13h.'
+					]
+				},
+				{
+					name:'Futuro em Movimento ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Dança',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'FuturoemMovimento',
+					faceLink:'https://www.facebook.com/groups/1740561566261151/about/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'amamulheresdeatitude@gmailcom',
+					telefone:'21 98811-0220',
+					endereço:'Rua Sebastião de Carvalho, 33',
+					description:[
+						'Preocupados com o alto índice de adolescentes grávidas, surgiu a iniciativa de oferecer oficinas de dança para ajudar mais os jovens em situação de vulnerabilidade social.',
+						'Além das aulas, também realizam debates com temas sobre: Drogas, violência. Oficinas de artesanatos foi uma maneira encontrada de tornar uma das das suas fonte renda.'
+					]
+				},
+				{
+					name:'Projeto Crianças Felizes ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Eventos',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/Projetocriancasfelizes',
+					faceLink:'https://www.facebook.com/Projetocriancasfelizes/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'lucianoodaniell@gmail.com',
+					telefone:'21 99714-3427',
+					endereço:'Avenida Central, n° 120',
+					description:[
+						'Fundada no dia 4 de Maio de 2013 pelo jovem Luciano Daniel que na época tinha 13 anos de idade, o projeto conta com a participação de 15 voluntários para ajudar na arrecadação e na distribuição nos dias de evento.',
+						'Nesses 4 anos de existência, utiliza as redes sociais como uma de suas melhores ferramentas de trabalho para a arrecadação das doações, e já são mais de 20 ações que beneficiaram mais de 7 mil crianças, inclusive em 2015 o Projeto expandiu suas festas para o bairro de Santa Cruz, Zona Oeste do Rio.',
+						'O Projeto Crianças Felizes foi selecionado para participar do reality show de mobilização social "Click Esperança" da TV Globo, sendo ele finalista e vencedor do reality.',
+						'Seu público alvo são as crianças, porém, evolvem toda a comunidade para que juntos possam sonhar com um futuro melhor.'
+					]
+				},
+				{
+					name:'Projeto Samba Favela',
+					categoria:'Arte e Cultura',
+					subcategoria:'Eventos',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/projetosambafavela',
+					faceLink:'https://www.facebook.com/projetosambafavela',
+					instagram:'@projetosambafavela',
+					instaLink:'https://www.instagram.com/projetosambafavela/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'lipebth@gmail.com',
+					telefone:'21 98750-0896',
+					endereço:'Espaço Cultural Maria Madalena (Madá) - Estrada do Iatararé, 320 - Ramos ',
+					description:[
+						'O Projeto Samba Favela teve início quando integrantes e amigos do antigo Grupo Brincadeira Tem Hora (BTH) se reencontraram pela internet e decidiram se reunir novamente para relembrar os velhos e bons tempos na música.',
+						'O (BTH)  foi fundado nos anos 90 e teve várias formações ao longo do tempo e hoje visa trazer para o Alemão a conexão entre o morro e o asfalto através do gênero musical e patrimônio cultural da cidade do Rio de Janeiro.',
+						'O evento tem entrada gratuita e promove a campanha de doações de alimentos não perecíveis para serem destinado à moradores da comunidade.'
+					]
+				},
+				{
+					name:'Projeto Vidançar ',
+					categoria:'Arte e Cultura',
+					subcategoria:'Dança',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/projetovidancar',
+					faceLink:'https://www.facebook.com/projetovidancar/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'http://projetovidancar.com.br/',
+					email:'projetovidacar@gmail.com',
+					telefone:'21 98739-4551',
+					endereço:'CRJ Alemão - Estrada do Itararé, n°690 ',
+					description:[
+						'Atuam com aulas de dança, teatro, apoio escolar e atendimento jurídico às famílias.',
+						'O projeto iniciou as atividades no ano de 2009 com 14 crianças.',
+						'Atualmente são 145 assistidos diretamente e 300 assistidos indiretamente.',
+						'O Vidançar conseguiu inserir 2 alunos no balé Bolshoi e 4 no Theatro Municipal.',
+						'Além da aprovação de todos os alunos durante 3 anos consecutivos.'
+					]
+				},
+				{
+					name:'Slam Laje',
+					categoria:'Arte e Cultura',
+					subcategoria:'Eventos',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/batalhadepoesia',
+					faceLink:'https://www.facebook.com/batalhadepoesia',
+					instagram:'@slamlaje',
+					instaLink:'https://www.instagram.com/slamlaje/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'slamlaje@gmail.com',
+					telefone:'21 98622-1392',
+					endereço:'Laje da Casa Brota - Rua Ari Barroso, s/n° - Morro do Alemão ',
+					description:[
+						'Fundado por moradores da região, o Slam Laje é a primeira batalha de poesia do Complexo do Alemão.',
+						'O objetivo é incentivar a poesia e a literatura marginal, fortalecendo o movimento cultural dentro da favela com muito passinho, batalhas de rimas, de uma forma sagaz e resistente.',
+						'A favela tá passando a mensagem: Slam laje!'
+					]
+				},
+				{
+					name:'Debora Amorim - Makeup ',
+					categoria:'Beleza e Estética',
+					subcategoria:'Maquiagem ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/debamorimmakeup',
+					faceLink:'https://www.facebook.com/debamorimmakeup',
+					instagram:'@debamorimm',
+					instaLink:'https://www.instagram.com/debamorimm/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'contato.demoraamorim@gmail.com',
+					telefone:'21 97145-0779',
+					endereço:'Estrada do Itararé, 480',
+					description:[
+						'Débora Amorim, formada em maquiagem, trabalha a cerca de 2 anos na área.'
+					]
+				},
+				{
+					name:'Favela é Fashion',
+					categoria:'Coletivo',
+					subcategoria:'Moda',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/FavelaeFashion',
+					faceLink:'https://www.facebook.com/FavelaeFashion',
+					instagram:'@favelaefashion',
+					instaLink:'https://www.instagram.com/favelaefashion/',
+					twitter:'@favelaefashion',
+					twitLink:'https://twitter.com/Favelaefashion',
+					site:'null',
+					email:'juhenrik26@gmail.com',
+					telefone:'21 98668-3701',
+					endereço:'Estrada do iatararé, 690 - Espaço do CRJ Alemão ',
+					description:[
+						'Favela é fashion é um projeto criado para selecionar jovens de comunidades que não tem chances de pagar um curso de moda.',
+						'“ Ajudo esses jovens a encarar o sonho deles... Realizo meus sonhos conquistando os deles!!!!! ”  Ele existe desde 2011 e atualmente sonha em ter seu próprio espaço fixo.'
+					]
+				},
+				{
+					name:'Favelagrafia',
+					categoria:'Coletivo',
+					subcategoria:'Fotografia ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/favelagrafia',
+					faceLink:'https://www.facebook.com/favelagrafia',
+					instagram:'@favelagrafia',
+					instaLink:'https://www.instagram.com/favelagrafia/',
+					twitter:'@favelagrafia',
+					twitLink:'https://twitter.com/favelagrafia',
+					site:'null',
+					email:'josianefotografia@gmail.com',
+					telefone:'21 97323-7174',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'O Favelagrafia é um coletivo de 9 fotógrafos, sendo os 9 moradores de favelas do Rio de Janeiro, inclusive o Complexo do Alemão.',
+						'O projeto tem um pouco mais de um ano de existência e foi idealizado pela a agência de publicidade NBS - a melhor da América Latina.',
+						'O objetivo é desconstruir a visão estereotipada e preconceituosa que as pessoas têm das favelas e nada melhor do que os próprios moradores para fazer isso através da fotografia.'
+					]
+				},
+				{
+					name:'Foto Clube Alemão',
+					categoria:'Coletivo',
+					subcategoria:'Fotografia ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/FotoClubeAlemão',
+					faceLink:'https://www.facebook.com/Foto-Clube-Alemão-142926802508619',
+					instagram:'@fotoclubealemao',
+					instaLink:'https://www.instagram.com/fotoclubealemao/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'brunoitan@gmail.com',
+					telefone:'21 98021-8721',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'O Foto Clube Alemão nasceu do desejo de promover o intercâmbio entre fotógrafos do Alemão e fora do Alemão, quebrar os paradigmas e preconceitos que existem sobre a fotografia dentro da favela e junto aos próprios moradores, disseminando e fomentando essa cultura de fotografia através de saídas fotográficas, palestras, oficinas e exposiçōes fotográficas, visando também mostrar que a boa fotografia não depende somente de equipamentos profissionais.'
+					]
+				},
+				{
+					name:'GAS - Grupo Alemão Solidário ',
+					categoria:'Coletivo',
+					subcategoria:'Assistência Social',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/gasgrupoalemaosolidario',
+					faceLink:'https://www.facebook.com/gasgrupoalemaosolidario',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'maysefm@gmail.com',
+					telefone:'21 98888-1452',
+					endereço:'Rua Sebastião de Carvalho ',
+					description:[
+						'GAS (Grupo Alemão Solidário) é coordenado por 3 mulheres, conta com o apoio de 15 voluntários, parceria do Conselho Tutelar com o cadastro de crianças em situações vulneráveis, entre outros de diversos bairros da cidade e de fora do país.',
+						'São 57 famílias atendidas totalizando 282 crianças beneficiadas direta e indiretamente pelas ações realizadas, sendo procurados também por famílias que necessitam de ajuda e estão fora da comunidade.',
+						'Direciona sua principal campanha no Natal, realizando cadastrados para beneficiar crianças  de 0 à 14 anos de idade, das comunidades da Pedra do Sapo, Nova Brasília, Fazendinha, Capão, Adeus, Baiana, Lagoinha, Inferno Verde, Palmeiras, Favela da Skol, Favela da Galinha…'
+					]
+				},
+				{
+					name:'Poetas Favelados ',
+					categoria:'Coletivo',
+					subcategoria:'Poesia ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/PoetasFavelados',
+					faceLink:'https://www.facebook.com/PoetasFavelados',
+					instagram:'@poetasfavelados',
+					instaLink:'https://www.instagram.com/poetasfavelados/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'poetasfavelados@gmail.com',
+					telefone:'21 98622-1392',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'O coletivo Poetas Favelados, sente o quanto a poesia inspira, grita e aquece os corações.',
+						'Pensando nisso, realizamo saraus itinerantes em transportes e espaços públicos pela cidade com Ataques Poéticos.'
+					]
+				},
+				{
+					name:'Gato Mídia',
+					categoria:'Educação',
+					subcategoria:'Comunicação',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/gatomidia',
+					faceLink:'https://www.facebook.com/gatomidia',
+					instagram:'@gatomidia',
+					instaLink:'https://www.instagram.com/gatomidia/',
+					twitter:'@gato_midia ',
+					twitLink:'https://twitter.com/Gato_MIDIA',
+					site:'https://gatomidia.wordpress.com/',
+					email:'projetogatomidia@gmail.com',
+					telefone:'null',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Espaço de aprendizado em mídia e tecnologia para jovens negros e moradores de espaços populares.',
+						'Criado em 2014 no Complexo do Alemão estimula nesses jovens a produção da sua própria comunicação, rede e conexões.',
+						'Possibilitando diferentes narrativas, visibilidade, oportunidades e ideias criativas e coletivas que construam um mundo mais justo, igualitário e afetivo.'
+					]
+				},
+				{
+					name:'Joga Cria ',
+					categoria:'Educação',
+					subcategoria:'Tecnologia',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/JogaCria',
+					faceLink:'https://www.facebook.com/JogaCria',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'joonasjss@gmail.com',
+					telefone:'21 97660-3854',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Criação de jogos como forma de incentivar o aprendizado projetual e tecnológico. Os encontros têm ocorrido no Complexo do Lins e Alemão.'
+					]
+				},
+				{
+					name:'Nave do Conhecimento de Nova Brasília ',
+					categoria:'Educação',
+					subcategoria:'Tecnologia',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/navedoconhecimentonovabrasilia',
+					faceLink:'https://www.facebook.com/navedoconhecimentonovabrasilia',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'https://navedoconhecimento.rio/',
+					email:'luciana.rodrigues@idaco.org.br',
+					telefone:'21 4101-1510',
+					endereço:'Rua Nova Brasília, s/n° - Praça do Terço - Nova Brasília - Complexo do Alemão',
+					description:[
+						'Espaço público onde oferecemos cursos nas área de tecnologia, educação e internet grátis a toda população do conjunto de favelas do Complexo do Alemão.',
+						'Aberto de Seg a Sábado de 09h às 19h.'
+					]
+				},
+				{
+					name:'Recreação Infantil Estrelinha ',
+					categoria:'Educação',
+					subcategoria:'Infantil ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'null',
+					faceLink:'null',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'jornalista.cmarinho@gmail.com',
+					telefone:'21 7985-9026',
+					endereço:'Fazendinha, Área 5 e Nova Brasília - Comlexo do Alemão',
+					description:[
+						'null'
+					]
+				},
+				{
+					name:'Vai na web',
+					categoria:'Educação',
+					subcategoria:'Tecnologia',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/vainaweb',
+					faceLink:'https://www.facebook.com/vainaweb/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'http://www.vainaweb.com.br/',
+					email:'null',
+					telefone:'21 96850-2828',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'O Vai Na Web é um programa de educação em tecnologias digitais avançadas que busca democratizar o ensino e aprendizado de tecnologia e ajudar na emancipação dos nossos jovens nos desafios da nova era digital.'
+					]
+				},
+				{
+					name:'Clube de Luta do Complexo ',
+					categoria:'Esporte e Atividade Física',
+					subcategoria:'Artes Marciais ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/clubedelutadocomplexo',
+					faceLink:'https://www.facebook.com/groups/clubedelutadocomplexo/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'dr.andreluiz1981@gmail.com',
+					telefone:'21 98048-6486',
+					endereço:'Estrada do Itararé - Complexo do Alemão ',
+					description:[
+						'O Clube de Luta atua há 15 anos e oferece atividades esportivas com ênfase nas artes marciais, além de reforço escolar e atividades de lazer e cultura para crianças, jovens e adultos.',
+						'Também se destacam no cenário de competições oficiais com dezenas de títulos estaduais e nacionais, inclusive em modalidades olímpicas como o Taekwondo.'
+					]
+				},
+				{
+					name:'Perninha Kickboxing ',
+					categoria:'Esporte e Atividade Física',
+					subcategoria:'Artes Marciais ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/PerninhaKickboxing',
+					faceLink:'https://www.facebook.com/groups/582405115123151/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'profperninhakick@gmail.com',
+					telefone:'21 96820-5972',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Competidor e invicto há 3 anos, Mestre Perninha dá aulas de kickboxing há mais de 15 anos, já participou de projetos sociais e no momento continua oferecendo aulas gratuitas para crianças e adolescentes.'
+					]
+				},
+				{
+					name:'Associação Abraço Campeão ',
+					categoria:'ONG',
+					subcategoria:'Cidania e Desenvolvimento',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/alanduarte',
+					faceLink:'https://www.facebook.com/alan.duarte.3386',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'http://thegoodfightmovie.com/abraco-campeao/',
+					email:'null',
+					telefone:'21 96892-9016',
+					endereço:'Morro do Adeus - Complexo do Alemão',
+					description:[
+						'A associação Abraço Campeão foi fundada pelo então professor/atleta Alan Duarte que iniciou suas atividades no ano de 2014, atuando na comunidade Morro do Adeus levando uma nova perspectiva para os jovens e adultos através do esporte, despertando novas potencialidades com disciplina através do boxe.'
+					]
+				},
+				{
+					name:'Centro Cultural Oca dos Curumins ',
+					categoria:'ONG',
+					subcategoria:'Educação e Cultura ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/CentroCulturalOcadosCurumins',
+					faceLink:'https://www.facebook.com/CentroCulturalOcadosCurumins/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'ccocadoscurumins@hotmail.com',
+					telefone:'21 3071-6750',
+					endereço:'Estrada do Itararé, n°480 - Travessa São José, n° 13 - Alvorada - Complexo do Alemão ',
+					description:[
+						'Conhecida como Escolinha da Tia Bete, tendo seu início no mês de Abril de 1977 com alfabetização, o Centro Cultural Ocas dos Curumins atualmente proporciona atividades na área social, cultural, esportivas, ambiental e prepara jovens para o mercado de trabalho.',
+						'É um ponto de cultura reconhecido pela secretaria estadual e um ponto de leitura reconhecido também pela prefeitura do Rio.',
+						'Realizam intercâmbio em parceria com a ONG Comunidade em Ação com parceiros voluntários de outros países.',
+						'Na Oca dos Curumins são oferecidas oficinas de teatro, brincadeiras antigas, exibição de filmes, artesanatos, inclusive o Grupo Sempre Juntos do AA, cujo qual presta atendimento há 15 anos, além de estar desenvolvendo o resgate da cultura afro brasileira, entre outras atividades.',
+						'A Oca dos Curumins é uma das instituições mais ativas do Complexo do Alemão com 40 anos de atividades na comunidade da Alvorada.'
+					]
+				},
+				{
+					name:'EDUCAP - Espaço Democrático de União, Convivência e Aprendizagem',
+					categoria:'ONG',
+					subcategoria:'Cidania e Desenvolvimento',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/educap.org',
+					faceLink:'https://www.facebook.com/educap.org/',
+					instagram:'@luciaeducap1716',
+					instaLink:'https://www.instagram.com/luciaeducap1716/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'luciaeducap@gmail.com',
+					telefone:'21 98832-3246',
+					endereço:'Rua Canitar - Campo do Sargento, s/n° - Complexo do Alemão ',
+					description:[
+						'null'
+					]
+				},
+				{
+					name:'Instituto Raízes Em Movimento ',
+					categoria:'ONG',
+					subcategoria:'Educação e Cultura ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/raizesemmovimento',
+					faceLink:'https://www.facebook.com/raizesemmovimento',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'http://www.raizesemmovimento.org.br',
+					email:'contato@raizesememovimento.org.br',
+					telefone:'21 2260-3998',
+					endereço:'Avenida Central, n° 68 - Ramos - Complexo do Alemão ',
+					description:[
+						'O INSTITUTO RAÍZES EM MOVIMENTO tem como missão promover o desenvolvimento humano, social e cultural do Complexo do Alemão e demais comunidades por meio da participação de atores locais como protagonistas desses processos, tendo como foco o fortalecimento e ampliação do capital social dessas comunidades.'
+					]
+				},
+				{
+					name:'Novos Líderes Empreendedores ',
+					categoria:'ONG',
+					subcategoria:'Educação e Cultura ',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/novoslideresempreendedores',
+					faceLink:'https://www.facebook.com/novoslideresempreendedores',
+					instagram:'@educatethefavela',
+					instaLink:'https://www.instagram.com/educatethefavela',
+					twitter:'null',
+					twitLink:'null',
+					site:'http://novoslideresempreendedores.com/',
+					email:'lohransanto009@gmail.com',
+					telefone:'21 99500-8681',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Atuando há 3 anos, desde 2014, a ONG usa a educação empreendedora para desenvolver e empoderar jovens e adultos das comunidades cariocas em prol de modificar e melhorar suas comunidades de origem.'
+					]
+				},
+				{
+					name:'Instituto Movimento & Vida ',
+					categoria:'Saúde',
+					subcategoria:'Fisioterapia',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/projetopaloma',
+					faceLink:'https://www.facebook.com/projetopaloma/',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'monicacirnea@gmail.com',
+					telefone:'21 96464-8101',
+					endereço:'Rua das Andorinhas, n° 98',
+					description:[
+						'O Instituto Movimento & Vida é uma organização sem fins lucrativos que realiza atendimento de fisioterapia gratuito aos moradores do conjunto de favelas do Complexo do Alemão.',
+						'A melhoria da qualidade de vida e reabilitação dos pacientes é o objetivo principal do trabalho desenvolvido pela instituição que atua 2007, promovendo informações de hábitos saudáveis e de proteção à saúde.',
+						'Sua missão é atender com qualidade, dedicação e amor moradores de uma região do Rio de Janeiro que segue marcada com violência, dificuldade, miséria e falta de atenção.',
+						'Atualmente precisa de recursos para manter o funcionamento diário e ampliar o número de pessoas atendidas, reduzindo a fila de espera de pacientes.'
+					]
+				},
+				{
+					name:'Alexandre Silva Fotografia ',
+					categoria:'Serviço',
+					subcategoria:'Fotografia',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/acsilvafotografia',
+					faceLink:'https://www.facebook.com/acsilvafotografia',
+					instagram:'@acsilvafotografia ',
+					instaLink:'https://www.instagram.com/acsilvafotografia/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'acsilvafotografia@gmail.com',
+					telefone:'21 99744-5063',
+					endereço:'Complexo do Alemão - Rio de Janeiro ',
+					description:[
+						'null'
+					]
+				},
+				{
+					name:'Casa Brota - Coworking de favela ',
+					categoria:'Serviço',
+					subcategoria:'Coworking',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/casabrota',
+					faceLink:'https://www.facebook.com/casabrota',
+					instagram:'@casabrota',
+					instaLink:'https://www.instagram.com/casabrota/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'falecom@casabrota.com.br',
+					telefone:'21 97264-7819',
+					endereço:'Rua Ari Barroso, s/n° - ao lado da Estação do teleférico do Alemão ',
+					description:[
+						'Casa Brota: Coworking de Favela, um espaço de conexão com foco na promoção cultural da favela e no desenvolvimento econômico das micro empresas.',
+						'Empreender a partir das criações e subjetividade de cada indivíduo, visando expandir e fortalecer as redes destes espaços populares para além da favela.',
+						'Prestação de serviços: Assessoria de imprensa, consultoria para empreendimentos da favela, redes, audiovisual, artes e tecnologia.'
+					]
+				},
+				{
+					name:'Classe D - Ateliê de Ideias ',
+					categoria:'Serviço',
+					subcategoria:'Design',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/ClasseDAteliêdeIdeias',
+					faceLink:'https://www.facebook.com/Classe-D-Ateliê-de-Ideias-950892308279847',
+					instagram:'@classe_d22',
+					instaLink:'https://www.instagram.com/classe_d22/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'produto.classed@gmail.com',
+					telefone:'21 99311-9672',
+					endereço:'Avenida Central, n°55 - Complexo do Alemão ',
+					description:[
+						'O Coletivo Classe-D é formado por um grupo de amigos que se conheceram pelas ruas do Rio de Janeiro fazendo graffiti por volta do início dos anos 2000.',
+						'Mas só em 2012 que parte deste coletivo começou a pensar profissionalmente em suas habilidades com produções de arte e comunicação visual.',
+						'A partir de então tem se desenvolvido gradativamente seus aprendizados, trabalhando para oferecer um serviço de qualidade e com características ousadas, com criatividade, segurança e compromisso.'
+					]
+				},
+				{
+					name:'Dança e Cia Art ',
+					categoria:'Serviço',
+					subcategoria:'Dança',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/dancaeciaart',
+					faceLink:'https://www.facebook.com/dancaeciaart',
+					instagram:'@dancaeciaart',
+					instaLink:'https://www.instagram.com/dancaeciaart/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'pedro.grh@gmail.com',
+					telefone:'21 99417-8279',
+					endereço:'Estrada Adhemar Bebiano, 1185',
+					description:[
+						'Tendo hoje 20 anos de idade, Pedro iniciou sua história com a dança no ano de 2010 com o grupo AfroReggae que com 1 ano se dedicando conseguiu uma bolsa e se aprofundar no que gosta.',
+						'A coisa deu tão certo que perto de completar 2 anos ele foi promovido a monitor das aulas, o que o fez ganhar um pouco mais que só uma bolsa.',
+						'Com o fechamento do AfroReggae em 2013, Pedro passou a dançar e a ensinar por conta própria, estando hoje à disposição daqueles que queiram aprender a arte da dança criando então a Dança e Cia Art.'
+					]
+				},
+				{
+					name:'Erica Martin Fotografia ',
+					categoria:'Serviço',
+					subcategoria:'Fotografia',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/photosnpictures',
+					faceLink:'https://www.facebook.com/photosnpictures',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'ericamar_irgm@hotmail.com',
+					telefone:'21 99645-4187',
+					endereço:'Complexo do Alemão - Rio de Janeiro ',
+					description:[
+						'Iniciou na fotografia há três anos na Nave do Conhecimento (Nova Brasília) e de lá foi encaminhada para cursar fotografia no SENAI.',
+						'Foi integrante de um curso audiovisual e um webdoc também dentro do Alemão.',
+						'Atualmente é integrante do coletivo Cá Entre Clicks e Fotógrafas Brasileiras.'
+					]
+				},
+				{
+					name:'Estúdio Abaeté ',
+					categoria:'Serviço',
+					subcategoria:'Produção',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/estudioabaete',
+					faceLink:'https://www.facebook.com/estudioabaete',
+					instagram:'@estudioabaete',
+					instaLink:'https://www.instagram.com/estudioabaete/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'estudioabaete@gmail.com',
+					telefone:'21 98336-9348',
+					endereço:'Complexo do Alemão - Rio de Janeiro ',
+					description:[
+						'O Estúdio Abaeté é uma produtora de desenvolvimento, criação e produção audiovisual.',
+						'Todos os profissionais atuantes na empresa são moradores do Alemão, com formação através de projetos e cursos locais, colocando a juventude recém formada numa atuação direta com o mercado.'
+					]
+				},
+				{
+					name:'Gráfica - Agência Carol Muniz ',
+					categoria:'Serviço',
+					subcategoria:'Gráfica',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/contatoagenciamuniz',
+					faceLink:'https://www.facebook.com/contatoagenciamuniz',
+					instagram:'@contatoagenciamuniz',
+					instaLink:'https://www.instagram.com/contatoagenciamuniz/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'contatoagenciamuniz@yahoo.com',
+					telefone:'21 97012-0816',
+					endereço:'Estrada do Itararé, 480 - Rua Nova, n°1 - Alvorada',
+					description:[
+						'null'
+					]
+				},
+				{
+					name:'Marcos Carolino Art ',
+					categoria:'Serviço',
+					subcategoria:'Dança',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/marcos.carolinoart',
+					faceLink:'https://www.facebook.com/marcos.carolinoart',
+					instagram:'@carolinnocoreografo',
+					instaLink:'https://www.instagram.com/carolinnocoreografo/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'mcarolino20@gmail.com',
+					telefone:'21 98027-4304',
+					endereço:'Complexo do Alemão - Rio de Janeiro ',
+					description:[
+						'Dançarino há 9 anos, Marcos Carolinno, sentiu a necessidade de dividir esse dom com outras pessoas que também amam dançar.',
+						'Atua como coreógrafo para festas de 15 anos desde 2013 e quer divulgar seu trabalho para além do Complexo do Alemão.'
+					]
+				},
+				{
+					name:'Toca do Lobo Produções ',
+					categoria:'Serviço',
+					subcategoria:'Produção',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/tdlproducoes',
+					faceLink:'https://www.facebook.com/tdlproducoes',
+					instagram:'@malhastensionadashelcimarlopes',
+					instaLink:'https://www.instagram.com/malhastensionadashelcimarlopes/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'helcimar@gmail.com',
+					telefone:'21 97045-3227',
+					endereço:'Rua Sebastião de Carvalho, n°193 Fundos - Casa 01',
+					description:[
+						'Há 6 anos a Toca do Lobo Produções oferece serviços de decorações de festas em Malhas Tensionadas, produção cultural, além de aluguel de equipamentos de som, iluminação e DJ.',
+						'Seu proprietário, Helcimar Lopes, também atua e presta seus serviços com produção cultural e drinkeiro. É reconhecido por promover os eventos mais badalados no Complexo do Alemão. '
+					]
+				},
+				{
+					name:'Tiaguinho Silva',
+					categoria:'Transporte',
+					subcategoria:'Moto Táxi',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'',
+					faceLink:'https://www.facebook.com/profile.php?id=100013204902709',
+					instagram:'@tiaguinhoalvorada',
+					instaLink:'https://www.instagram.com/tiaguinhoalvorada/',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'tspurificacao@gmail.com',
+					telefone:'21 97361-7113',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Tiago é um dos inúmeros mototaxista que resolveu se incorporar nesta opção de transporte alternativo oriundo da favela.',
+						'O Moto Táxi é o transporte de passageiros que possibilita comodidade e agiliza a viagem por conta da flexibilidade sobre duas rodas.'
+					]
+				},
+				{
+					name:'Cezar Andrade',
+					categoria:'Transporte',
+					subcategoria:'Moto Táxi',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/cezarandrade',
+					faceLink:'https://www.facebook.com/cezar.andrade.7967',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'null',
+					telefone:'21985451070',
+					endereço:'Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Cezar é um dos inúmeros mototaxista que resolveu se incorporar nesta opção de transporte alternativo oriundo da favela.',
+						'O Moto Táxi é o transporte de passageiros que possibilita comodidade e agiliza a viagem por conta da flexibilidade sobre duas rodas.'
+					]
+				},
+				{
+					name:'Marciele Jesus',
+					categoria:'Serviço',
+					subcategoria:'Cabelereira e Barbeira',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'/marcielePerfeito',
+					faceLink:'https://www.facebook.com/marciele.Perfeito',
+					instagram:'null',
+					instaLink:'null',
+					twitter:'null',
+					twitLink:'null',
+					site:'null',
+					email:'null',
+					telefone:'21 998461817',
+					endereço:'Av. Itaoca 1778 Complexo do Alemão - Rio de janeiro ',
+					description:[
+						'Barbeira e Cabelereira formada e profissional.'
+					]
+				},
+				{
+					name:'',
+					categoria:'',
+					subcategoria:'',
+					tag:[],
+					imageDesk:'',
+					imageMob:'',
+					facebook:'',
+					faceLink:'',
+					instagram:'',
+					instaLink:'',
+					twitter:'',
+					twitLink:'',
+					site:'',
+					email:'',
+					telefone:'',
+					endereço:'',
+					description:[
+						''
+					]
+				},
+			]
 		}
 	},
 	computed:{
@@ -408,9 +1278,8 @@ export default{
 			const list = this.atividades
 
 			if (this.category) {
-				console.log('test',list)
-				list.filter(atividade => atividade.categoria === this.category)
-				return list
+				return list.filter(atividade => atividade.categoria === this.category)
+				 
 			}
 
 			return null
@@ -420,6 +1289,10 @@ export default{
 		setCategory(value){
 			this.category = value
 		}
+	},
+	components: {
+		Atividades,
+		ListaAtividades
 	}
 }
 </script>
@@ -430,6 +1303,8 @@ header{
 	height: 140vh;
 	background: #fcae1b url(../../static/assets/background.svg) no-repeat bottom;
 	background-size: 100%;
+	display: flex;
+	justify-content: flex-start;
 }
 ;@media (max-width: 640px){
 	header{
@@ -658,7 +1533,7 @@ main{
 .main__footer{
 	width: 20%;
 	min-width: 250px;
-	height: 90vh;
+	height: 80vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
