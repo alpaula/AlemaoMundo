@@ -172,41 +172,32 @@
 </template>
 
 <script>
-import AbaeteLogo from '../../static/assets/Abaeté.jpg'
 import AbaeteD from '../../static/assets/Abaete - D.jpg'
 import AbaeteM from '../../static/assets/Abaete - M.jpg'
-import AbracoCampeaoLogo from '../../static/assets/Abraço Campeão.jpg'
 import AbracoCampeaoD from '../../static/assets/abracocampeao - D.jpg'
 import AbracoCampeaoM from '../../static/assets/abracocampeao - M.jpg'
-import AfroLajeLogo from '../../static/assets/AfroLaje.jpg'
 import AfroLajeD from '../../static/assets/afrolaje - D.jpg'
 import AfroLajeM from '../../static/assets/afrolaje - M.jpg'
 import AlexandreSilvaD from '../../static/assets/AlexandreSilva - D.jpg'
 import AlexandreSilvaM from '../../static/assets/AlexandreSilva - M.jpg'
 import PelaMisericordia from '../../static/assets/Aliança Pela Misericórdia.jpg'
 import AnaMoura from '../../static/assets/Ana Moura.jpg'
-import BrigadeiroLogo from '../../static/assets/Brigadeiros Literários.png'
 import BrigadeiroLiterarioD from '../../static/assets/BrigadeiroLiterario - D.jpg'
 import BrigadeiroLiterarioM from '../../static/assets/BrigadeiroLiterario - M.jpg'
 import CarolMunizLogo from '../../static/assets/Carol Muniz.jpg'
-import CarolMunizD from '../../static/assets/carolMuniz - D.jpg'
-import CarolMunizM from '../../static/assets/carolMuniz - M.jpg'
-import CasaBrotaLogo from '../../static/assets/Casa Brota.jpg'
-import CasaPrimasLogo from '../../static/assets/Casa Das Primas.png'
+import CasaBrotaLogo from '../../static/assets/casabrota.png'
 import CasaPrimasD from '../../static/assets/casadasPrimas - D.jpg'
 import CasaPrimasM from '../../static/assets/casadasPrimas - M.jpg'
 import CineCariocaD from '../../static/assets/cinecarioca - D.jpg'
 import CineCariocaM from '../../static/assets/cinecarioca - M.jpg'
-import ClasseDLogo from '../../static/assets/ClasseD.jpg'
 import ClasseDD from '../../static/assets/classe - D.jpg'
 import ClasseDM from '../../static/assets/classe - M.jpg'
 import ClubeLutasD from '../../static/assets/clubedelutas - D.jpg'
 import ClubeLutasM from '../../static/assets/clubedelutas - M.jpg'
-import ContraBandoLogo from '../../static/assets/Contra Bando Logo.jpg'
 import ContraBandoD from '../../static/assets/contraBando - D.jpg'
 import ContraBandoM from '../../static/assets/contraBando - M.jpg'
-import CriancasFelizesLogo from '../../static/assets/Crianças Felizes.jpg'
 import CriancasFelizesD from '../../static/assets/criancasfelizes - D.jpg'
+import CriancasFelizesM from '../../static/assets/criancasfelizes - M.jpg'
 import CRJLogo from '../../static/assets/CRJ Alemão.jpg'
 import CRJD from '../../static/assets/CRJ - D.jpg'
 import CRJM from '../../static/assets/CRJ - M.jpg'
@@ -216,7 +207,6 @@ import DancaArtM from '../../static/assets/DançaArt - M.png'
 import DeboraAmorimD from '../../static/assets/deboraAmorim - D.jpg'
 import DeboraAmorimM from '../../static/assets/deboraAmorim - M.jpg'
 import DescolandoIdeias from '../../static/assets/Descolando Ideias.jpg'
-import DocesMomentosLogo from '../../static/assets/Doces e Momentos.jpg'
 import DocesMomentosD from '../../static/assets/docesMomentos - D.jpg'
 import DocesMomentosM from '../../static/assets/docesMomentos - M.jpg'
 import DocesTravessuras from '../../static/assets/Doces e Travessuras.jpg'
@@ -228,20 +218,16 @@ import EricaMartinD from '../../static/assets/ericaMartin - D.jpg'
 import EricaMartinM from '../../static/assets/ericaMartin - M.jpg'
 import FamiliaPerninhaD from '../../static/assets/familiaPerninha - D.jpg'
 import FamiliaPerninhaM from '../../static/assets/familiaPerninha - M.jpg'
-import FavelaFashionLogo from '../../static/assets/Favela Fashion.jpg'
 import FavelaFashionD from '../../static/assets/favelaFashion - D.jpg'
 import FavelaFashionM from '../../static/assets/favelaFashion - M.jpg'
 import Favelagrafia from '../../static/assets/Favelagrafia.png'
-import FotoClubeLogo from '../../static/assets/Foto Clube.jpg'
 import FotoClubeD from '../../static/assets/fotoclube - D.jpg'
 import FotoClubeM from '../../static/assets/fotoclube - M.jpg'
 import FuturoMovimento from '../../static/assets/FuturoMovimento.jpg'
 import GasD from '../../static/assets/gas - D.jpg'
 import GasM from '../../static/assets/gas - M.jpg'
-import GatoMidiaLogo from '../../static/assets/Gato Mídia.png'
 import GatoMidiaD from '../../static/assets/gatomidia - D.jpg'
 import GatoMidiaM from '../../static/assets/gatomidia - M.jpg'
-import JogaCriaLogo from '../../static/assets/Joga Cria.png'
 import JogaCriaD from '../../static/assets/jogaecria - D.jpg'
 import JogaCriaM from '../../static/assets/jogaecria - M.jpg'
 import JoseanaFotoD from '../../static/assets/joseanafoto - D.jpg'
@@ -250,36 +236,28 @@ import LMLanchesLogo from '../../static/assets/LM Lanches.jpg'
 import MarcosCarolinnoLogo from '../../static/assets/marcos-carolinno.png'
 import MarcosCarolinnoD from '../../static/assets/MarcosCarolino - D.jpg'
 import MarcosCarolinnoM from '../../static/assets/MarcosCarolino - M.jpg'
-import MotoTaxiD from '../../static/assets/mototaxi - D.jpg'
-import MotoTaxiM from '../../static/assets/mototaxi - M.jpg'
 import MovimentoVidaLogo from '../../static/assets/Movimento _ Vida.jpg'
-import NaveConhecimentoLogo from '../../static/assets/NaveConhecimento.png'
 import NaveConhecimentoD from '../../static/assets/navedoconhecimento - D.jpg'
 import NaveConhecimentoM from '../../static/assets/navedoconhecimento - M.jpg'
-import NoixFazLogo from '../../static/assets/Noixfaz.jpg'
 import NoixFazD from '../../static/assets/noixqfaz - D.jpg'
 import NoixFazM from '../../static/assets/noixqfaz - M.jpg'
-import NovosLideresLogo from '../../static/assets/Novos Líderes.jpg'
 import NovosLideresD from '../../static/assets/novosLideres - D.jpg'
 import NovosLideresM from '../../static/assets/novosLideres - M.jpg'
-import OcaCuruminsLogo from '../../static/assets/OcaCurumins.jpg'
 import OcaCuruminsD from '../../static/assets/ocacurumins - D.jpg'
 import OcaCuruminsM from '../../static/assets/ocacurumins - M.jpg'
 import PoetasFaveladosLogo from '../../static/assets/Poetas Favelados.jpg'
-import RaizesMovimentoLogo from '../../static/assets/RaízesMovimento.png'
 import RaizesMovimentoD from '../../static/assets/raizesmovimento - D.jpg'
 import RaizesMovimentoM from '../../static/assets/raizesmovimento - M.jpg'
 import RecreacaoInfantilD from '../../static/assets/recreacaoinfantil - D.jpg'
 import RecreacaoInfantilM from '../../static/assets/recreacaoinfantil - M.png'
-import SambaFavelaLogo from '../../static/assets/Samba Favela.jpg'
 import SambaFavelaD from '../../static/assets/sambafavela - D.jpg'
 import SambaFavelaM from '../../static/assets/sambafavela - M.jpg'
 import SlamLajeD from '../../static/assets/slamLaje - D.jpg'
 import SlamLajeM from '../../static/assets/slamlaje - M.jpg'
-import TocaLoboLogo from '../../static/assets/Toca do Lobo.jpg'
+import ThiaguinhoD from '../../static/assets/thiaguinho - D.jpg'
+import ThiaguinhoM from '../../static/assets/thiaguinho - M.jpg'
 import TocaLoboD from '../../static/assets/tocadolobo - D.jpg'
 import TocaLoboM from '../../static/assets/tocadolobo - M.jpg'
-import Vidancar from '../../static/assets/Vidançar.jpg'
 import VidancarD from '../../static/assets/vidancar - D.jpg'
 import VidancarM from '../../static/assets/vidancar - M.jpg'
 
@@ -297,8 +275,8 @@ export default{
 					categoria:'Alimentação',
 					subcategoria:'Doceria',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/BrigadeiroLiterario - D.jpg',
+					imageMob:'../../static/assets/BrigadeiroLiterario - M.jpg',
 					facebook:'/brigadeirosliterarios',
 					faceLink:'https://www.facebook.com/brigadeirosliterarios',
 					instagram:'@brigadeirosliterarios',
@@ -319,8 +297,8 @@ export default{
 					categoria:'Alimentação',
 					subcategoria:'Doceria',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/casadasPrimas - D.jpg',
+					imageMob:'../../static/assets/casadasPrimas - M.jpg',
 					facebook:'/casadasprimasdoceria',
 					faceLink:'https://www.facebook.com/casadasprimasdoceria',
 					instagram:'@casadasprimasdoceria',
@@ -340,8 +318,8 @@ export default{
 					categoria:'Alimentação',
 					subcategoria:'Festas',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/docesMomentos - D.jpg',
+					imageMob:'../../static/assets/docesMomentos - M.jpg',
 					facebook:'docesemomentosjoana',
 					faceLink:'https://www.facebook.com/docesemomentosjoana',
 					instagram:'@docesemomentosjoana',
@@ -362,8 +340,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Dança',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/afrolaje - D.jpg',
+					imageMob:'../../static/assets/afrolaje - M.jpg',
 					facebook:'afrolaje',
 					faceLink:'https://www.facebook.com/afrolaje',
 					instagram:'null',
@@ -385,8 +363,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Graffiti',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/noixqfaz - D.jpg',
+					imageMob:'../../static/assets/noixqfaz - M.jpg',
 					facebook:'noixqfazcpx',
 					faceLink:'https://www.facebook.com/noixqfazcpx',
 					instagram:'@annyvii',
@@ -410,8 +388,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Teatro',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/contraBando - D.jpg',
+					imageMob:'../../static/assets/contraBando - M.jpg',
 					facebook:'/ContraBandodeTeatro',
 					faceLink:'https://www.facebook.com/Contra-Bando-de-Teatro-1438195543130396',
 					instagram:'@contrabandodeteatro',
@@ -433,8 +411,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Educação',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/CRJ - D.jpg',
+					imageMob:'../../static/assets/CRJ - M.jpg',
 					facebook:'crj.alemao.50',
 					faceLink:'https://www.facebook.com/crj.alemao.50',
 					instagram:'@crjalemao',
@@ -478,8 +456,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Eventos',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/criancasfelizes - D.jpg',
+					imageMob:'../../static/assets/criancasfelizes - M.jpg',
 					facebook:'/Projetocriancasfelizes',
 					faceLink:'https://www.facebook.com/Projetocriancasfelizes/',
 					instagram:'null',
@@ -502,8 +480,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Eventos',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/sambafavela - D.jpg',
+					imageMob:'../../static/assets/sambafavela - M.jpg',
 					facebook:'/projetosambafavela',
 					faceLink:'https://www.facebook.com/projetosambafavela',
 					instagram:'@projetosambafavela',
@@ -525,8 +503,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Dança',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/vidancar - D.jpg',
+					imageMob:'../../static/assets/vidancar - M.jpg',
 					facebook:'/projetovidancar',
 					faceLink:'https://www.facebook.com/projetovidancar/',
 					instagram:'null',
@@ -550,8 +528,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Eventos',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/slamLaje - D.jpg',
+					imageMob:'../../static/assets/slamlaje - M.jpg',
 					facebook:'/batalhadepoesia',
 					faceLink:'https://www.facebook.com/batalhadepoesia',
 					instagram:'@slamlaje',
@@ -573,8 +551,8 @@ export default{
 					categoria:'Beleza e Estética',
 					subcategoria:'Maquiagem ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/deboraAmorim - D.jpg',
+					imageMob:'../../static/assets/deboraAmorim - M.jpg',
 					facebook:'/debamorimmakeup',
 					faceLink:'https://www.facebook.com/debamorimmakeup',
 					instagram:'@debamorimm',
@@ -594,8 +572,8 @@ export default{
 					categoria:'Coletivo',
 					subcategoria:'Moda',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/favelaFashion - D.jpg',
+					imageMob:'../../static/assets/favelaFashion - M.jpg',
 					facebook:'/FavelaeFashion',
 					faceLink:'https://www.facebook.com/FavelaeFashion',
 					instagram:'@favelaefashion',
@@ -639,8 +617,8 @@ export default{
 					categoria:'Coletivo',
 					subcategoria:'Fotografia ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/fotoclube - D.jpg',
+					imageMob:'../../static/assets/fotoclube - M.jpg',
 					facebook:'/FotoClubeAlemão',
 					faceLink:'https://www.facebook.com/Foto-Clube-Alemão-142926802508619',
 					instagram:'@fotoclubealemao',
@@ -660,8 +638,8 @@ export default{
 					categoria:'Coletivo',
 					subcategoria:'Assistência Social',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/gas - D.jpg',
+					imageMob:'../../static/assets/gas - M.jpg',
 					facebook:'/gasgrupoalemaosolidario',
 					faceLink:'https://www.facebook.com/gasgrupoalemaosolidario',
 					instagram:'null',
@@ -705,8 +683,8 @@ export default{
 					categoria:'Educação',
 					subcategoria:'Comunicação',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/gatomidia - D.jpg',
+					imageMob:'../../static/assets/gatomidia - M.jpg',
 					facebook:'/gatomidia',
 					faceLink:'https://www.facebook.com/gatomidia',
 					instagram:'@gatomidia',
@@ -728,8 +706,8 @@ export default{
 					categoria:'Educação',
 					subcategoria:'Tecnologia',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/jogaecria - D.jpg',
+					imageMob:'../../static/assets/jogaecria - M.jpg',
 					facebook:'/JogaCria',
 					faceLink:'https://www.facebook.com/JogaCria',
 					instagram:'null',
@@ -749,8 +727,8 @@ export default{
 					categoria:'Educação',
 					subcategoria:'Tecnologia',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/navedoconhecimento - D.jpg',
+					imageMob:'../../static/assets/navedoconhecimento - M.jpg',
 					facebook:'/navedoconhecimentonovabrasilia',
 					faceLink:'https://www.facebook.com/navedoconhecimentonovabrasilia',
 					instagram:'null',
@@ -771,8 +749,8 @@ export default{
 					categoria:'Educação',
 					subcategoria:'Infantil ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/recreacaoinfantil - D.jpg',
+					imageMob:'../../static/assets/recreacaoinfantil - M.jpg',
 					facebook:'null',
 					faceLink:'null',
 					instagram:'null',
@@ -813,8 +791,8 @@ export default{
 					categoria:'Esporte e Atividade Física',
 					subcategoria:'Artes Marciais ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/clubedelutas - D.jpg',
+					imageMob:'../../static/assets/clubedelutas - M.jpg',
 					facebook:'/clubedelutadocomplexo',
 					faceLink:'https://www.facebook.com/groups/clubedelutadocomplexo/',
 					instagram:'null',
@@ -835,8 +813,8 @@ export default{
 					categoria:'Esporte e Atividade Física',
 					subcategoria:'Artes Marciais ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/familiaPerninha - D.jpg',
+					imageMob:'../../static/assets/familiaPerninha - M.jpg',
 					facebook:'/PerninhaKickboxing',
 					faceLink:'https://www.facebook.com/groups/582405115123151/',
 					instagram:'null',
@@ -856,8 +834,8 @@ export default{
 					categoria:'ONG',
 					subcategoria:'Cidania e Desenvolvimento',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/abracocampeao - D.jpg',
+					imageMob:'../../static/assets/abracocampeao - M.jpg',
 					facebook:'/alanduarte',
 					faceLink:'https://www.facebook.com/alan.duarte.3386',
 					instagram:'null',
@@ -877,8 +855,8 @@ export default{
 					categoria:'ONG',
 					subcategoria:'Educação e Cultura ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/ocacurumins - D.jpg',
+					imageMob:'../../static/assets/ocacurumins - M.jpg',
 					facebook:'/CentroCulturalOcadosCurumins',
 					faceLink:'https://www.facebook.com/CentroCulturalOcadosCurumins/',
 					instagram:'null',
@@ -902,8 +880,8 @@ export default{
 					categoria:'ONG',
 					subcategoria:'Cidania e Desenvolvimento',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/EDUCAP - D.jpg',
+					imageMob:'../../static/assets/EDUCAP - M.jpg',
 					facebook:'/educap.org',
 					faceLink:'https://www.facebook.com/educap.org/',
 					instagram:'@luciaeducap1716',
@@ -923,8 +901,8 @@ export default{
 					categoria:'ONG',
 					subcategoria:'Educação e Cultura ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/raizesmovimento - D.jpg',
+					imageMob:'../../static/assets/raizesmovimento - M.jpg',
 					facebook:'/raizesemmovimento',
 					faceLink:'https://www.facebook.com/raizesemmovimento',
 					instagram:'null',
@@ -932,7 +910,7 @@ export default{
 					twitter:'null',
 					twitLink:'null',
 					site:'http://www.raizesemmovimento.org.br',
-					email:'contato@raizesememovimento.org.br',
+					email:'contato@raizesemmovimento.org.br',
 					telefone:'21 2260-3998',
 					endereço:'Avenida Central, n° 68 - Ramos - Complexo do Alemão ',
 					description:[
@@ -944,8 +922,8 @@ export default{
 					categoria:'ONG',
 					subcategoria:'Educação e Cultura ',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/novosLideres - D.jpg',
+					imageMob:'../../static/assets/novosLideres - M.jpg',
 					facebook:'/novoslideresempreendedores',
 					faceLink:'https://www.facebook.com/novoslideresempreendedores',
 					instagram:'@educatethefavela',
@@ -989,8 +967,8 @@ export default{
 					categoria:'Serviço',
 					subcategoria:'Fotografia',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/AlexandreSilva - D.jpg',
+					imageMob:'../../static/assets/AlexandreSilva - M.jpg',
 					facebook:'/acsilvafotografia',
 					faceLink:'https://www.facebook.com/acsilvafotografia',
 					instagram:'@acsilvafotografia ',
@@ -1033,8 +1011,8 @@ export default{
 					categoria:'Serviço',
 					subcategoria:'Design',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/classe - D.jpg',
+					imageMob:'../../static/assets/classe - M.jpg',
 					facebook:'/ClasseDAteliêdeIdeias',
 					faceLink:'https://www.facebook.com/Classe-D-Ateliê-de-Ideias-950892308279847',
 					instagram:'@classe_d22',
@@ -1079,8 +1057,8 @@ export default{
 					categoria:'Serviço',
 					subcategoria:'Fotografia',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/ericaMartin - D.jpg',
+					imageMob:'../../static/assets/ericaMartin - M.jpg',
 					facebook:'/photosnpictures',
 					faceLink:'https://www.facebook.com/photosnpictures',
 					instagram:'null',
@@ -1102,8 +1080,8 @@ export default{
 					categoria:'Serviço',
 					subcategoria:'Produção',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/Abaete - D.jpg',
+					imageMob:'../../static/assets/Abaete - M.jpg',
 					facebook:'/estudioabaete',
 					faceLink:'https://www.facebook.com/estudioabaete',
 					instagram:'@estudioabaete',
@@ -1145,8 +1123,8 @@ export default{
 					categoria:'Serviço',
 					subcategoria:'Dança',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/MarcosCarolino - D.jpg',
+					imageMob:'../../static/assets/MarcosCarolino - M.jpg',
 					facebook:'/marcos.carolinoart',
 					faceLink:'https://www.facebook.com/marcos.carolinoart',
 					instagram:'@carolinnocoreografo',
@@ -1167,8 +1145,8 @@ export default{
 					categoria:'Serviço',
 					subcategoria:'Produção',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/tocadolobo - D.jpg',
+					imageMob:'../../static/assets/tocadolobo - M.jpg',
 					facebook:'/tdlproducoes',
 					faceLink:'https://www.facebook.com/tdlproducoes',
 					instagram:'@malhastensionadashelcimarlopes',
@@ -1189,8 +1167,8 @@ export default{
 					categoria:'Transporte',
 					subcategoria:'Moto Táxi',
 					tag:[],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/thiaguinho - D.jpg',
+					imageMob:'../../static/assets/thiaguinho - M.jpg',
 					facebook:'',
 					faceLink:'https://www.facebook.com/profile.php?id=100013204902709',
 					instagram:'@tiaguinhoalvorada',
