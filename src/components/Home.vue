@@ -72,62 +72,62 @@
 							</div>
 						</button>
 					</div>
-					<div class="headerNav__list--mobile">
-						<button class="navList__item--mobile" @click="">
+					<div class="headerNav__list--mobile" v-show="transition = true">
+						<button class="navList__item--mobile" @click="setCategory('Alimentação'), transition=false">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/alimentacao.svg">
 							</div>
 							alimentação
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Arte e Cultura')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/arteEcultura.svg">
 							</div>
 							arte e cultura
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Beleza e Estética')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/belezaEestetica.svg">
 							</div>
 							beleza e estética
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Coletivos')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/coletivos.svg">
 							</div>
 							coletivos
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Educação')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/educacao.svg">
 							</div>
 							educação
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Esportes e Atividades Físicas')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/esportes.svg">
 							</div>
 							esportes e atividade
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Ong')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/ongs.svg">
 							</div>
 							ong's
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Saúde')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/saude.svg">
 							</div>
 							saúde
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Serviços')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/servicos.svg">
 							</div>
 							serviços
 						</button>
-						<button class="navList__item--mobile" @click="">
+						<button class="navList__item--mobile" @click="setCategory('Transporte')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/transporte.svg">
 							</div>
@@ -136,9 +136,13 @@
 					</div>
 				</nav>
 			</aside>
-			<ListaAtividades></ListaAtividades>
-			<!-- <Atividades></Atividades> -->
-		</header>
+			<ListaAtividades
+				:filterActivity="filterActivity"
+				v-show="transition = false"
+			>
+			</ListaAtividades>
+<!-- 			<Atividades></Atividades>
+ -->		</header>
 		<main>
 			<section class="main__section">
 				<h1 class="mainSection__title">Como surgiu o Alemão para o mundo?</h1>
@@ -269,6 +273,7 @@ export default{
 	data(){
 		return{
 			category:'',
+			transition:true,
 			atividades:[
 				{
 					name:'Brigadeiros Literários',
@@ -1251,6 +1256,16 @@ export default{
 			]
 		}
 	},
+	// wacth:{
+	// 	mobile(){
+	// 		console.log('test',window.screen.availWidth)
+	// 		if(window.screen.availWidth > '640'){
+	// 			this.transition = false
+	// 		}else{
+	// 			this.transition = true
+	// 		}
+	// 	}
+	// },
 	computed:{
 		filterActivity(){
 			const list = this.atividades
@@ -1261,6 +1276,14 @@ export default{
 			}
 
 			return null
+		},
+		mobile(){
+			if(screen.width < '640'){
+				console.log(test, screen.width)
+				return this.transition = false
+			}else{
+				return this.transition = true
+			}
 		}
 	},
 	methods:{
@@ -1284,7 +1307,7 @@ header{
 	display: flex;
 	justify-content: flex-start;
 }
-;@media (max-width: 640px){
+@media (max-width: 640px){
 	header{
 		min-height: 165vh;
 		display: flex;
@@ -1339,7 +1362,7 @@ header{
 }
 .navBox__button{
 	width: 10%;
-	height: 7vh;
+	height: 6vh;
 	background: #fff;
 	border: none;
 }
@@ -1351,7 +1374,7 @@ header{
 		width: 90%;
 		display: none;
 	}
-}
+} 	
 .headerNav__list--mobile{
 	display: none;
 }
@@ -1382,7 +1405,7 @@ header{
 	align-items: center;
 }
 .navList__item--mobile{
-	width: 35%;
+	width: 40%;
 	background-color: transparent;
 	border: none;
 	color: #fff;
@@ -1405,7 +1428,7 @@ header{
 	height: 4vh;
 }
 .listItem__logo--mobile{
-	height: 6vh;
+	height: 5vh;
 }
 main{
 	width: 100%;
