@@ -72,8 +72,20 @@
 							</div>
 						</button>
 					</div>
-					<div class="headerNav__list--mobile" v-show="transition = true">
-						<button class="navList__item--mobile" @click="setCategory('Alimentação'), transition=false">
+				</nav>
+			</aside>
+			<aside class="header__aside--mobile" id="hideMenu">
+				<img class="header__logo" src="../../static/assets/alemao-para-o-mundo_logo.svg">
+				<nav class="header__nav">
+					<div class="headerNav__box--mobile">
+						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?">
+						<button class="navBox__button" @click="">
+							<img class="boxButton__logo" src="../../static/assets/Lupa-busca.svg">
+						</button>
+					</div>
+					<div class="headerNav__list--mobile">
+						<button class="navList__item--mobile" 
+							@click="setCategory('Alimentação'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/alimentacao.svg">
 							</div>
@@ -138,11 +150,17 @@
 			</aside>
 			<ListaAtividades
 				:filterActivity="filterActivity"
-				v-show="transition = false"
+				:category="category"
+				:selectActivity="selectActivity"
+				v-show="transition"
+				v-if="change"
 			>
 			</ListaAtividades>
-<!-- 			<Atividades></Atividades>
- -->		</header>
+			<Atividades
+				v-else
+			>
+			</Atividades>
+		</header>
 		<main>
 			<section class="main__section">
 				<h1 class="mainSection__title">Como surgiu o Alemão para o mundo?</h1>
@@ -150,7 +168,7 @@
 					 O Alemão para o mundo é o resultado do projeto final dos estudantes do curso de programação e desenvolvimento web, Vai Na Web, cujo os quais em sua maioria são residentes desse conjunto de favelas.
 				</p>
 				<p class="mainSection__paragraph">
-					Após três meses de aprendizado técnicos e praticos, eles mapaearam iniciativas sociais, culturais, empreendedoras, para mostrar a potencialidade, talentos, resistência existente no Complexo do Alemão. 
+					Após  três meses de aprendizado técnicos e praticos, eles mapaearam iniciativas sociais, culturais, empreendedoras, para mostrar a potencialidade, talentos, resistência existente no Complexo do Alemão. 
 				</p>
 			</section>
 			<section class="main__section">
@@ -273,13 +291,57 @@ export default{
 	data(){
 		return{
 			category:'',
-			transition:true,
+			transition:false,
+			change: true,
+			selectActivity: '',
+			groups: [
+				{
+					category: 'Alimentação',
+					subcategory:['Restaurante', 'Lanche', 'Doceria', 'Festa', 'Todos']
+				},
+				{
+					category: 'Arte e Cultura',
+					subcategory: ['Grafite', 'Música', 'Dança', 'Poesia', 'Teatro', 'Fotografia', 'Eventos', 'Educação', 'Todos']
+				},
+				{
+					category: 'Beleza e Estética',
+					subcategory:['Cabelo', 'Maquiagem', 'Corpo', 'Todos']
+				},
+				{
+					category: 'Coletivo',
+					subcategory:['Coworking', 'Fotografia', 'Assistência Social', 'Produção', 'Moda', 'Todos']
+				},
+				{
+					category: 'Educação',
+					subcategory:['Tecnologia', 'Infantil', 'EJA', 'Universidade', 'Arte e Cultura', 'Todos']
+				},
+				{
+					category: 'Esporte e Atividade Física',
+					subcategory:['Arte Marcial', 'Academmia', 'Futubol', 'Funcional', 'Dança', 'Todos']
+				},
+				{
+					category: 'ONG',
+					subcategory:['Cidadania', 'Desenvolvimento', 'Educação', 'Cultura', 'Assistência Social', 'Todos']
+				},
+				{
+					category: 'Saúde',
+					subcategory:['Fisioterapia', 'Laboratório', 'Clínica', 'Todos']
+				},
+				{
+					category: 'Serviços',
+					subcategory:['Coworking', 'Dança', 'Design', 'Fotografia', 'Gráfica', 'Produção', 'Alimentação', 'Todos']
+				},
+				{
+					category: 'Transporte',
+					subcategory:['Moto Táxi', 'Táxi', 'Ônibus', 'Van', 'Kombi', 'Todos']
+				}
+			],
 			atividades:[
 				{
 					name:'Brigadeiros Literários',
 					categoria:'Alimentação',
 					subcategoria:'Doceria',
-					tag:[],
+					tag:['Alimentação', 'Doceria'],
 					imageDesk:'../../static/assets/BrigadeiroLiterario - D.jpg',
 					imageMob:'../../static/assets/BrigadeiroLiterario - M.jpg',
 					facebook:'/brigadeirosliterarios',
@@ -301,7 +363,7 @@ export default{
 					name:'Casa das Primas Doceria ',
 					categoria:'Alimentação',
 					subcategoria:'Doceria',
-					tag:[],
+					tag:['Alimentação', 'Doceria', 'Lanche'],
 					imageDesk:'../../static/assets/casadasPrimas - D.jpg',
 					imageMob:'../../static/assets/casadasPrimas - M.jpg',
 					facebook:'/casadasprimasdoceria',
@@ -321,8 +383,8 @@ export default{
 				{
 					name:'Festas',
 					categoria:'Alimentação',
-					subcategoria:'Festas',
-					tag:[],
+					subcategoria:'Festa',
+					tag:['Alimentação', 'Serviço', 'Festa'],
 					imageDesk:'../../static/assets/docesMomentos - D.jpg',
 					imageMob:'../../static/assets/docesMomentos - M.jpg',
 					facebook:'docesemomentosjoana',
@@ -344,7 +406,7 @@ export default{
 					name:'AfroLaje ',
 					categoria:'Arte e Cultura',
 					subcategoria:'Dança',
-					tag:[],
+					tag:['Arte e Cultura', 'Dança'],
 					imageDesk:'../../static/assets/afrolaje - D.jpg',
 					imageMob:'../../static/assets/afrolaje - M.jpg',
 					facebook:'afrolaje',
@@ -366,8 +428,8 @@ export default{
 				{
 					name:'Coletivo de Grafite NoixQFaz ',
 					categoria:'Arte e Cultura',
-					subcategoria:'Graffiti',
-					tag:[],
+					subcategoria:'Grafite',
+					tag:['Arte e Cultura', 'Grafite'],
 					imageDesk:'../../static/assets/noixqfaz - D.jpg',
 					imageMob:'../../static/assets/noixqfaz - M.jpg',
 					facebook:'noixqfazcpx',
@@ -392,7 +454,7 @@ export default{
 					name:'Contra Bando de Teatro ',
 					categoria:'Arte e Cultura',
 					subcategoria:'Teatro',
-					tag:[],
+					tag:['Arte e Cultura', 'Teatro'],
 					imageDesk:'../../static/assets/contraBando - D.jpg',
 					imageMob:'../../static/assets/contraBando - M.jpg',
 					facebook:'/ContraBandodeTeatro',
@@ -415,7 +477,7 @@ export default{
 					name:'CRJ - Alemão ',
 					categoria:'Arte e Cultura',
 					subcategoria:'Educação',
-					tag:[],
+					tag:['Arte e Cultura', 'Educação'],
 					imageDesk:'../../static/assets/CRJ - D.jpg',
 					imageMob:'../../static/assets/CRJ - M.jpg',
 					facebook:'crj.alemao.50',
@@ -438,7 +500,7 @@ export default{
 					name:'Futuro em Movimento ',
 					categoria:'Arte e Cultura',
 					subcategoria:'Dança',
-					tag:[],
+					tag:['Arte e Cultura', 'Educação', 'Dança'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'FuturoemMovimento',
@@ -459,8 +521,8 @@ export default{
 				{
 					name:'Projeto Crianças Felizes ',
 					categoria:'Arte e Cultura',
-					subcategoria:'Eventos',
-					tag:[],
+					subcategoria:'Evento',
+					tag:['ONG', 'Arte e Cultura', 'Evento'],
 					imageDesk:'../../static/assets/criancasfelizes - D.jpg',
 					imageMob:'../../static/assets/criancasfelizes - M.jpg',
 					facebook:'/Projetocriancasfelizes',
@@ -483,8 +545,8 @@ export default{
 				{
 					name:'Projeto Samba Favela',
 					categoria:'Arte e Cultura',
-					subcategoria:'Eventos',
-					tag:[],
+					subcategoria:'Evento',
+					tag:['Arte e Cultura', 'Música', 'Evento'],
 					imageDesk:'../../static/assets/sambafavela - D.jpg',
 					imageMob:'../../static/assets/sambafavela - M.jpg',
 					facebook:'/projetosambafavela',
@@ -507,7 +569,7 @@ export default{
 					name:'Projeto Vidançar ',
 					categoria:'Arte e Cultura',
 					subcategoria:'Dança',
-					tag:[],
+					tag:['Arte e Cultura', 'Educação', 'Dança', 'Teatro'],
 					imageDesk:'../../static/assets/vidancar - D.jpg',
 					imageMob:'../../static/assets/vidancar - M.jpg',
 					facebook:'/projetovidancar',
@@ -531,8 +593,8 @@ export default{
 				{
 					name:'Slam Laje',
 					categoria:'Arte e Cultura',
-					subcategoria:'Eventos',
-					tag:[],
+					subcategoria:'Evento',
+					tag:['Arte e Cultura', 'Evento', 'Poesia'],
 					imageDesk:'../../static/assets/slamLaje - D.jpg',
 					imageMob:'../../static/assets/slamlaje - M.jpg',
 					facebook:'/batalhadepoesia',
@@ -554,8 +616,8 @@ export default{
 				{
 					name:'Debora Amorim - Makeup ',
 					categoria:'Beleza e Estética',
-					subcategoria:'Maquiagem ',
-					tag:[],
+					subcategoria:'Maquiagem',
+					tag:['Beleza e Estética', 'Maquiagem'],
 					imageDesk:'../../static/assets/deboraAmorim - D.jpg',
 					imageMob:'../../static/assets/deboraAmorim - M.jpg',
 					facebook:'/debamorimmakeup',
@@ -576,7 +638,7 @@ export default{
 					name:'Favela é Fashion',
 					categoria:'Coletivo',
 					subcategoria:'Moda',
-					tag:[],
+					tag:['Coletivo', 'Moda', 'Educação'],
 					imageDesk:'../../static/assets/favelaFashion - D.jpg',
 					imageMob:'../../static/assets/favelaFashion - M.jpg',
 					facebook:'/FavelaeFashion',
@@ -597,8 +659,8 @@ export default{
 				{
 					name:'Favelagrafia',
 					categoria:'Coletivo',
-					subcategoria:'Fotografia ',
-					tag:[],
+					subcategoria:'Fotografia',
+					tag:['Coletivo', 'Fotografia'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/favelagrafia',
@@ -620,8 +682,8 @@ export default{
 				{
 					name:'Foto Clube Alemão',
 					categoria:'Coletivo',
-					subcategoria:'Fotografia ',
-					tag:[],
+					subcategoria:'Fotografia',
+					tag:['Coletivo', 'Arte e Cultura', 'Fotografia', 'Evento'],
 					imageDesk:'../../static/assets/fotoclube - D.jpg',
 					imageMob:'../../static/assets/fotoclube - M.jpg',
 					facebook:'/FotoClubeAlemão',
@@ -642,7 +704,7 @@ export default{
 					name:'GAS - Grupo Alemão Solidário ',
 					categoria:'Coletivo',
 					subcategoria:'Assistência Social',
-					tag:[],
+					tag:['Coletivo', 'Assistência Social'],
 					imageDesk:'../../static/assets/gas - D.jpg',
 					imageMob:'../../static/assets/gas - M.jpg',
 					facebook:'/gasgrupoalemaosolidario',
@@ -664,7 +726,7 @@ export default{
 				{
 					name:'Poetas Favelados ',
 					categoria:'Coletivo',
-					subcategoria:'Poesia ',
+					subcategoria:'Poesia',
 					tag:[],
 					imageDesk:'',
 					imageMob:'',
@@ -752,7 +814,7 @@ export default{
 				{
 					name:'Recreação Infantil Estrelinha ',
 					categoria:'Educação',
-					subcategoria:'Infantil ',
+					subcategoria:'Infantil',
 					tag:[],
 					imageDesk:'../../static/assets/recreacaoinfantil - D.jpg',
 					imageMob:'../../static/assets/recreacaoinfantil - M.jpg',
@@ -794,7 +856,7 @@ export default{
 				{
 					name:'Clube de Luta do Complexo ',
 					categoria:'Esporte e Atividade Física',
-					subcategoria:'Artes Marciais ',
+					subcategoria:'Arte Marcial',
 					tag:[],
 					imageDesk:'../../static/assets/clubedelutas - D.jpg',
 					imageMob:'../../static/assets/clubedelutas - M.jpg',
@@ -816,7 +878,7 @@ export default{
 				{
 					name:'Perninha Kickboxing ',
 					categoria:'Esporte e Atividade Física',
-					subcategoria:'Artes Marciais ',
+					subcategoria:'Arte Marcial',
 					tag:[],
 					imageDesk:'../../static/assets/familiaPerninha - D.jpg',
 					imageMob:'../../static/assets/familiaPerninha - M.jpg',
@@ -837,7 +899,7 @@ export default{
 				{
 					name:'Associação Abraço Campeão ',
 					categoria:'ONG',
-					subcategoria:'Cidania e Desenvolvimento',
+					subcategoria:'Cidadania e Desenvolvimento',
 					tag:[],
 					imageDesk:'../../static/assets/abracocampeao - D.jpg',
 					imageMob:'../../static/assets/abracocampeao - M.jpg',
@@ -858,7 +920,7 @@ export default{
 				{
 					name:'Centro Cultural Oca dos Curumins ',
 					categoria:'ONG',
-					subcategoria:'Educação e Cultura ',
+					subcategoria:'Educação e Cultura',
 					tag:[],
 					imageDesk:'../../static/assets/ocacurumins - D.jpg',
 					imageMob:'../../static/assets/ocacurumins - M.jpg',
@@ -1256,40 +1318,25 @@ export default{
 			]
 		}
 	},
-	// wacth:{
-	// 	mobile(){
-	// 		console.log('test',window.screen.availWidth)
-	// 		if(window.screen.availWidth > '640'){
-	// 			this.transition = false
-	// 		}else{
-	// 			this.transition = true
-	// 		}
-	// 	}
-	// },
 	computed:{
 		filterActivity(){
 			const list = this.atividades
 
 			if (this.category) {
 				return list.filter(atividade => atividade.categoria === this.category)
-				 
 			}
 
 			return null
-		},
-		mobile(){
-			if(screen.width < '640'){
-				console.log(test, screen.width)
-				return this.transition = false
-			}else{
-				return this.transition = true
-			}
 		}
 	},
 	methods:{
 		setCategory(value){
-			this.category = value
-		}
+			this.category = value;
+			this.transition = true;
+		},
+		hideMenu(){
+			document.getElementById('hideMenu').style.display = 'none';
+		},
 	},
 	components: {
 		Atividades,
@@ -1325,12 +1372,11 @@ header{
 }
 @media (max-width: 640px){
 	.header__aside{
-		width: 90%;
-		align-items: center;
+		display: none;
 	}
 }
 .header__logo{
-	width: 100%;
+	min-width: 100%;
 	margin: 3% 0;
 }
 .header__nav{
@@ -1344,11 +1390,6 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-@media (max-width: 640px){
-	.headerNav__box{
-		height: 9vh;
-	}
 }
 .navBox__input{
 	width: 84%;
@@ -1369,23 +1410,42 @@ header{
 .boxButton__logo{
 	width: 70%;
 }
-@media (max-width: 640px){
-	.headerNav__list{
-		width: 90%;
-		display: none;
-	}
-} 	
-.headerNav__list--mobile{
+.header__aside--mobile{
+	width: 100%;
+	max-width: 450px;
+	min-width: 350px;
+	height: 110vh;
+	padding: 1%;
 	display: none;
+}
+@media(max-width: 640px){
+	.header__aside--mobile{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+}
+.headerNav__box--mobile{
+	width: 100%;
+	height: 9vh;
+	border-radius: 30px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.headerNav__list--mobile{
+	width: 90%;
+	min-height: 70vh; 
+	margin: 2% 0;
+	display: none;
+	justify-content: space-around;
+	flex-flow: row wrap;
 }
 @media (max-width: 640px){
 	.headerNav__list--mobile{
-		width: 100%;
-		min-height: 70vh; 
-		margin: 2% 0;
 		display: flex;
-		justify-content: space-around;
-		flex-flow: row wrap;
 	}
 }
 .navList__item{
