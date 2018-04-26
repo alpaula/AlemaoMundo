@@ -151,15 +151,23 @@
 			<ListaAtividades
 				:filterActivity="filterActivity"
 				:category="category"
-				:selectActivity="selectActivity"
+				@selectActivity="value => {selectActivity = value}"
+				@change="setActivity"
 				v-show="transition"
 				v-if="change"
 			>
 			</ListaAtividades>
 			<Atividades
+				:filterActivity="filterActivity"
+				@change="value => {change = value}"
 				v-else
 			>
 			</Atividades>
+			<div class="header__quadro" v-show="category">
+				<p class="headerQuadro__subcategoria" v-for="value in filterCategory.subcategory" @click="setSubcategory(value)">
+					{{ value }}
+				</p>
+			</div>
 		</header>
 		<main>
 			<section class="main__section">
@@ -291,9 +299,10 @@ export default{
 	data(){
 		return{
 			category:'',
-			transition:false,
+			subCategory:'',
+			transition: false,
 			change: true,
-			selectActivity: '',
+			selectActivity:'',
 			groups: [
 				{
 					category: 'Alimentação',
@@ -348,9 +357,9 @@ export default{
 					faceLink:'https://www.facebook.com/brigadeirosliterarios',
 					instagram:'@brigadeirosliterarios',
 					instaLink:'https://www.instagram.com/brigadeirosliterarios/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'brigadeiroslisterarios@gmail.com',
 					telefone:'21 96686-2218',
 					endereço:'Complexo do Alemão - Rio de janeiro',
@@ -370,14 +379,14 @@ export default{
 					faceLink:'https://www.facebook.com/casadasprimasdoceria',
 					instagram:'@casadasprimasdoceria',
 					instaLink:'https://www.instagram.com/casadasprimasdoceria',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
-					email:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
+					email:null,
 					telefone:'21 97344-1959',
 					endereço:'Estrada do Itararé, 341 - Loja 20 ',
 					description:[
-						'recente point aberto no Complexo do Alemão, onde tem como especialidades brownies, tortas, sorvetes e milk sheik." Aqui você pode se sentir o último brownie do pacote."'
+						'Recente point aberto no Complexo do Alemão, onde tem como especialidades brownies, tortas, sorvetes e milk sheik." Aqui você pode se sentir o último brownie do pacote."'
 					]
 				},
 				{
@@ -391,10 +400,10 @@ export default{
 					faceLink:'https://www.facebook.com/docesemomentosjoana',
 					instagram:'@docesemomentosjoana',
 					instaLink:'https://www.instagram.com/docesemomentosjoana',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
-					email:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
+					email:null,
 					telefone:'21 98062-1818',
 					endereço:'Rua da Assembléia - Próximo a Estação do teleférico itararé',
 					description:[
@@ -411,12 +420,12 @@ export default{
 					imageMob:'../../static/assets/afrolaje - M.jpg',
 					facebook:'afrolaje',
 					faceLink:'https://www.facebook.com/afrolaje',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
-					email:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
+					email:null,
 					telefone:'21 98403-4178',
 					endereço:'Travessa São José, n°13 - Oca dos Curumins',
 					description:[
@@ -436,9 +445,9 @@ export default{
 					faceLink:'https://www.facebook.com/noixqfazcpx',
 					instagram:'@annyvii',
 					instaLink:'https://www.instagram.com/annyvii/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'vivianyribeiroart@gmail.com',
 					telefone:'21 99958-2597',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -461,8 +470,8 @@ export default{
 					faceLink:'https://www.facebook.com/Contra-Bando-de-Teatro-1438195543130396',
 					instagram:'@contrabandodeteatro',
 					instaLink:'https://www.instagram.com/contrabandodeteatro/',
-					twitter:'null',
-					twitLink:'null',
+					twitter:null,
+					twitLink:null,
 					site:'http://contra-bando.wixsite.com/',
 					email:'contrabandodeteatro@gmail.com',
 					telefone:'21 99265-1517',
@@ -484,9 +493,9 @@ export default{
 					faceLink:'https://www.facebook.com/crj.alemao.50',
 					instagram:'@crjalemao',
 					instaLink:'https://www.instagram.com/crjalemao/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'alemaocrj@gmail.com',
 					telefone:'21 2334-7971',
 					endereço:'Estrada do Itararé, 690 - Complexo do Alemão',
@@ -505,11 +514,11 @@ export default{
 					imageMob:'',
 					facebook:'FuturoemMovimento',
 					faceLink:'https://www.facebook.com/groups/1740561566261151/about/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'amamulheresdeatitude@gmailcom',
 					telefone:'21 98811-0220',
 					endereço:'Rua Sebastião de Carvalho, 33',
@@ -527,11 +536,11 @@ export default{
 					imageMob:'../../static/assets/criancasfelizes - M.jpg',
 					facebook:'/Projetocriancasfelizes',
 					faceLink:'https://www.facebook.com/Projetocriancasfelizes/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'lucianoodaniell@gmail.com',
 					telefone:'21 99714-3427',
 					endereço:'Avenida Central, n° 120',
@@ -553,9 +562,9 @@ export default{
 					faceLink:'https://www.facebook.com/projetosambafavela',
 					instagram:'@projetosambafavela',
 					instaLink:'https://www.instagram.com/projetosambafavela/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'lipebth@gmail.com',
 					telefone:'21 98750-0896',
 					endereço:'Espaço Cultural Maria Madalena (Madá) - Estrada do Iatararé, 320 - Ramos ',
@@ -574,10 +583,10 @@ export default{
 					imageMob:'../../static/assets/vidancar - M.jpg',
 					facebook:'/projetovidancar',
 					faceLink:'https://www.facebook.com/projetovidancar/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
 					site:'http://projetovidancar.com.br/',
 					email:'projetovidacar@gmail.com',
 					telefone:'21 98739-4551',
@@ -601,9 +610,9 @@ export default{
 					faceLink:'https://www.facebook.com/batalhadepoesia',
 					instagram:'@slamlaje',
 					instaLink:'https://www.instagram.com/slamlaje/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'slamlaje@gmail.com',
 					telefone:'21 98622-1392',
 					endereço:'Laje da Casa Brota - Rua Ari Barroso, s/n° - Morro do Alemão ',
@@ -624,9 +633,9 @@ export default{
 					faceLink:'https://www.facebook.com/debamorimmakeup',
 					instagram:'@debamorimm',
 					instaLink:'https://www.instagram.com/debamorimm/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'contato.demoraamorim@gmail.com',
 					telefone:'21 97145-0779',
 					endereço:'Estrada do Itararé, 480',
@@ -647,7 +656,7 @@ export default{
 					instaLink:'https://www.instagram.com/favelaefashion/',
 					twitter:'@favelaefashion',
 					twitLink:'https://twitter.com/Favelaefashion',
-					site:'null',
+					site:null,
 					email:'juhenrik26@gmail.com',
 					telefone:'21 98668-3701',
 					endereço:'Estrada do iatararé, 690 - Espaço do CRJ Alemão ',
@@ -669,7 +678,7 @@ export default{
 					instaLink:'https://www.instagram.com/favelagrafia/',
 					twitter:'@favelagrafia',
 					twitLink:'https://twitter.com/favelagrafia',
-					site:'null',
+					site:null,
 					email:'josianefotografia@gmail.com',
 					telefone:'21 97323-7174',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -690,9 +699,9 @@ export default{
 					faceLink:'https://www.facebook.com/Foto-Clube-Alemão-142926802508619',
 					instagram:'@fotoclubealemao',
 					instaLink:'https://www.instagram.com/fotoclubealemao/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'brunoitan@gmail.com',
 					telefone:'21 98021-8721',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -709,11 +718,11 @@ export default{
 					imageMob:'../../static/assets/gas - M.jpg',
 					facebook:'/gasgrupoalemaosolidario',
 					faceLink:'https://www.facebook.com/gasgrupoalemaosolidario',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'maysefm@gmail.com',
 					telefone:'21 98888-1452',
 					endereço:'Rua Sebastião de Carvalho ',
@@ -734,9 +743,9 @@ export default{
 					faceLink:'https://www.facebook.com/PoetasFavelados',
 					instagram:'@poetasfavelados',
 					instaLink:'https://www.instagram.com/poetasfavelados/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'poetasfavelados@gmail.com',
 					telefone:'21 98622-1392',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -760,7 +769,7 @@ export default{
 					twitLink:'https://twitter.com/Gato_MIDIA',
 					site:'https://gatomidia.wordpress.com/',
 					email:'projetogatomidia@gmail.com',
-					telefone:'null',
+					telefone:null,
 					endereço:'Complexo do Alemão - Rio de janeiro ',
 					description:[
 						'Espaço de aprendizado em mídia e tecnologia para jovens negros e moradores de espaços populares.',
@@ -777,11 +786,11 @@ export default{
 					imageMob:'../../static/assets/jogaecria - M.jpg',
 					facebook:'/JogaCria',
 					faceLink:'https://www.facebook.com/JogaCria',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'joonasjss@gmail.com',
 					telefone:'21 97660-3854',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -798,10 +807,10 @@ export default{
 					imageMob:'../../static/assets/navedoconhecimento - M.jpg',
 					facebook:'/navedoconhecimentonovabrasilia',
 					faceLink:'https://www.facebook.com/navedoconhecimentonovabrasilia',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
 					site:'https://navedoconhecimento.rio/',
 					email:'luciana.rodrigues@idaco.org.br',
 					telefone:'21 4101-1510',
@@ -818,18 +827,18 @@ export default{
 					tag:[],
 					imageDesk:'../../static/assets/recreacaoinfantil - D.jpg',
 					imageMob:'../../static/assets/recreacaoinfantil - M.jpg',
-					facebook:'null',
-					faceLink:'null',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					facebook:null,
+					faceLink:null,
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'jornalista.cmarinho@gmail.com',
 					telefone:'21 7985-9026',
 					endereço:'Fazendinha, Área 5 e Nova Brasília - Comlexo do Alemão',
 					description:[
-						'null'
+						null
 					]
 				},
 				{
@@ -841,12 +850,12 @@ export default{
 					imageMob:'',
 					facebook:'/vainaweb',
 					faceLink:'https://www.facebook.com/vainaweb/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
 					site:'http://www.vainaweb.com.br/',
-					email:'null',
+					email:null,
 					telefone:'21 96850-2828',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
 					description:[
@@ -862,11 +871,11 @@ export default{
 					imageMob:'../../static/assets/clubedelutas - M.jpg',
 					facebook:'/clubedelutadocomplexo',
 					faceLink:'https://www.facebook.com/groups/clubedelutadocomplexo/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'dr.andreluiz1981@gmail.com',
 					telefone:'21 98048-6486',
 					endereço:'Estrada do Itararé - Complexo do Alemão ',
@@ -884,11 +893,11 @@ export default{
 					imageMob:'../../static/assets/familiaPerninha - M.jpg',
 					facebook:'/PerninhaKickboxing',
 					faceLink:'https://www.facebook.com/groups/582405115123151/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'profperninhakick@gmail.com',
 					telefone:'21 96820-5972',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -905,12 +914,12 @@ export default{
 					imageMob:'../../static/assets/abracocampeao - M.jpg',
 					facebook:'/alanduarte',
 					faceLink:'https://www.facebook.com/alan.duarte.3386',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
 					site:'http://thegoodfightmovie.com/abraco-campeao/',
-					email:'null',
+					email:null,
 					telefone:'21 96892-9016',
 					endereço:'Morro do Adeus - Complexo do Alemão',
 					description:[
@@ -926,11 +935,11 @@ export default{
 					imageMob:'../../static/assets/ocacurumins - M.jpg',
 					facebook:'/CentroCulturalOcadosCurumins',
 					faceLink:'https://www.facebook.com/CentroCulturalOcadosCurumins/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'ccocadoscurumins@hotmail.com',
 					telefone:'21 3071-6750',
 					endereço:'Estrada do Itararé, n°480 - Travessa São José, n° 13 - Alvorada - Complexo do Alemão ',
@@ -953,14 +962,14 @@ export default{
 					faceLink:'https://www.facebook.com/educap.org/',
 					instagram:'@luciaeducap1716',
 					instaLink:'https://www.instagram.com/luciaeducap1716/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'luciaeducap@gmail.com',
 					telefone:'21 98832-3246',
 					endereço:'Rua Canitar - Campo do Sargento, s/n° - Complexo do Alemão ',
 					description:[
-						'null'
+						null
 					]
 				},
 				{
@@ -972,10 +981,10 @@ export default{
 					imageMob:'../../static/assets/raizesmovimento - M.jpg',
 					facebook:'/raizesemmovimento',
 					faceLink:'https://www.facebook.com/raizesemmovimento',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
 					site:'http://www.raizesemmovimento.org.br',
 					email:'contato@raizesemmovimento.org.br',
 					telefone:'21 2260-3998',
@@ -995,8 +1004,8 @@ export default{
 					faceLink:'https://www.facebook.com/novoslideresempreendedores',
 					instagram:'@educatethefavela',
 					instaLink:'https://www.instagram.com/educatethefavela',
-					twitter:'null',
-					twitLink:'null',
+					twitter:null,
+					twitLink:null,
 					site:'http://novoslideresempreendedores.com/',
 					email:'lohransanto009@gmail.com',
 					telefone:'21 99500-8681',
@@ -1014,11 +1023,11 @@ export default{
 					imageMob:'',
 					facebook:'/projetopaloma',
 					faceLink:'https://www.facebook.com/projetopaloma/',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'monicacirnea@gmail.com',
 					telefone:'21 96464-8101',
 					endereço:'Rua das Andorinhas, n° 98',
@@ -1040,14 +1049,14 @@ export default{
 					faceLink:'https://www.facebook.com/acsilvafotografia',
 					instagram:'@acsilvafotografia ',
 					instaLink:'https://www.instagram.com/acsilvafotografia/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'acsilvafotografia@gmail.com',
 					telefone:'21 99744-5063',
 					endereço:'Complexo do Alemão - Rio de Janeiro ',
 					description:[
-						'null'
+						null
 					]
 				},
 				{
@@ -1061,9 +1070,9 @@ export default{
 					faceLink:'https://www.facebook.com/casabrota',
 					instagram:'@casabrota',
 					instaLink:'https://www.instagram.com/casabrota/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'falecom@casabrota.com.br',
 					telefone:'21 97264-7819',
 					endereço:'Rua Ari Barroso, s/n° - ao lado da Estação do teleférico do Alemão ',
@@ -1084,9 +1093,9 @@ export default{
 					faceLink:'https://www.facebook.com/Classe-D-Ateliê-de-Ideias-950892308279847',
 					instagram:'@classe_d22',
 					instaLink:'https://www.instagram.com/classe_d22/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'produto.classed@gmail.com',
 					telefone:'21 99311-9672',
 					endereço:'Avenida Central, n°55 - Complexo do Alemão ',
@@ -1107,9 +1116,9 @@ export default{
 					faceLink:'https://www.facebook.com/dancaeciaart',
 					instagram:'@dancaeciaart',
 					instaLink:'https://www.instagram.com/dancaeciaart/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'pedro.grh@gmail.com',
 					telefone:'21 99417-8279',
 					endereço:'Estrada Adhemar Bebiano, 1185',
@@ -1128,11 +1137,11 @@ export default{
 					imageMob:'../../static/assets/ericaMartin - M.jpg',
 					facebook:'/photosnpictures',
 					faceLink:'https://www.facebook.com/photosnpictures',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'ericamar_irgm@hotmail.com',
 					telefone:'21 99645-4187',
 					endereço:'Complexo do Alemão - Rio de Janeiro ',
@@ -1153,9 +1162,9 @@ export default{
 					faceLink:'https://www.facebook.com/estudioabaete',
 					instagram:'@estudioabaete',
 					instaLink:'https://www.instagram.com/estudioabaete/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'estudioabaete@gmail.com',
 					telefone:'21 98336-9348',
 					endereço:'Complexo do Alemão - Rio de Janeiro ',
@@ -1175,14 +1184,14 @@ export default{
 					faceLink:'https://www.facebook.com/contatoagenciamuniz',
 					instagram:'@contatoagenciamuniz',
 					instaLink:'https://www.instagram.com/contatoagenciamuniz/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'contatoagenciamuniz@yahoo.com',
 					telefone:'21 97012-0816',
 					endereço:'Estrada do Itararé, 480 - Rua Nova, n°1 - Alvorada',
 					description:[
-						'null'
+						null
 					]
 				},
 				{
@@ -1196,9 +1205,9 @@ export default{
 					faceLink:'https://www.facebook.com/marcos.carolinoart',
 					instagram:'@carolinnocoreografo',
 					instaLink:'https://www.instagram.com/carolinnocoreografo/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'mcarolino20@gmail.com',
 					telefone:'21 98027-4304',
 					endereço:'Complexo do Alemão - Rio de Janeiro ',
@@ -1218,9 +1227,9 @@ export default{
 					faceLink:'https://www.facebook.com/tdlproducoes',
 					instagram:'@malhastensionadashelcimarlopes',
 					instaLink:'https://www.instagram.com/malhastensionadashelcimarlopes/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'helcimar@gmail.com',
 					telefone:'21 97045-3227',
 					endereço:'Rua Sebastião de Carvalho, n°193 Fundos - Casa 01',
@@ -1240,9 +1249,9 @@ export default{
 					faceLink:'https://www.facebook.com/profile.php?id=100013204902709',
 					instagram:'@tiaguinhoalvorada',
 					instaLink:'https://www.instagram.com/tiaguinhoalvorada/',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
+					twitter:null,
+					twitLink:null,
+					site:null,
 					email:'tspurificacao@gmail.com',
 					telefone:'21 97361-7113',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
@@ -1260,12 +1269,12 @@ export default{
 					imageMob:'',
 					facebook:'/cezarandrade',
 					faceLink:'https://www.facebook.com/cezar.andrade.7967',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
-					email:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
+					email:null,
 					telefone:'21985451070',
 					endereço:'Complexo do Alemão - Rio de janeiro ',
 					description:[
@@ -1282,12 +1291,12 @@ export default{
 					imageMob:'',
 					facebook:'/marcielePerfeito',
 					faceLink:'https://www.facebook.com/marciele.Perfeito',
-					instagram:'null',
-					instaLink:'null',
-					twitter:'null',
-					twitLink:'null',
-					site:'null',
-					email:'null',
+					instagram:null,
+					instaLink:null,
+					twitter:null,
+					twitLink:null,
+					site:null,
+					email:null,
 					telefone:'21 998461817',
 					endereço:'Av. Itaoca 1778 Complexo do Alemão - Rio de janeiro ',
 					description:[
@@ -1321,22 +1330,61 @@ export default{
 	computed:{
 		filterActivity(){
 			const list = this.atividades
+			let result
 
 			if (this.category) {
-				return list.filter(atividade => atividade.categoria === this.category)
+				result = list.filter(atividade => atividade.tag.find(value => value === this.category))
+				if (this.subCategory) {
+					result = result.filter(atividade => atividade.tag.find(value => value === this.subCategory))
+					return result
+				}
+				if (this.selectActivity) {
+					result = list.find(atividade => atividade.name === this.selectActivity)
+				}
+				return result
 			}
 
 			return null
+		},
+		filterCategory(){
+			const list = this.groups
+
+			if (this.category) {
+				return list.find(group => group.category === this.category)
+			}
+			return list
 		}
 	},
 	methods:{
 		setCategory(value){
 			this.category = value;
 			this.transition = true;
+
+			if (this.selectActivity != '') {
+				this.selectActivity = '';
+			}
+			
+			if (this.change === false) {
+				this.change = true
+			}
+			 
+			if (this.subCategory != '') {
+				this.subCategory = ''
+			}
+		},
+		setSubcategory(value){
+			if (value === 'Todos') {
+				this.subCategory = ''
+			}else{
+				this.subCategory = value;
+			}
 		},
 		hideMenu(){
 			document.getElementById('hideMenu').style.display = 'none';
 		},
+		setActivity(){
+			this.change = !this.change
+		}
 	},
 	components: {
 		Atividades,
@@ -1489,6 +1537,26 @@ header{
 }
 .listItem__logo--mobile{
 	height: 5vh;
+}
+.header__quadro{
+	width: 250px;
+	min-height: 100px;
+	padding: 1%;
+	border-radius: 15px;
+	background-color: #fff;
+	position: absolute;
+	right: 30px;
+	top: 150px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+.headerQuadro__subcategoria{
+	font-size: 0.7;
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	cursor: pointer;
 }
 main{
 	width: 100%;

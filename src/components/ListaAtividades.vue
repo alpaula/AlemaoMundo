@@ -34,7 +34,6 @@ export default{
 		category:{
 			type: String
 		},
-		
 	},
 	data(){
 		return{
@@ -52,7 +51,7 @@ export default{
 		},
 		setActivity(value){
 			this.$emit('change')
-			this.$emit('', value)
+			this.$emit('selectActivity', value)
 		}
 	},	
 	components:{

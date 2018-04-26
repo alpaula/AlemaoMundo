@@ -2,59 +2,48 @@
 	<div class="body">
 		<header class="cabecalho">
 			<div class="cabecalho__barra">
-			<h1 class="cabecalho__barra--titulo">Casa Brota</h1>
+			<h1 class="cabecalho__barra--titulo">{{ filterActivity.name }}</h1>
 			</div>
-			<img class="cabecalho__barra--imagem" src="../../static/assets/casabrota.png">
+			<img class="cabecalho__barra--imagem" :src="filterActivity.imageDesk">
 		</header>
 		<div class="info">
 			<h2 class="info__tag info__tag--about"
 				v-bind:style="{background:bgAbout}"
-				@click="changeAba('sobre')"
+				@click="changeTab('sobre')"
 			>
 				Sobre
 			</h2>
 			<h2 class="info__tag info__tag--location"
 				v-bind:style="{background:bgLocation}"
-				@click="changeAba('local')"
+				@click="changeTab('local')"
 			>
 				Local
 			</h2>
 			<section class="info__aba info__aba--about"
 				v-bind:style="{display:displayAbout}"
-				>
+			>
 				<div class="infoAba__box">
 					<div class="abaBox__item abaBox__item--text">
-						<p class="boxItem__paragraph">
-							Coworking de Favela, um espaço de conexão
-							com foco na promoção cultural da favela e no
-							desenvolvimento econômico das micro empresas.
-							 Empreender a partir das criações e subjetividade
-							de cada indivíduo, visando expandir e fortalecer as
-							redes destes espaços populares para além da
-							favela.
-						</p>
-						<p class="boxItem__paragraph">
-							Prestação de serviços: Assessoria de imprensa,
-							consultoria para empreendimentos da favela,
-							redes, audiovisual, artes e tecnologia.
+						<p class="boxItem__paragraph" v-for="text in filterActivity.description">
+							{{ text }}
 						</p>
 					</div>
 					<div class="abaBox__item abaBox__item--socialMedia">
-						<div class="abaBox__caixa">
+						<div class="abaBox__caixa" v-show="filterActivity.email">
 							<img class="boxItem__icon" src="../../static/assets/email.svg">
-							<p class="boxItem__link">falecom@casabrota.com.br</p>
+							<p class="boxItem__link">{{ filterActivity.email }}</p>
 						</div>
-						<div class="abaBox__caixa">
+						<div class="abaBox__caixa" v-show="filterActivity.telefone">
 							<img class="boxItem__icon" src="../../static/assets/telefone.svg">
-							<p class="boxItem__link">(21) 97264-7819</p>
+							<p class="boxItem__link">{{ filterActivity.telefone }}</p>
 						</div>
-						<div class="abaBox__caixa">
+						<div class="abaBox__caixa" v-show="filterActivity.facebook">
 							<img class="boxItem__icon" src="../../static/assets/facebook.svg">
-							<a class="boxItem__link" href="https://www.facebook.com/casabrota">/comcasabrota</a>
+							<a class="boxItem__link" :href="filterActivity.faceLink">{{ filterActivity.facebook }}</a>
 						</div>
-						<div class="abaBox__caixa">
+						<div class="abaBox__caixa" v-show="filterActivity.instagram">
 							<img class="boxItem__icon" src="../../static/assets/instagram.svg">
-							<a class="boxItem__link" href="https://www.instagram.com/casabrota/">@casabrota</a>
+							<a class="boxItem__link" :href="filterActivity.instaLink">{{ filterActivity.instagram }}</a>
 						</div>
 					</div>
 				</div>
@@ -73,24 +62,21 @@
 <script>
 export default{
 	name: 'Atividades',
+	props:{
+		filterActivity:{
+			type: Object
+		}
+	},
 	data(){
 		return{
 			displayAbout:'flex',
 			bgAbout:'#fff',
 			displayLocation:'none',
 			bgLocation:'#f26522'
-			// styleAbout:{
-			// 	display: 'flex',
-			// 	background: '#fff'
-			// },
-			// styleLocation:{
-			// 	display: 'none',
-			// 	background: '#f26522'
-			// }
 		}
 	},
 	methods:{
-		changeAba(value){
+		changeTab(value){
 			if (value === 'local') {
 				this.displayAbout = 'none'
 				this.bgAbout = '#f26522'
@@ -103,6 +89,7 @@ export default{
 				this.displayLocation = 'none'
 				this.bgLocation = '#f26522'
 			}
+		// this.$emit('change', true)
 		}
 	}
 }
