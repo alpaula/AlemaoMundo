@@ -2,7 +2,8 @@
 	<div class="body">
 		<header class="cabecalho">
 			<div class="cabecalho__barra">
-			<h1 class="cabecalho__barra--titulo">{{ filterActivity.name }}</h1>
+				<h1 class="cabecalho__barra--titulo">{{ filterActivity.name }}</h1>
+				<button class="cabecalho__barra--close material-icons" @click="hideActivity()">close</button>
 			</div>
 			<img class="cabecalho__barra--imagem" :src="filterActivity.imageDesk">
 		</header>
@@ -65,6 +66,9 @@ export default{
 	props:{
 		filterActivity:{
 			type: Object
+		},
+		hideActivity:{
+			type: Function
 		}
 	},
 	data(){
@@ -90,7 +94,10 @@ export default{
 				this.bgLocation = '#f26522'
 			}
 		// this.$emit('change', true)
-		}
+		},
+		// hideActivity(){
+		// 	this.hideActivity()
+		// }
 	}
 }
 </script>
@@ -110,12 +117,27 @@ export default{
 		height: 7vh;
 		background-color: #f26522;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 	}
 	.cabecalho__barra--titulo{
 		color: #fff;
+		margin-left: 2%;
 	}
+	.cabecalho__barra--close{
+	width: 25px;
+	height: 25px;
+	margin-right: 2%;
+	background-color: #fff;
+	border: none;
+	border-radius: 50px;
+	font-size: 1.7em;
+	color: #f26522;
+	line-height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 	.cabecalho__barra--imagem{
 		width: 100%;
 	}

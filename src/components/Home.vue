@@ -29,7 +29,7 @@
 								<img class="listItem__logo" src="../../static/assets/belezaEestetica.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="setCategory('Coletivos')">
+						<button class="navList__item" @click="setCategory('coletivo')">
 							coletivos
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/coletivos.svg">
@@ -41,13 +41,13 @@
 								<img class="listItem__logo" src="../../static/assets/educacao.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="setCategory('Esportes e Atividades Físicas')">
+						<button class="navList__item" @click="setCategory('Esporte e Atividade Física')">
 							esportes e atividade física
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/esportes.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="setCategory('Ong')">
+						<button class="navList__item" @click="setCategory('ONG')">
 							ong's
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/ongs.svg">
@@ -103,7 +103,7 @@
 							</div>
 							beleza e estética
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Coletivos')">
+						<button class="navList__item--mobile" @click="setCategory('Coletivo')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/coletivos.svg">
 							</div>
@@ -115,13 +115,13 @@
 							</div>
 							educação
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Esportes e Atividades Físicas')">
+						<button class="navList__item--mobile" @click="setCategory('Esporte e Atividade Física')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/esportes.svg">
 							</div>
 							esportes e atividade
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Ong')">
+						<button class="navList__item--mobile" @click="setCategory('ONG')">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/ongs.svg">
 							</div>
@@ -159,6 +159,7 @@
 			</ListaAtividades>
 			<Atividades
 				:filterActivity="filterActivity"
+				:hideActivity="hideActivity"
 				@change="value => {change = value}"
 				v-else
 			>
@@ -396,7 +397,7 @@ export default{
 					tag:['Alimentação', 'Serviço', 'Festa'],
 					imageDesk:'../../static/assets/docesMomentos - D.jpg',
 					imageMob:'../../static/assets/docesMomentos - M.jpg',
-					facebook:'docesemomentosjoana',
+					facebook:'/docesemomentosjoana',
 					faceLink:'https://www.facebook.com/docesemomentosjoana',
 					instagram:'@docesemomentosjoana',
 					instaLink:'https://www.instagram.com/docesemomentosjoana',
@@ -418,7 +419,7 @@ export default{
 					tag:['Arte e Cultura', 'Dança'],
 					imageDesk:'../../static/assets/afrolaje - D.jpg',
 					imageMob:'../../static/assets/afrolaje - M.jpg',
-					facebook:'afrolaje',
+					facebook:'/afrolaje',
 					faceLink:'https://www.facebook.com/afrolaje',
 					instagram:null,
 					instaLink:null,
@@ -441,7 +442,7 @@ export default{
 					tag:['Arte e Cultura', 'Grafite'],
 					imageDesk:'../../static/assets/noixqfaz - D.jpg',
 					imageMob:'../../static/assets/noixqfaz - M.jpg',
-					facebook:'noixqfazcpx',
+					facebook:'/noixqfazcpx',
 					faceLink:'https://www.facebook.com/noixqfazcpx',
 					instagram:'@annyvii',
 					instaLink:'https://www.instagram.com/annyvii/',
@@ -466,7 +467,7 @@ export default{
 					tag:['Arte e Cultura', 'Teatro'],
 					imageDesk:'../../static/assets/contraBando - D.jpg',
 					imageMob:'../../static/assets/contraBando - M.jpg',
-					facebook:'/ContraBandodeTeatro',
+					facebook:'/contrabandodeteatro',
 					faceLink:'https://www.facebook.com/Contra-Bando-de-Teatro-1438195543130396',
 					instagram:'@contrabandodeteatro',
 					instaLink:'https://www.instagram.com/contrabandodeteatro/',
@@ -489,7 +490,7 @@ export default{
 					tag:['Arte e Cultura', 'Educação'],
 					imageDesk:'../../static/assets/CRJ - D.jpg',
 					imageMob:'../../static/assets/CRJ - M.jpg',
-					facebook:'crj.alemao.50',
+					facebook:'/crj.alemao.50',
 					faceLink:'https://www.facebook.com/crj.alemao.50',
 					instagram:'@crjalemao',
 					instaLink:'https://www.instagram.com/crjalemao/',
@@ -512,7 +513,7 @@ export default{
 					tag:['Arte e Cultura', 'Educação', 'Dança'],
 					imageDesk:'',
 					imageMob:'',
-					facebook:'FuturoemMovimento',
+					facebook:'/futuroemmovimento',
 					faceLink:'https://www.facebook.com/groups/1740561566261151/about/',
 					instagram:null,
 					instaLink:null,
@@ -534,7 +535,7 @@ export default{
 					tag:['ONG', 'Arte e Cultura', 'Evento'],
 					imageDesk:'../../static/assets/criancasfelizes - D.jpg',
 					imageMob:'../../static/assets/criancasfelizes - M.jpg',
-					facebook:'/Projetocriancasfelizes',
+					facebook:'/projetocriancasfelizes',
 					faceLink:'https://www.facebook.com/Projetocriancasfelizes/',
 					instagram:null,
 					instaLink:null,
@@ -650,7 +651,7 @@ export default{
 					tag:['Coletivo', 'Moda', 'Educação'],
 					imageDesk:'../../static/assets/favelaFashion - D.jpg',
 					imageMob:'../../static/assets/favelaFashion - M.jpg',
-					facebook:'/FavelaeFashion',
+					facebook:'/favelaefashion',
 					faceLink:'https://www.facebook.com/FavelaeFashion',
 					instagram:'@favelaefashion',
 					instaLink:'https://www.instagram.com/favelaefashion/',
@@ -695,7 +696,7 @@ export default{
 					tag:['Coletivo', 'Arte e Cultura', 'Fotografia', 'Evento'],
 					imageDesk:'../../static/assets/fotoclube - D.jpg',
 					imageMob:'../../static/assets/fotoclube - M.jpg',
-					facebook:'/FotoClubeAlemão',
+					facebook:'/fotoclubealemão',
 					faceLink:'https://www.facebook.com/Foto-Clube-Alemão-142926802508619',
 					instagram:'@fotoclubealemao',
 					instaLink:'https://www.instagram.com/fotoclubealemao/',
@@ -736,10 +737,10 @@ export default{
 					name:'Poetas Favelados ',
 					categoria:'Coletivo',
 					subcategoria:'Poesia',
-					tag:[],
+					tag:['Coletivo', 'Poesia', 'Evento'],
 					imageDesk:'',
 					imageMob:'',
-					facebook:'/PoetasFavelados',
+					facebook:'/poetasfavelados',
 					faceLink:'https://www.facebook.com/PoetasFavelados',
 					instagram:'@poetasfavelados',
 					instaLink:'https://www.instagram.com/poetasfavelados/',
@@ -757,8 +758,8 @@ export default{
 				{
 					name:'Gato Mídia',
 					categoria:'Educação',
-					subcategoria:'Comunicação',
-					tag:[],
+					subcategoria:'Tecnologia',
+					tag:['Educação', 'Tecnologia'],
 					imageDesk:'../../static/assets/gatomidia - D.jpg',
 					imageMob:'../../static/assets/gatomidia - M.jpg',
 					facebook:'/gatomidia',
@@ -781,10 +782,10 @@ export default{
 					name:'Joga Cria ',
 					categoria:'Educação',
 					subcategoria:'Tecnologia',
-					tag:[],
+					tag:['Educação', 'Tecnologia'],
 					imageDesk:'../../static/assets/jogaecria - D.jpg',
 					imageMob:'../../static/assets/jogaecria - M.jpg',
-					facebook:'/JogaCria',
+					facebook:'/jogacria',
 					faceLink:'https://www.facebook.com/JogaCria',
 					instagram:null,
 					instaLink:null,
@@ -802,7 +803,7 @@ export default{
 					name:'Nave do Conhecimento de Nova Brasília ',
 					categoria:'Educação',
 					subcategoria:'Tecnologia',
-					tag:[],
+					tag:['Educação', 'Tecnologia'],
 					imageDesk:'../../static/assets/navedoconhecimento - D.jpg',
 					imageMob:'../../static/assets/navedoconhecimento - M.jpg',
 					facebook:'/navedoconhecimentonovabrasilia',
@@ -824,7 +825,7 @@ export default{
 					name:'Recreação Infantil Estrelinha ',
 					categoria:'Educação',
 					subcategoria:'Infantil',
-					tag:[],
+					tag:['Educação', 'Infantil'],
 					imageDesk:'../../static/assets/recreacaoinfantil - D.jpg',
 					imageMob:'../../static/assets/recreacaoinfantil - M.jpg',
 					facebook:null,
@@ -845,7 +846,7 @@ export default{
 					name:'Vai na web',
 					categoria:'Educação',
 					subcategoria:'Tecnologia',
-					tag:[],
+					tag:['Educação', 'Tecnologia'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/vainaweb',
@@ -866,7 +867,7 @@ export default{
 					name:'Clube de Luta do Complexo ',
 					categoria:'Esporte e Atividade Física',
 					subcategoria:'Arte Marcial',
-					tag:[],
+					tag:['Esporte e Atividade Física', 'Arte Marcial'],
 					imageDesk:'../../static/assets/clubedelutas - D.jpg',
 					imageMob:'../../static/assets/clubedelutas - M.jpg',
 					facebook:'/clubedelutadocomplexo',
@@ -888,10 +889,10 @@ export default{
 					name:'Perninha Kickboxing ',
 					categoria:'Esporte e Atividade Física',
 					subcategoria:'Arte Marcial',
-					tag:[],
+					tag:['Esporte e Atividade Física', 'Arte Marcial'],
 					imageDesk:'../../static/assets/familiaPerninha - D.jpg',
 					imageMob:'../../static/assets/familiaPerninha - M.jpg',
-					facebook:'/PerninhaKickboxing',
+					facebook:'/perninhakickboxing',
 					faceLink:'https://www.facebook.com/groups/582405115123151/',
 					instagram:null,
 					instaLink:null,
@@ -908,8 +909,8 @@ export default{
 				{
 					name:'Associação Abraço Campeão ',
 					categoria:'ONG',
-					subcategoria:'Cidadania e Desenvolvimento',
-					tag:[],
+					subcategoria:'Cidadania', 
+					tag:['ONG', 'Cidadania'],
 					imageDesk:'../../static/assets/abracocampeao - D.jpg',
 					imageMob:'../../static/assets/abracocampeao - M.jpg',
 					facebook:'/alanduarte',
@@ -929,11 +930,11 @@ export default{
 				{
 					name:'Centro Cultural Oca dos Curumins ',
 					categoria:'ONG',
-					subcategoria:'Educação e Cultura',
-					tag:[],
+					subcategoria:'Educação',
+					tag:['ONG', 'Educação', 'Cultura', 'Arte e Cultura'],
 					imageDesk:'../../static/assets/ocacurumins - D.jpg',
 					imageMob:'../../static/assets/ocacurumins - M.jpg',
-					facebook:'/CentroCulturalOcadosCurumins',
+					facebook:'/centroculturalocadoscurumins',
 					faceLink:'https://www.facebook.com/CentroCulturalOcadosCurumins/',
 					instagram:null,
 					instaLink:null,
@@ -954,8 +955,8 @@ export default{
 				{
 					name:'EDUCAP - Espaço Democrático de União, Convivência e Aprendizagem',
 					categoria:'ONG',
-					subcategoria:'Cidania e Desenvolvimento',
-					tag:[],
+					subcategoria:'Cidadania e Desenvolvimento',
+					tag:['ONG', 'Educação', 'Arte e Cultura', 'Cidadania', 'Desenvolvimento', 'Cultura', 'Grafite', 'Dança'],
 					imageDesk:'../../static/assets/EDUCAP - D.jpg',
 					imageMob:'../../static/assets/EDUCAP - M.jpg',
 					facebook:'/educap.org',
@@ -976,7 +977,7 @@ export default{
 					name:'Instituto Raízes Em Movimento ',
 					categoria:'ONG',
 					subcategoria:'Educação e Cultura ',
-					tag:[],
+					tag:['ONG', 'Educação', 'Cultura'],
 					imageDesk:'../../static/assets/raizesmovimento - D.jpg',
 					imageMob:'../../static/assets/raizesmovimento - M.jpg',
 					facebook:'/raizesemmovimento',
@@ -996,8 +997,8 @@ export default{
 				{
 					name:'Novos Líderes Empreendedores ',
 					categoria:'ONG',
-					subcategoria:'Educação e Cultura ',
-					tag:[],
+					subcategoria:'Educação',
+					tag:['ONG', 'Educação', 'Desenvolvimento'],
 					imageDesk:'../../static/assets/novosLideres - D.jpg',
 					imageMob:'../../static/assets/novosLideres - M.jpg',
 					facebook:'/novoslideresempreendedores',
@@ -1018,7 +1019,7 @@ export default{
 					name:'Instituto Movimento & Vida ',
 					categoria:'Saúde',
 					subcategoria:'Fisioterapia',
-					tag:[],
+					tag:['Saúde', 'Fisioterapia'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/projetopaloma',
@@ -1040,9 +1041,9 @@ export default{
 				},
 				{
 					name:'Alexandre Silva Fotografia ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Fotografia',
-					tag:[],
+					tag:['Serviços', 'Fotografia'],
 					imageDesk:'../../static/assets/AlexandreSilva - D.jpg',
 					imageMob:'../../static/assets/AlexandreSilva - M.jpg',
 					facebook:'/acsilvafotografia',
@@ -1061,9 +1062,9 @@ export default{
 				},
 				{
 					name:'Casa Brota - Coworking de favela ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Coworking',
-					tag:[],
+					tag:['Serviços', 'Coworking'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/casabrota',
@@ -1084,12 +1085,12 @@ export default{
 				},
 				{
 					name:'Classe D - Ateliê de Ideias ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Design',
-					tag:[],
+					tag:['Serviços', 'Design'],
 					imageDesk:'../../static/assets/classe - D.jpg',
 					imageMob:'../../static/assets/classe - M.jpg',
-					facebook:'/ClasseDAteliêdeIdeias',
+					facebook:'/classedateliêdeideias',
 					faceLink:'https://www.facebook.com/Classe-D-Ateliê-de-Ideias-950892308279847',
 					instagram:'@classe_d22',
 					instaLink:'https://www.instagram.com/classe_d22/',
@@ -1107,9 +1108,9 @@ export default{
 				},
 				{
 					name:'Dança e Cia Art ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Dança',
-					tag:[],
+					tag:['Serviços', 'Dança'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/dancaeciaart',
@@ -1130,9 +1131,9 @@ export default{
 				},
 				{
 					name:'Erica Martin Fotografia ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Fotografia',
-					tag:[],
+					tag:['Serviços', 'Fotografia'],
 					imageDesk:'../../static/assets/ericaMartin - D.jpg',
 					imageMob:'../../static/assets/ericaMartin - M.jpg',
 					facebook:'/photosnpictures',
@@ -1153,9 +1154,9 @@ export default{
 				},
 				{
 					name:'Estúdio Abaeté ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Produção',
-					tag:[],
+					tag:['Serviços', 'Produção'],
 					imageDesk:'../../static/assets/Abaete - D.jpg',
 					imageMob:'../../static/assets/Abaete - M.jpg',
 					facebook:'/estudioabaete',
@@ -1175,9 +1176,9 @@ export default{
 				},
 				{
 					name:'Gráfica - Agência Carol Muniz ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Gráfica',
-					tag:[],
+					tag:['Serviços', 'Gráfica'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/contatoagenciamuniz',
@@ -1196,9 +1197,9 @@ export default{
 				},
 				{
 					name:'Marcos Carolino Art ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Dança',
-					tag:[],
+					tag:['Serviços', 'Dança'],
 					imageDesk:'../../static/assets/MarcosCarolino - D.jpg',
 					imageMob:'../../static/assets/MarcosCarolino - M.jpg',
 					facebook:'/marcos.carolinoart',
@@ -1218,9 +1219,9 @@ export default{
 				},
 				{
 					name:'Toca do Lobo Produções ',
-					categoria:'Serviço',
+					categoria:'Serviços',
 					subcategoria:'Produção',
-					tag:[],
+					tag:['Serviços', 'Produção'],
 					imageDesk:'../../static/assets/tocadolobo - D.jpg',
 					imageMob:'../../static/assets/tocadolobo - M.jpg',
 					facebook:'/tdlproducoes',
@@ -1242,10 +1243,10 @@ export default{
 					name:'Tiaguinho Silva',
 					categoria:'Transporte',
 					subcategoria:'Moto Táxi',
-					tag:[],
+					tag:['Transporte', 'Moto Táxi'],
 					imageDesk:'../../static/assets/thiaguinho - D.jpg',
 					imageMob:'../../static/assets/thiaguinho - M.jpg',
-					facebook:'',
+					facebook:'/thiaguinhosilva',
 					faceLink:'https://www.facebook.com/profile.php?id=100013204902709',
 					instagram:'@tiaguinhoalvorada',
 					instaLink:'https://www.instagram.com/tiaguinhoalvorada/',
@@ -1264,7 +1265,7 @@ export default{
 					name:'Cezar Andrade',
 					categoria:'Transporte',
 					subcategoria:'Moto Táxi',
-					tag:[],
+					tag:['Transporte', 'Moto Táxi'],
 					imageDesk:'',
 					imageMob:'',
 					facebook:'/cezarandrade',
@@ -1284,12 +1285,12 @@ export default{
 				},
 				{
 					name:'Marciele Jesus',
-					categoria:'Serviço',
-					subcategoria:'Cabelereira e Barbeira',
-					tag:[],
+					categoria:'Beleza e Estética',
+					subcategoria:'Cabelo',
+					tag:['Beleza e Estética', 'Cabelo'],
 					imageDesk:'',
 					imageMob:'',
-					facebook:'/marcielePerfeito',
+					facebook:'/marcieleperfeito',
 					faceLink:'https://www.facebook.com/marciele.Perfeito',
 					instagram:null,
 					instaLink:null,
@@ -1336,7 +1337,7 @@ export default{
 				result = list.filter(atividade => atividade.tag.find(value => value === this.category))
 				if (this.subCategory) {
 					result = result.filter(atividade => atividade.tag.find(value => value === this.subCategory))
-					return result
+					// return result
 				}
 				if (this.selectActivity) {
 					result = list.find(atividade => atividade.name === this.selectActivity)
@@ -1360,14 +1361,16 @@ export default{
 			this.category = value;
 			this.transition = true;
 
-			if (this.selectActivity != '') {
-				this.selectActivity = '';
-			}
+			// if (this.selectActivity != '') {
+			// 	this.selectActivity = '';
+			// }
 			
-			if (this.change === false) {
-				this.change = true
-			}
+			// if (this.change === false) {
+			// 	this.change = true
+			// }
 			 
+			this.hideActivity()
+
 			if (this.subCategory != '') {
 				this.subCategory = ''
 			}
@@ -1378,12 +1381,26 @@ export default{
 			}else{
 				this.subCategory = value;
 			}
+
+			this.hideActivity()
 		},
 		hideMenu(){
 			document.getElementById('hideMenu').style.display = 'none';
 		},
 		setActivity(){
+			// if (this.change === false) {
+			// 	this.change = true
+			// }else{
+			// 	this.change = false
+			// }
 			this.change = !this.change
+		},
+		hideActivity(){
+			if (this.change === false) {
+				this.change = true
+			}
+
+			this.selectActivity = ''
 		}
 	},
 	components: {

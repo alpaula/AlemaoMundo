@@ -37,9 +37,6 @@ export default{
 	},
 	data(){
 		return{
-			settings:{
-				// maxScrollbarLength: 60
-			}
 		}
 	},
 	computed:{
