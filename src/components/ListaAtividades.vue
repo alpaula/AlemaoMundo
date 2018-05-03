@@ -6,9 +6,14 @@
 		</div>
 		<div class="search">
 			<input class="search__input" type="text" name="pesquisa" placeholder="o que você procura?">
-			<button class="search__button material-icons" @click="">
+			<button class="search__button material-icons" >
 				menu
 			</button>
+			<div class="search__quadro" v-show="hamburguer">
+				<p class="searchQuadro__subcategoria" v-for="value in filterCategory.subcategory" @click="setSubcategory(value)">
+					{{ value }}
+				</p>
+			</div>
 		</div>
 		<VuePerfectScrollbar class="scroll-area" @ps-scroll-y="scrollHanle">
 			<section class="container" v-for="atividade in filterActivity" @click="setActivity(atividade.name)">
@@ -34,9 +39,16 @@ export default{
 		category:{
 			type: String
 		},
+		setSubcategory:{
+			type: Function
+		},
+		filterCategory:{
+			type: Object
+		}
 	},
 	data(){
 		return{
+			hamburguer: ''
 		}
 	},
 	computed:{
@@ -93,18 +105,22 @@ export default{
 .area__close{
 	width: 25px;
 	height: 25px;
+	margin-right: 2%;
 	background-color: transparent;
 	border: none;
 	border-radius: 50px;
-	font-size: 1.7em;
 	color: #fff;
+	font-size: 1.7em;
 	line-height: 25px;
 	position: absolute;
 	right: 20px;
-	top: 25%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.area__close:hover{
+	background-color: #fff;
+	color: #f26522;
 }
 .search{
 	width: 98%;
@@ -120,6 +136,7 @@ export default{
 		width: 90%;
 		margin: 10px auto;
 		display: flex;
+		flex-wrap: wrap;
 	}
 }
 .search__input{
@@ -139,6 +156,42 @@ export default{
 	border-radius: 30px;
 	font-size: 50px;
 	color: #2e3192
+}
+.search__quadro{
+	width: 100%;
+	min-height: 100px;
+	padding: 0.4%;
+	border-radius: 15px;
+	background-color: #fff;
+	right: 10px;
+	top: 150px;
+	display: none;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+}
+@media (max-width: 640px){
+	.search__quadro{
+		display: flex;
+	}
+}
+.searchQuadro__subcategoria{
+	width: 50%;
+	min-height: 30px;
+	margin: 1% 0;
+	padding: 0 2%;
+	border-radius: inherit;
+	font-size: 1.2em;
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	text-align: left;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.searchQuadro__subcategoria:hover{
+	background-color: #f26522;
+	color: #fff;
 }
 .scroll-area {
   position: relative;

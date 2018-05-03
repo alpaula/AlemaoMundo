@@ -9,13 +9,13 @@
 		</header>
 		<div class="info">
 			<h2 class="info__tag info__tag--about"
-				v-bind:style="{background:bgAbout}"
+				v-bind:style="{background:bgAbout, color:colorAbout}"
 				@click="changeTab('sobre')"
 			>
 				Sobre
 			</h2>
 			<h2 class="info__tag info__tag--location"
-				v-bind:style="{background:bgLocation}"
+				v-bind:style="{background:bgLocation, color:colorLocation}"
 				@click="changeTab('local')"
 			>
 				Local
@@ -84,14 +84,18 @@ export default{
 			if (value === 'local') {
 				this.displayAbout = 'none'
 				this.bgAbout = '#f26522'
+				this.colorAbout = '#fff'
 				this.displayLocation = 'flex'
 				this.bgLocation = '#fff'
+				this.colorLocation = '#2e3192'
 			}
 			else if (value === 'sobre') {
 				this.displayAbout = 'flex'
 				this.bgAbout = '#fff'
+				this.colorAbout = '#2e3192'
 				this.displayLocation = 'none'
 				this.bgLocation = '#f26522'
+				this.colorLocation = '#fff'
 			}
 		// this.$emit('change', true)
 		},
@@ -102,29 +106,44 @@ export default{
 }
 </script>
 <style scoped>
+.body{
+	width: 45%;
+	margin: 0;
+	margin-top: 3%;
+}
+@media(max-width: 640px){
 	.body{
-		width: 45%;
-		margin: 0;
-		margin-top: 3%;
-	}
-	.cabecalho{
 		width: 100%;
-		height: 44vh;
-		margin-bottom: 20px;
-	}
-	.cabecalho__barra{
-		width: 100%;
-		height: 7vh;
-		background-color: #f26522;
+		margin-top: 0;
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
 		align-items: center;
-	}
-	.cabecalho__barra--titulo{
-		color: #fff;
-		margin-left: 2%;
-	}
-	.cabecalho__barra--close{
+	}	
+}
+.cabecalho{
+	width: 100%;
+	height: 44vh;
+	margin-bottom: 20px;
+}
+@media(max-width: 640px){
+	.cabecalho{
+		height: 51vh;
+		margin-bottom: 0;
+	}	
+}
+.cabecalho__barra{
+	width: 100%;
+	height: 7vh;
+	background-color: #f26522;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cabecalho__barra--titulo{
+	color: #fff;
+	margin-left: 2%;
+}
+.cabecalho__barra--close{
 	width: 25px;
 	height: 25px;
 	margin-right: 2%;
@@ -138,113 +157,137 @@ export default{
 	justify-content: center;
 	align-items: center;
 }
+.cabecalho__barra--imagem{
+	width: 100%;
+}
+@media(max-width: 640px){
 	.cabecalho__barra--imagem{
-		width: 100%;
-	}
+	width: 80%;
+	}	
+}
+.info{
+	width: 100%;
+	margin-top: 40px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+@media(max-width: 640px){
 	.info{
-		width: 100%;
-		position: relative;
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.info__aba{
-		width: 100%;
-		position: absolute;
-		top: 48px;
-	}
-	.info__aba--about{
-		z-index: 2;
-		text-align: left;
-	}
-	.info__aba--location{
-		z-index: 1;
-	}
-	.info__tag{
-		width: 33.5%;
-		height: 48px;
-		border-top-left-radius: 20px;
-		border-top-right-radius: 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.info__tag--about{
-		/*background-color: #FFF;*/
-		color: #2e3192;
-	}
-	.info__tag--location{
-		/*background-color: #f26522;*/
-		color: #2e3192;
-	}
-	.abaBox__item{
-		width: 50%;
-		min-height: 25vh;
-		margin-bottom: 20px;
-	}
-	.infoAba__box{
-		width: 100%;
-		padding: 30px;
-		border-radius: 0 20px 20px 20px;
-		background-color: #fff;
-		display: flex;
-		justify-content: space-between;
-		align-items:flex-start;
-	}
-	.boxItem__paragraph{
-		font-family: ministry, sans-serif;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 1em;
-		color: #2e3192;
-	}
-	.abaBox__caixa{
-		width: 100%;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-	}
-	.abaBox__item--socialMedia{
-		width: 40%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		align-items: flex-start;
-		align-content: space-between;
-	}
-	.boxItem__icon{
-		width: 30px;
-		margin-right: 8px;
-	} 
-	.boxItem__link{
 		width: 80%;
-		font-family: ministry, sans-serif;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 0.9em;
-		color: #2e3192;
-		text-align: left;
-		line-height: 20px;
-		text-decoration: none;
+		margin-top: 15px;
 	}
-	.boxItem__link:hover,
-	.boxItem__link:active{
-		color: #2e3192;
-	} 
-	@media(max-width: 950px){
-		.infoAba__box{
-			flex-direction: column;
-		}
-		.abaBox__item--text{
-			width: 95%;
-		}
-		.boxItem__link{
-			font-size: 1em;
-		}
+}
+.info__aba{
+	width: 100%;
+	position: absolute;
+	top: 48px;
+}
+.info__aba--about{
+	z-index: 2;
+	text-align: left;
+}
+.info__aba--location{
+	z-index: 1;
+}
+.info__tag{
+	width: 33.5%;
+	height: 48px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.info__tag--location{
+	color: #2e3192;
+}
+.abaBox__item{
+	width: 48%;
+	min-height: 25vh;
+	margin-bottom: 20px;
+}
+.infoAba__box{
+	width: 100%;
+	padding: 20px;
+	border-radius: 0 20px 20px 20px;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.boxItem__paragraph{
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #2e3192;
+}
+.abaBox__caixa{
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.abaBox__item--socialMedia{
+	width: 50%;
+	padding-left: 3%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+@media(max-width: 640px){
+	.abaBox__item--socialMedia{
+		margin-bottom: 0;
 	}
-	.infoAba__box--location{
-		min-height: 52vh;
-		border-radius: 20px;
-		border-top-left-radius: 0;
+}
+.boxItem__icon{
+	width: 20px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+} 
+.boxItem__link{
+	width: 80%;
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 0.85em;
+	color: #2e3192;
+	text-align: left;
+	line-height: 20px;
+	text-decoration: none;
+}
+.boxItem__link:hover,
+.boxItem__link:active{
+	color: #2e3192;
+} 
+@media(max-width: 950px){
+	.infoAba__box{
 		flex-direction: column;
 	}
+	.abaBox__item--text{
+		width: 95%;
+	}
+	.boxItem__link{
+		font-size: 1em;
+	}
+}
+@media(max-width: 640px){
+	.abaBox__item{
+		width: 95%;
+		min-height: 10vh;
+		padding: 0;
+	}
+	.abaBox__item--text{
+		margin-bottom: 2%;
+	}
+}
+.infoAba__box--location{
+	min-height: 52vh;
+	border-radius: 20px;
+	border-top-left-radius: 0;
+	flex-direction: column;
+}
 </style>

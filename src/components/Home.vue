@@ -29,7 +29,7 @@
 								<img class="listItem__logo" src="../../static/assets/belezaEestetica.svg">
 							</div>
 						</button>
-						<button class="navList__item" @click="setCategory('coletivo')">
+						<button class="navList__item" @click="setCategory('Coletivo')">
 							coletivos
 							<div class="listItem__box">
 								<img class="listItem__logo" src="../../static/assets/coletivos.svg">
@@ -91,55 +91,55 @@
 							</div>
 							alimentação
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Arte e Cultura')">
+						<button class="navList__item--mobile" @click="setCategory('Arte e Cultura'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/arteEcultura.svg">
 							</div>
 							arte e cultura
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Beleza e Estética')">
+						<button class="navList__item--mobile" @click="setCategory('Beleza e Estética'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/belezaEestetica.svg">
 							</div>
 							beleza e estética
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Coletivo')">
+						<button class="navList__item--mobile" @click="setCategory('Coletivo'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/coletivos.svg">
 							</div>
 							coletivos
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Educação')">
+						<button class="navList__item--mobile" @click="setCategory('Educação'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/educacao.svg">
 							</div>
 							educação
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Esporte e Atividade Física')">
+						<button class="navList__item--mobile" @click="setCategory('Esporte e Atividade Física'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/esportes.svg">
 							</div>
 							esportes e atividade
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('ONG')">
+						<button class="navList__item--mobile" @click="setCategory('ONG'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/ongs.svg">
 							</div>
 							ong's
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Saúde')">
+						<button class="navList__item--mobile" @click="setCategory('Saúde'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/saude.svg">
 							</div>
 							saúde
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Serviços')">
+						<button class="navList__item--mobile" @click="setCategory('Serviços'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/servicos.svg">
 							</div>
 							serviços
 						</button>
-						<button class="navList__item--mobile" @click="setCategory('Transporte')">
+						<button class="navList__item--mobile" @click="setCategory('Transporte'), hideMenu()">
 							<div class="listItem__box">
 								<img class="listItem__logo--mobile" src="../../static/assets/transporte.svg">
 							</div>
@@ -151,6 +151,8 @@
 			<ListaAtividades
 				:filterActivity="filterActivity"
 				:category="category"
+				:setSubcategory="setSubcategory"
+				:filterCategory="filterCategory"
 				@selectActivity="value => {selectActivity = value}"
 				@change="setActivity"
 				v-show="transition"
@@ -1501,11 +1503,11 @@ header{
 	align-items: center;
 }
 .headerNav__list--mobile{
-	width: 90%;
+	width: 95%;
 	min-height: 70vh; 
 	margin: 2% 0;
 	display: none;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-flow: row wrap;
 }
 @media (max-width: 640px){
@@ -1530,11 +1532,11 @@ header{
 	align-items: center;
 }
 .navList__item--mobile{
-	width: 40%;
+	width: 45%;
 	background-color: transparent;
 	border: none;
 	color: #fff;
-	font-size: 1em;
+	font-size: 1.2em;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -1556,30 +1558,47 @@ header{
 	height: 5vh;
 }
 .header__quadro{
-	width: 250px;
+	width: 280px;
 	min-height: 100px;
-	padding: 1%;
+	padding: 0.4%;
 	border-radius: 15px;
 	background-color: #fff;
 	position: absolute;
-	right: 30px;
+	right: 10px;
 	top: 150px;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	justify-content: flex-end;
+}
+@media (max-width: 640px){
+	.header__quadro{
+		display: none;
+	}
 }
 .headerQuadro__subcategoria{
+	width: 50%;
+	min-height: 30px;
+	margin: 1% 0;
+	padding: 0 2%;
+	border-radius: inherit;
 	font-size: 0.7;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
+	text-align: left;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.headerQuadro__subcategoria:hover{
+	background-color: #f26522;
+	color: #fff;
 }
 main{
 	width: 100%;
 	min-height: 70vh;
 	margin-top: -1%;
-	padding: 2% 0 6% 2%;
+	padding: 2% 0 3% 2%;
 	background-color: #f26522;
 	display: flex;
 	justify-content: space-around;
@@ -1679,7 +1698,7 @@ main{
 .main__footer{
 	width: 20%;
 	min-width: 250px;
-	height: 80vh;
+	height: 75vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
