@@ -2,15 +2,15 @@
 	<div id="AppSite">
 		<div class="area">
 			<h1 class="area__titulo">{{ category }}</h1>
-			<button class="area__close material-icons">close</button>
+			<button class="area__close material-icons" @click="hideMenu(), setTransition()">close</button>
 		</div>
 		<div class="search">
 			<input class="search__input" type="text" name="pesquisa" placeholder="o que você procura?">
-			<button class="search__button material-icons" >
+			<button class="search__button material-icons" @click="hamburguer=!hamburguer">
 				menu
 			</button>
-			<div class="search__quadro" v-show="">
-				<p class="searchQuadro__subcategoria" v-for="value in filterCategory.subcategory" @click="setSubcategory(value)">
+			<div class="search__quadro" v-show="hamburguer">
+				<p class="searchQuadro__subcategoria" v-for="value in filterCategory.subcategory" @click="setSubcategory(value), hamburguer=!hamburguer">
 					{{ value }}
 				</p>
 			</div>
@@ -42,8 +42,9 @@ export default{
 		setSubcategory:{
 			type: Function
 		},
-		filterCategory:{
-			type: Object
+		filterCategory:[Object, Array],
+		hideMenu:{
+			type: Function
 		}
 	},
 	data(){
@@ -61,6 +62,9 @@ export default{
 		setActivity(value){
 			this.$emit('change')
 			this.$emit('selectActivity', value)
+		},
+		setTransition(){
+			this.$emit('transition')
 		}
 	},	
 	components:{
@@ -102,6 +106,11 @@ export default{
 	font-style: normal;
 	font-weight: 400;
 }
+@media(max-width: 360px){
+	.area__titulo{
+		font-size: 1.5em;
+	}
+}
 .area__close{
 	width: 25px;
 	height: 25px;
@@ -122,6 +131,11 @@ export default{
 	background-color: #fff;
 	color: #f26522;
 }
+@media(max-width: 360px){
+	.area__close{
+		right: 5px;
+	}
+}
 .search{
 	width: 98%;
 	margin-bottom: 5px;
@@ -133,7 +147,7 @@ export default{
 }
 @media(max-width: 640px){
 	.search{
-		width: 90%;
+		width: 80%;
 		margin: 10px auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -150,12 +164,17 @@ export default{
 	font-weight: 400;
 }
 .search__button{
-	width: 15%;
+	width: 10%;
 	background-color: #fff;
 	border: none;
 	border-radius: 30px;
 	font-size: 50px;
 	color: #2e3192
+}
+@media(max-width: 640px){
+	.search__button{
+		font-size: 40px;
+	}
 }
 .search__quadro{
 	width: 100%;
@@ -184,6 +203,7 @@ export default{
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
+	color: #2e3192;
 	text-align: left;
 	cursor: pointer;
 	display: flex;
@@ -213,8 +233,14 @@ export default{
 	align-items: center;
 	justify-content: center;	
 	position: relative;
-	/*overflow: auto;*/
 }
+@media(max-width: 360px){
+	.container{
+		width: 325px;
+		margin-bottom: 2%;
+	}
+}
+
 .image{
 	width: 100%;
 	object-fit: cover;
@@ -254,13 +280,29 @@ export default{
 }
 .title{
 	margin-bottom: 5px;
-	font-size: 1.63em;
-	font-weight: bold;
+	font-size: 1.4em;
+	font-family: ministry, sans-serif;
+	font-style: normal;
+	font-weight: 500;
 	color: white;
 }
+@media(max-width: 640px){
+	.title{
+		font-size: 1.25em;
+	}
+}
+
 .caption{
-	font-size: 1.63em;
+	font-size: 1.2em;
+	font-family: ministry, sans-serif;
 	font-style: italic;
+	font-weight: 300;
 	color: white;
 }
+@media(max-width: 640px){
+	.caption{
+		font-size: 1.1em;
+	}
+}
+
 </style>

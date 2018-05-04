@@ -75,8 +75,10 @@ export default{
 		return{
 			displayAbout:'flex',
 			bgAbout:'#fff',
+			colorAbout: '#2e3192',
 			displayLocation:'none',
-			bgLocation:'#f26522'
+			bgLocation:'#f26522',
+			colorLocation: '#fff'
 		}
 	},
 	methods:{
@@ -97,11 +99,8 @@ export default{
 				this.bgLocation = '#f26522'
 				this.colorLocation = '#fff'
 			}
-		// this.$emit('change', true)
 		},
-		// hideActivity(){
-		// 	this.hideActivity()
-		// }
+		
 	}
 }
 </script>
@@ -122,7 +121,7 @@ export default{
 }
 .cabecalho{
 	width: 100%;
-	height: 44vh;
+	height: 48vh;
 	margin-bottom: 20px;
 }
 @media(max-width: 640px){
@@ -130,6 +129,11 @@ export default{
 		height: 51vh;
 		margin-bottom: 0;
 	}	
+}
+@media(max-width: 360px){
+	.cabecalho{
+		height: 33.5vh;
+	}
 }
 .cabecalho__barra{
 	width: 100%;
@@ -142,6 +146,15 @@ export default{
 .cabecalho__barra--titulo{
 	color: #fff;
 	margin-left: 2%;
+	font-size: 1.9em;
+	font-family:"ministry";
+	font-style:normal;
+	font-weight:500;
+}
+@media(max-width: 360px){
+	.cabecalho__barra--titulo{
+		font-size: 1.25em;
+	}
 }
 .cabecalho__barra--close{
 	width: 25px;
@@ -157,13 +170,27 @@ export default{
 	justify-content: center;
 	align-items: center;
 }
+@media(max-width: 640px){
+	.cabecalho__barra--close{
+		width: 23px;
+		height: 23px;
+		font-size: 1.5em;
+	}
+}
 .cabecalho__barra--imagem{
 	width: 100%;
 }
 @media(max-width: 640px){
 	.cabecalho__barra--imagem{
-	width: 80%;
+		margin-left: 10%;
+		width: 80%;
 	}	
+}
+@media(max-width: 360px){
+	.cabecalho__barra--imagem{
+		margin-left: 7.5%;
+		width: 85%;
+	}
 }
 .info{
 	width: 100%;
@@ -175,6 +202,12 @@ export default{
 @media(max-width: 640px){
 	.info{
 		width: 80%;
+		margin-top: 15px;
+	}
+}
+@media(max-width: 360px){
+	.info{
+		width: 85%;
 		margin-top: 15px;
 	}
 }
@@ -196,12 +229,17 @@ export default{
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	font-size: 20px;
+	font-family:"ministry";
+	font-style:normal;
+	font-weight:400;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.info__tag--location{
-	color: #2e3192;
+@media(max-width: 640px){
+	.info__tag{
+		font-size: 1.2em;
+	}
 }
 .abaBox__item{
 	width: 48%;
@@ -217,6 +255,11 @@ export default{
 	justify-content: space-between;
 	align-items: center;
 }
+@media(max-width: 640px){
+	.infoAba__box{
+		padding: 11px;
+	}
+}
 .boxItem__paragraph{
 	font-family: ministry, sans-serif;
 	font-style: normal;
@@ -224,8 +267,14 @@ export default{
 	font-size: 0.9em;
 	color: #2e3192;
 }
+@media(max-width: 360px){
+	.boxItem__paragraph{
+		font-size: .86em;
+	}
+}
 .abaBox__caixa{
 	width: 100%;
+	margin: 2.5% 0;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -247,17 +296,28 @@ export default{
 	width: 20px;
 	margin-right: 8px;
 	margin-bottom: 8px;
-} 
+}
+@media(max-width: 640px){
+	.boxItem__icon{
+		margin: 0;
+		margin-right: 2%;
+	}
+}
 .boxItem__link{
 	width: 80%;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 0.85em;
+	font-size: 1em;
 	color: #2e3192;
 	text-align: left;
 	line-height: 20px;
 	text-decoration: none;
+}
+@media(max-width: 360px){
+	.boxItem__link{
+		font-size: .87em
+	}
 }
 .boxItem__link:hover,
 .boxItem__link:active{
@@ -270,9 +330,6 @@ export default{
 	.abaBox__item--text{
 		width: 95%;
 	}
-	.boxItem__link{
-		font-size: 1em;
-	}
 }
 @media(max-width: 640px){
 	.abaBox__item{
@@ -282,6 +339,11 @@ export default{
 	}
 	.abaBox__item--text{
 		margin-bottom: 2%;
+	}
+}
+@media(max-width: 640px){
+	.abaBox__item--text{
+		margin-bottom: 6%;
 	}
 }
 .infoAba__box--location{

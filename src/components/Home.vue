@@ -4,9 +4,9 @@
 			<aside class="header__aside">
 				<img class="header__logo" src="../../static/assets/alemao-para-o-mundo_logo.svg">
 				<nav class="header__nav">
-					<div class="headerNav__box">
-						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?">
-						<button class="navBox__button" @click="">
+					<div class="headerNav__box" @click="category='', subCategory=''">
+						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?" @keyup.enter="setFilter()" @click="transition=false" v-model="filterName" >
+						<button class="navBox__button" @click="setFilter()">
 							<img class="boxButton__logo" src="../../static/assets/Lupa-busca.svg">
 						</button>
 					</div>
@@ -153,10 +153,13 @@
 				:category="category"
 				:setSubcategory="setSubcategory"
 				:filterCategory="filterCategory"
+				:hideMenu="hideMenu"
 				@selectActivity="value => {selectActivity = value}"
 				@change="setActivity"
+				@transition="transition=!transition"
 				v-show="transition"
 				v-if="change"
+				@keyup.delete= "transition = false" 
 			>
 			</ListaAtividades>
 			<Atividades
@@ -164,6 +167,7 @@
 				:hideActivity="hideActivity"
 				@change="value => {change = value}"
 				v-else
+				@keyup.delete="change = true"
 			>
 			</Atividades>
 			<div class="header__quadro" v-show="category">
@@ -185,15 +189,15 @@
 			<section class="main__section">
 				<div class="main__section--box">
 					<img class="mainSection__logo" src="../../static/assets/vai-na-web_logo.svg">
-					<button class="mainSection__button--mobile">fique por dentro</button>
+					<a class="mainSection__button--mobile" href="http://www.vainaweb.com.br/" target=“_blank”>fique por dentro</a>
 				</div>
 				<p class="mainSection__paragraph">
 					O Vai na Web é um curso de programação e desenvolvimento web realizado dentro de organizações de base comunitária para jovens de 16 a 29 anos. Atualmente, acontece em dois polos: Complexo do Alemão (Educap) e Morro dos Prazeres (Proa), contando com 53 alunos capacitados até o momento. Dos 12 formados pela turma piloto, 4 foram contratados e já estão trabalhando na área.
 				</p>
-				<p class="mainSection__paragraph">
+				<p class="mainSection__paragraph mainSection__paragraph--last">
 					As aulas do programa 100% financiado pela 1STi e realizado em parceria com o Instituto Precisa Ser constituem uma base pedagógica de conteúdos compatíveis com as ferramentas utilizadas pelo mercado de TI – CSS, HTML, design responsivo – e abrangem a preocupação com a formação socioemocional do aluno. Além do aprendizado técnico, o Vai na Web presenta aulas de comunicação não violenta, meditação, liderança, postura profissional e respeito à diversidade.
 				</p>
-				<button class="mainSection__button">fique por dentro</button>
+				<a class="mainSection__button" href="http://www.vainaweb.com.br/" target=“_blank”>fique por dentro</a>
 			</section>
 			<footer class="main__footer">
 				<img class="mainFooter__logo mainFooter__logo1" src="../../static/assets/1sti_logo.svg">
@@ -303,9 +307,11 @@ export default{
 		return{
 			category:'',
 			subCategory:'',
-			transition: false,
-			change: true,
+			filterName:'',
+			activityName:'',
 			selectActivity:'',
+			change: true,
+			transition: false,
 			groups: [
 				{
 					category: 'Alimentação',
@@ -313,7 +319,7 @@ export default{
 				},
 				{
 					category: 'Arte e Cultura',
-					subcategory: ['Grafite', 'Música', 'Dança', 'Poesia', 'Teatro', 'Fotografia', 'Eventos', 'Educação', 'Todos']
+					subcategory: ['Grafite', 'Música', 'Dança', 'Poesia', 'Teatro', 'Fotografia', 'Evento', 'Educação', 'Todos']
 				},
 				{
 					category: 'Beleza e Estética',
@@ -329,7 +335,7 @@ export default{
 				},
 				{
 					category: 'Esporte e Atividade Física',
-					subcategory:['Arte Marcial', 'Academmia', 'Futubol', 'Funcional', 'Dança', 'Todos']
+					subcategory:['Arte Marcial', 'Academia', 'Futubol', 'Funcional', 'Dança', 'Todos']
 				},
 				{
 					category: 'ONG',
@@ -458,8 +464,7 @@ export default{
 						'É um grupo de grafiteiros, moradores do Complexo do Alemão cujo os quais resolveram se reunir para revitalizar espaços que precisam de reparos.',
 						'Batizado de "Noix Q Faz #Cpx", escolheram a quadra da comunidade do Reservatório para começar o trabalho, tendo todo material de tintas, jets, pincéis custeado pelos próprios moradores.',
 						'Uma das missões do coletivo é levar ação à  lugares que estejam precisando de uma transformação e permitir que o grafite se multiplique pela favela.',
-						'Realizam oficinas em ações sociais de revitalização de espaços e ambientes usando a arte do graffiti como ferramenta fundamental.',
-						'Desenvolvem projetos coletivos como o Arte e Transformação para crianças a partir de 06 anos, adolescentes, jovens e, quem quiser interagir e aprender, nas oficinas, workshop de artistas convidados, e bate papo de conhecimento sobre culturas urbanas e os elementos do hip hop.'
+						'Realizam oficinas em ações sociais de revitalização de espaços e ambientes usando a arte do graffiti como ferramenta fundamental.'
 					]
 				},
 				{
@@ -550,8 +555,7 @@ export default{
 					description:[
 						'Fundada no dia 4 de Maio de 2013 pelo jovem Luciano Daniel que na época tinha 13 anos de idade, o projeto conta com a participação de 15 voluntários para ajudar na arrecadação e na distribuição nos dias de evento.',
 						'Nesses 4 anos de existência, utiliza as redes sociais como uma de suas melhores ferramentas de trabalho para a arrecadação das doações, e já são mais de 20 ações que beneficiaram mais de 7 mil crianças, inclusive em 2015 o Projeto expandiu suas festas para o bairro de Santa Cruz, Zona Oeste do Rio.',
-						'O Projeto Crianças Felizes foi selecionado para participar do reality show de mobilização social "Click Esperança" da TV Globo, sendo ele finalista e vencedor do reality.',
-						'Seu público alvo são as crianças, porém, evolvem toda a comunidade para que juntos possam sonhar com um futuro melhor.'
+						'O Projeto Crianças Felizes foi selecionado para participar do reality show de mobilização social "Click Esperança" da TV Globo, sendo ele finalista e vencedor do reality.'
 					]
 				},
 				{
@@ -950,8 +954,7 @@ export default{
 						'Conhecida como Escolinha da Tia Bete, tendo seu início no mês de Abril de 1977 com alfabetização, o Centro Cultural Ocas dos Curumins atualmente proporciona atividades na área social, cultural, esportivas, ambiental e prepara jovens para o mercado de trabalho.',
 						'É um ponto de cultura reconhecido pela secretaria estadual e um ponto de leitura reconhecido também pela prefeitura do Rio.',
 						'Realizam intercâmbio em parceria com a ONG Comunidade em Ação com parceiros voluntários de outros países.',
-						'Na Oca dos Curumins são oferecidas oficinas de teatro, brincadeiras antigas, exibição de filmes, artesanatos, inclusive o Grupo Sempre Juntos do AA, cujo qual presta atendimento há 15 anos, além de estar desenvolvendo o resgate da cultura afro brasileira, entre outras atividades.',
-						'A Oca dos Curumins é uma das instituições mais ativas do Complexo do Alemão com 40 anos de atividades na comunidade da Alvorada.'
+						'Na Oca dos Curumins são oferecidas oficinas de teatro, brincadeiras antigas, exibição de filmes, artesanatos, inclusive o Grupo Sempre Juntos do AA, cujo qual presta atendimento há 15 anos, além de estar desenvolvendo o resgate da cultura afro brasileira, entre outras atividades.'
 					]
 				},
 				{
@@ -1335,15 +1338,21 @@ export default{
 			const list = this.atividades
 			let result
 
+
 			if (this.category) {
 				result = list.filter(atividade => atividade.tag.find(value => value === this.category))
 				if (this.subCategory) {
 					result = result.filter(atividade => atividade.tag.find(value => value === this.subCategory))
-					// return result
 				}
 				if (this.selectActivity) {
 					result = list.find(atividade => atividade.name === this.selectActivity)
 				}
+				return result
+			}
+
+			if (this.activityName) {
+				result = list.filter(atividade => atividade.name.indexOf(this.activityName) >= 0)
+
 				return result
 			}
 
@@ -1362,14 +1371,7 @@ export default{
 		setCategory(value){
 			this.category = value;
 			this.transition = true;
-
-			// if (this.selectActivity != '') {
-			// 	this.selectActivity = '';
-			// }
-			
-			// if (this.change === false) {
-			// 	this.change = true
-			// }
+			this.activityName = '';
 			 
 			this.hideActivity()
 
@@ -1387,14 +1389,15 @@ export default{
 			this.hideActivity()
 		},
 		hideMenu(){
-			document.getElementById('hideMenu').style.display = 'none';
+			var el = document.getElementById('hideMenu')
+
+			if (el.style.display != 'none'){
+				el.style.display = 'none';
+			}else{
+				el.style.display = 'flex';
+			}
 		},
 		setActivity(){
-			// if (this.change === false) {
-			// 	this.change = true
-			// }else{
-			// 	this.change = false
-			// }
 			this.change = !this.change
 		},
 		hideActivity(){
@@ -1403,6 +1406,11 @@ export default{
 			}
 
 			this.selectActivity = ''
+		},
+		setFilter(){
+			this.activityName = this.filterName
+			this.transition = true
+			this.filterName = ''
 		}
 	},
 	components: {
@@ -1428,10 +1436,15 @@ header{
 		justify-content: center;
 	}
 }
+@media (max-width: 360px){
+	header{
+		min-height: 110vh;
+	}
+}
 .header__aside{
 	width: 31vw;
 	min-width: 350px;
-	height: 110vh;
+	min-height: 110vh;
 	padding: 1%;
 	display: flex;
 	flex-direction: column;
@@ -1443,11 +1456,21 @@ header{
 	}
 }
 .header__logo{
-	min-width: 100%;
+	width: 100%;
 	margin: 3% 0;
+}
+@media (max-width: 360px){
+	.header__logo{
+		width: 90%;
+	}
 }
 .header__nav{
 	width: 100%;
+}
+@media (max-width: 360px){
+	.header__nav{
+		width: 90%;
+	}
 }
 .headerNav__box{
 	width: 100%;
@@ -1479,18 +1502,18 @@ header{
 }
 .header__aside--mobile{
 	width: 100%;
-	max-width: 450px;
+	max-width: 500px;
 	min-width: 350px;
 	height: 110vh;
 	padding: 1%;
 	display: none;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 }
 @media(max-width: 640px){
 	.header__aside--mobile{
 		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
 	}
 }
 .headerNav__box--mobile{
@@ -1501,6 +1524,11 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+@media (max-width: 360px){
+	.headerNav__box--mobile{
+		height: 7.5vh;
+	}
 }
 .headerNav__list--mobile{
 	width: 95%;
@@ -1545,6 +1573,11 @@ header{
 	justify-content: space-between;
 	align-items: center;
 }
+@media (max-width: 360px){
+	.navList__item--mobile{
+		font-size: 1em;
+	}
+}
 .listItem__box{
 	width: 50px;
 	display: flex;
@@ -1558,7 +1591,7 @@ header{
 	height: 5vh;
 }
 .header__quadro{
-	width: 280px;
+	width: 22%;
 	min-height: 100px;
 	padding: 0.4%;
 	border-radius: 15px;
@@ -1581,10 +1614,11 @@ header{
 	margin: 1% 0;
 	padding: 0 2%;
 	border-radius: inherit;
-	font-size: 0.7;
+	font-size: 1em;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
+	color: #2e3192;
 	text-align: left;
 	cursor: pointer;
 	display: flex;
@@ -1596,7 +1630,7 @@ header{
 }
 main{
 	width: 100%;
-	min-height: 70vh;
+	min-height: 95vh;
 	margin-top: -1%;
 	padding: 2% 0 3% 2%;
 	background-color: #f26522;
@@ -1612,7 +1646,13 @@ main{
 @media(max-width: 640px){
 	.main__section{
 		width: 90%;
-		margin: 5% 0;
+		margin: 2% 0;
+	}
+}
+@media (max-width: 360px){
+	.main__section{
+		margin-bottom: 2%;
+		padding: 0 5%;
 	}
 }
 .mainSection__title{
@@ -1630,6 +1670,11 @@ main{
 		font-size: 1.6em;
 	}
 }
+@media(max-width: 360px){
+	.mainSection__title{
+		font-size: 1.4em;
+	}
+}
 .mainSection__paragraph{
 	margin-bottom: 3%;
 	font-size: .9em;
@@ -1642,6 +1687,19 @@ main{
 @media(max-width: 640px){
 	.mainSection__paragraph{
 		font-size: 1em;
+	}
+}
+@media(max-width: 360px){
+	.mainSection__paragraph{
+		font-size: .85em;
+	}
+}
+.mainSection__paragraph--last{
+	margin-bottom: 10%;
+}
+@media(max-width: 640px){
+	.mainSection__paragraph--last{
+		margin-bottom: 0;
 	}
 }
 .main__section--box{
@@ -1658,11 +1716,17 @@ main{
 		width: 41%;
 	}
 }
+@media(max-width: 360px){
+	.mainSection__logo{
+		width: 35%;
+	}
+}
 .mainSection__button{
-	width: 50%;
-	padding: 4% 0;
-	margin: 5% 0;
-	background-color: #f26522;
+	width: 50vw;
+	height: 5vh;
+	padding: 4% 10%;
+	margin-top: 15%;
+	background-color: transparent;
 	border: solid 5px #fff;
 	border-radius: 40px;
 	font-family: ministry, sans-serif;
@@ -1670,6 +1734,7 @@ main{
 	font-weight: 700;
 	font-size: 1.2em;
 	color: #fff;
+	text-decoration: none;
 }
 @media(max-width: 640px){
 	.mainSection__button{
@@ -1678,7 +1743,7 @@ main{
 }
 .mainSection__button--mobile{
 	width: 45%;
-	padding: 3% 0;
+	padding: 3% 6%;
 	margin: 5% 0;
 	background-color: #f26522;
 	border: solid 5px #fff;
@@ -1688,10 +1753,18 @@ main{
 	font-weight: 700;
 	font-size: 1.3em;
 	color: #fff;
+	text-decoration: none;
 	display: none;
 }
 @media(max-width: 640px){
 	.mainSection__button--mobile{
+		display: block;
+	}
+}
+@media(max-width: 360px){
+	.mainSection__button--mobile{
+		width: 53%;
+		font-size: .88em;
 		display: block;
 	}
 }
@@ -1707,9 +1780,14 @@ main{
 @media(max-width: 640px){
 	.main__footer{
 		width: 100%;
-		height: 35vh;
+		height: 25vh;
 		flex-direction: row;
 		justify-content: center;
+	}
+}
+@media(max-width: 360px){
+	.main__footer{
+		height: 15vh;
 	}
 }
 .mainFooter__logo{
@@ -1718,7 +1796,7 @@ main{
 }
 @media(max-width: 640px){
 	.mainFooter__logo{
-		width: 25%;
+		width: 22%;
 		margin: 3%;
 	}
 }
@@ -1727,7 +1805,7 @@ main{
 }
 @media(max-width: 640px){
 	.mainFooter__logo1{
-		width: 12%;
+		width: 10%;
 	}
 }
 </style>
