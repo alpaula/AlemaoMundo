@@ -9,7 +9,7 @@
 			<button class="search__button material-icons" >
 				menu
 			</button>
-			<div class="search__quadro" v-show="hamburguer">
+			<div class="search__quadro" v-show="">
 				<p class="searchQuadro__subcategoria" v-for="value in filterCategory.subcategory" @click="setSubcategory(value)">
 					{{ value }}
 				</p>
