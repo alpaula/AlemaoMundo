@@ -1591,7 +1591,8 @@ header{
 	height: 5vh;
 }
 .header__quadro{
-	width: 22%;
+	width: 20%;
+	min-width: 30px;
 	min-height: 100px;
 	padding: 0.4%;
 	border-radius: 15px;
@@ -1600,8 +1601,8 @@ header{
 	right: 10px;
 	top: 150px;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-end;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 @media (max-width: 640px){
 	.header__quadro{
@@ -1609,10 +1610,11 @@ header{
 	}
 }
 .headerQuadro__subcategoria{
-	width: 50%;
+	/*width: 50%;*/
+	min-width: 100px;
 	min-height: 30px;
 	margin: 1% 0;
-	padding: 0 2%;
+	padding: 0 1% 0 3%;
 	border-radius: inherit;
 	font-size: 1em;
 	font-family: ministry, sans-serif;

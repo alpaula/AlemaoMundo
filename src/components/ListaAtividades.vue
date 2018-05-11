@@ -224,8 +224,8 @@ export default{
 	}
 }
 .container{
-	width: 500px;
-	height: 200px;
+	width: 100%;
+	height: 38%;
 	margin: 0 auto;
 	margin-bottom: 1%;
 	overflow: hidden;
@@ -253,6 +253,7 @@ export default{
 }
 .imageMob{
 	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	position: absolute;
 	display: none;
