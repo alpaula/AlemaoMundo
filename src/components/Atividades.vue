@@ -64,9 +64,7 @@
 export default{
 	name: 'Atividades',
 	props:{
-		filterActivity:{
-			type: Object
-		},
+		filterActivity: [Object, Array],
 		hideActivity:{
 			type: Function
 		}
@@ -110,7 +108,7 @@ export default{
 	margin: 0;
 	margin-top: 3%;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.body{
 		width: 100%;
 		margin-top: 0;
@@ -121,39 +119,33 @@ export default{
 }
 .cabecalho{
 	width: 100%;
-	height: 48vh;
-	margin-bottom: 20px;
-}
-@media(max-width: 640px){
-	.cabecalho{
-		height: 51vh;
-		margin-bottom: 0;
-	}	
-}
-@media(max-width: 360px){
-	.cabecalho{
-		height: 33.5vh;
-	}
+	min-height: 15vh;
 }
 .cabecalho__barra{
 	width: 100%;
-	height: 7vh;
+	height: 55px;
 	background-color: #f26522;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+@media(max-width: 768px){
+	.cabecalho__barra{
+		position: fixed;
+		z-index: 9;
+	}
+}
 .cabecalho__barra--titulo{
 	color: #fff;
 	margin-left: 2%;
-	font-size: 1.9em;
+	font-size: 3vw;
 	font-family:"ministry";
 	font-style:normal;
 	font-weight:500;
 }
-@media(max-width: 360px){
+@media(max-width: 768px){
 	.cabecalho__barra--titulo{
-		font-size: 1.25em;
+		font-size: 3.9vw;
 	}
 }
 .cabecalho__barra--close{
@@ -169,8 +161,12 @@ export default{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
-@media(max-width: 640px){
+.cabecalho__barra--close:focus{
+	outline: none;
+}
+@media(max-width: 768px){
 	.cabecalho__barra--close{
 		width: 23px;
 		height: 23px;
@@ -180,26 +176,21 @@ export default{
 .cabecalho__barra--imagem{
 	width: 100%;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.cabecalho__barra--imagem{
-		margin-left: 10%;
 		width: 80%;
+		margin: 0 10%;
+		margin-top: 55px;
 	}	
-}
-@media(max-width: 360px){
-	.cabecalho__barra--imagem{
-		margin-left: 7.5%;
-		width: 85%;
-	}
 }
 .info{
 	width: 100%;
-	margin-top: 40px;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.info{
 		width: 80%;
 		margin-top: 15px;
@@ -228,23 +219,23 @@ export default{
 	height: 48px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
-	font-size: 20px;
+	font-size: 1.7vw;
 	font-family:"ministry";
 	font-style:normal;
 	font-weight:400;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.info__tag{
-		font-size: 1.2em;
+		font-size: 3vw;
 	}
 }
 .abaBox__item{
 	width: 48%;
-	min-height: 25vh;
-	margin-bottom: 20px;
+	min-height: 10vh;
 }
 .infoAba__box{
 	width: 100%;
@@ -253,23 +244,36 @@ export default{
 	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.infoAba__box{
 		padding: 11px;
 	}
 }
 .boxItem__paragraph{
+	margin-bottom: 2%;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 0.9em;
+	font-size: 1.2vw;
 	color: #2e3192;
 }
-@media(max-width: 360px){
+@media(max-width: 768px){
 	.boxItem__paragraph{
-		font-size: .86em;
+		font-size: 2.2vw;
+	}
+}
+.abaBox__item--socialMedia{
+	width: 47%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+@media(max-width: 768px){
+	.abaBox__item--socialMedia{
+		margin-bottom: 0;
 	}
 }
 .abaBox__caixa{
@@ -279,48 +283,34 @@ export default{
 	justify-content: flex-start;
 	align-items: center;
 }
-.abaBox__item--socialMedia{
-	width: 50%;
-	padding-left: 3%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: center;
-}
-@media(max-width: 640px){
-	.abaBox__item--socialMedia{
-		margin-bottom: 0;
-	}
-}
 .boxItem__icon{
 	width: 20px;
 	margin-right: 8px;
 	margin-bottom: 8px;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.boxItem__icon{
 		margin: 0;
 		margin-right: 2%;
 	}
 }
 .boxItem__link{
-	width: 80%;
+	min-width: 30px;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 1em;
+	font-size: 1.14vw;
 	color: #2e3192;
 	text-align: left;
 	line-height: 20px;
 	text-decoration: none;
 }
-@media(max-width: 360px){
+@media(max-width: 768px){
 	.boxItem__link{
-		font-size: .87em
+		font-size: 2.2vw;
 	}
 }
-.boxItem__link:hover,
-.boxItem__link:active{
+.boxItem__link:hover, .boxItem__link:active{
 	color: #2e3192;
 } 
 @media(max-width: 950px){
@@ -331,7 +321,7 @@ export default{
 		width: 95%;
 	}
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.abaBox__item{
 		width: 95%;
 		min-height: 10vh;
@@ -341,7 +331,7 @@ export default{
 		margin-bottom: 2%;
 	}
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.abaBox__item--text{
 		margin-bottom: 6%;
 	}

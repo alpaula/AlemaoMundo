@@ -2,10 +2,10 @@
 	<div class="body">
 		<header>
 			<aside class="header__aside">
-				<img class="header__logo" src="../../static/assets/alemao-para-o-mundo_logo.svg">
+				<img class="header__logo" src="../../static/assets/alemao-para-o-mundo_logo.svg" @click="clearAll()">
 				<nav class="header__nav">
 					<div class="headerNav__box" @click="category='', subCategory=''">
-						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?" @keyup.enter="setFilter()" @click="transition=false" v-model="filterName" >
+						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?" @keyup.enter="setFilter()" @click="transition=false, change=true" v-model="filterName" >
 						<button class="navBox__button" @click="setFilter()">
 							<img class="boxButton__logo" src="../../static/assets/Lupa-busca.svg">
 						</button>
@@ -77,9 +77,9 @@
 			<aside class="header__aside--mobile" id="hideMenu">
 				<img class="header__logo" src="../../static/assets/alemao-para-o-mundo_logo.svg">
 				<nav class="header__nav">
-					<div class="headerNav__box--mobile">
-						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?">
-						<button class="navBox__button" @click="">
+					<div class="headerNav__box--mobile" @click="category='', subCategory=''">
+						<input class="navBox__input" type="text" name="pesquisa" placeholder="o que você procura?" @keyup.enter="setFilter(), hideMenu()" @click="transition=false, change=true" v-model="filterName">
+						<button class="navBox__button" @click="setFilter(), hideMenu()">
 							<img class="boxButton__logo" src="../../static/assets/Lupa-busca.svg">
 						</button>
 					</div>
@@ -154,12 +154,13 @@
 				:setSubcategory="setSubcategory"
 				:filterCategory="filterCategory"
 				:hideMenu="hideMenu"
+				:setFilter="setFilter"
 				@selectActivity="value => {selectActivity = value}"
 				@change="setActivity"
 				@transition="transition=!transition"
+				@filterName="value => {filterName = value}"
 				v-show="transition"
 				v-if="change"
-				@keyup.delete= "transition = false" 
 			>
 			</ListaAtividades>
 			<Atividades
@@ -217,12 +218,13 @@ import AfroLajeD from '../../static/assets/afrolaje - D.jpg'
 import AfroLajeM from '../../static/assets/afrolaje - M.jpg'
 import AlexandreSilvaD from '../../static/assets/AlexandreSilva - D.jpg'
 import AlexandreSilvaM from '../../static/assets/AlexandreSilva - M.jpg'
-import PelaMisericordia from '../../static/assets/Aliança Pela Misericórdia.jpg'
+import AliancaD from '../../static/assets/Aliança - D.jpg'
+import AliancaM from '../../static/assets/Aliança - M.jpg'
 import AnaMoura from '../../static/assets/Ana Moura.jpg'
 import BrigadeiroLiterarioD from '../../static/assets/BrigadeiroLiterario - D.jpg'
 import BrigadeiroLiterarioM from '../../static/assets/BrigadeiroLiterario - M.jpg'
-import CarolMunizLogo from '../../static/assets/Carol Muniz.jpg'
-import CasaBrotaLogo from '../../static/assets/casabrota.png'
+import CasaBrotaD from '../../static/assets/casabrota - D.png'
+import CasaBrotaM from '../../static/assets/casabrota - M.jpg'
 import CasaPrimasD from '../../static/assets/casadasPrimas - D.jpg'
 import CasaPrimasM from '../../static/assets/casadasPrimas - M.jpg'
 import CineCariocaD from '../../static/assets/cinecarioca - D.jpg'
@@ -238,26 +240,31 @@ import CriancasFelizesM from '../../static/assets/criancasfelizes - M.jpg'
 import CRJLogo from '../../static/assets/CRJ Alemão.jpg'
 import CRJD from '../../static/assets/CRJ - D.jpg'
 import CRJM from '../../static/assets/CRJ - M.jpg'
-import DancaCiaLogo from '../../static/assets/dança-cia.jpg'
+import DancaCiaD from '../../static/assets/dancecia - D.jpg'
+import DancaCiaM from '../../static/assets/dancecia - M.jpg'
 import DancaArtD from '../../static/assets/DançaArt - D.png'
 import DancaArtM from '../../static/assets/DançaArt - M.png'
 import DeboraAmorimD from '../../static/assets/deboraAmorim - D.jpg'
 import DeboraAmorimM from '../../static/assets/deboraAmorim - M.jpg'
-import DescolandoIdeias from '../../static/assets/Descolando Ideias.jpg'
+import DescolandoD from '../../static/assets/descolando ideias - D.jpg'
+import DescolandoM from '../../static/assets/descolando ideias - M.jpg'
 import DocesMomentosD from '../../static/assets/docesMomentos - D.jpg'
 import DocesMomentosM from '../../static/assets/docesMomentos - M.jpg'
-import DocesTravessuras from '../../static/assets/Doces e Travessuras.jpg'
+import DocesTravessurasD from '../../static/assets/Doces e travessuras - D.jpg'
+import DocesTravessurasM from '../../static/assets/Doces e travessuras - M.jpg'
 import EducapLogo from '../../static/assets/EDUCAP.jpg'
 import EducapD from '../../static/assets/EDUCAP - D.jpg'
 import EducapM from '../../static/assets/EDUCAP - M.jpg'
-import EmergenciaLogo from '../../static/assets/Emergência Social.jpg'
+import EmergenciaD from '../../static/assets/emergencia social - D.jpg'
+import EmergenciaM from '../../static/assets/emergencia social - M.jpg'
 import EricaMartinD from '../../static/assets/ericaMartin - D.jpg'
 import EricaMartinM from '../../static/assets/ericaMartin - M.jpg'
 import FamiliaPerninhaD from '../../static/assets/familiaPerninha - D.jpg'
 import FamiliaPerninhaM from '../../static/assets/familiaPerninha - M.jpg'
 import FavelaFashionD from '../../static/assets/favelaFashion - D.jpg'
 import FavelaFashionM from '../../static/assets/favelaFashion - M.jpg'
-import Favelagrafia from '../../static/assets/Favelagrafia.png'
+import FavelagrafiaD from '../../static/assets/favelagrafia - D.jpg'
+import FavelagrafiaM from '../../static/assets/favelagrafia - M.jpg'
 import FotoClubeD from '../../static/assets/fotoclube - D.jpg'
 import FotoClubeM from '../../static/assets/fotoclube - M.jpg'
 import FuturoMovimento from '../../static/assets/FuturoMovimento.jpg'
@@ -269,11 +276,14 @@ import JogaCriaD from '../../static/assets/jogaecria - D.jpg'
 import JogaCriaM from '../../static/assets/jogaecria - M.jpg'
 import JoseanaFotoD from '../../static/assets/joseanafoto - D.jpg'
 import JoseanaFotoM from '../../static/assets/joseanafoto - M.jpg'
-import LMLanchesLogo from '../../static/assets/LM Lanches.jpg'
-import MarcosCarolinnoLogo from '../../static/assets/marcos-carolinno.png'
+import LMLanchesD from '../../static/assets/lm lanches - D.jpg'
+import LMLanchesM from '../../static/assets/lm lanches - M.jpg'
 import MarcosCarolinnoD from '../../static/assets/MarcosCarolino - D.jpg'
 import MarcosCarolinnoM from '../../static/assets/MarcosCarolino - M.jpg'
-import MovimentoVidaLogo from '../../static/assets/Movimento _ Vida.jpg'
+import MovimentoVidaD from '../../static/assets/movimento e vida - D.jpg'
+import MovimentoVidaM from '../../static/assets/movimento e vida - M.jpg'
+import MunizArtesD from '../../static/assets/Muniz artes - D.jpg'
+import MunizArtesM from '../../static/assets/Muniz artes - M.jpg'
 import NaveConhecimentoD from '../../static/assets/navedoconhecimento - D.jpg'
 import NaveConhecimentoM from '../../static/assets/navedoconhecimento - M.jpg'
 import NoixFazD from '../../static/assets/noixqfaz - D.jpg'
@@ -282,7 +292,8 @@ import NovosLideresD from '../../static/assets/novosLideres - D.jpg'
 import NovosLideresM from '../../static/assets/novosLideres - M.jpg'
 import OcaCuruminsD from '../../static/assets/ocacurumins - D.jpg'
 import OcaCuruminsM from '../../static/assets/ocacurumins - M.jpg'
-import PoetasFaveladosLogo from '../../static/assets/Poetas Favelados.jpg'
+import PoetasFaveladosD from '../../static/assets/Poetas Favelados -D.jpg'
+import PoetasFaveladosM from '../../static/assets/Poetas Favelados -M.jpg'
 import RaizesMovimentoD from '../../static/assets/raizesmovimento - D.jpg'
 import RaizesMovimentoM from '../../static/assets/raizesmovimento - M.jpg'
 import RecreacaoInfantilD from '../../static/assets/recreacaoinfantil - D.jpg'
@@ -677,8 +688,8 @@ export default{
 					categoria:'Coletivo',
 					subcategoria:'Fotografia',
 					tag:['Coletivo', 'Fotografia'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/favelagrafia - D.jpg',
+					imageMob:'../../static/assets/favelagrafia - M.jpg',
 					facebook:'/favelagrafia',
 					faceLink:'https://www.facebook.com/favelagrafia',
 					instagram:'@favelagrafia',
@@ -744,8 +755,8 @@ export default{
 					categoria:'Coletivo',
 					subcategoria:'Poesia',
 					tag:['Coletivo', 'Poesia', 'Evento'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/Poetas Favelados -D.jpg',
+					imageMob:'../../static/assets/Poetas Favelados -M.jpg',
 					facebook:'/poetasfavelados',
 					faceLink:'https://www.facebook.com/PoetasFavelados',
 					instagram:'@poetasfavelados',
@@ -1025,8 +1036,8 @@ export default{
 					categoria:'Saúde',
 					subcategoria:'Fisioterapia',
 					tag:['Saúde', 'Fisioterapia'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/movimento e vida - D.jpg',
+					imageMob:'../../static/assets/movimento e vida - M.jpg',
 					facebook:'/projetopaloma',
 					faceLink:'https://www.facebook.com/projetopaloma/',
 					instagram:null,
@@ -1070,8 +1081,8 @@ export default{
 					categoria:'Serviços',
 					subcategoria:'Coworking',
 					tag:['Serviços', 'Coworking'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/casabrota - D.png',
+					imageMob:'../../static/assets/casabrota - M.png',
 					facebook:'/casabrota',
 					faceLink:'https://www.facebook.com/casabrota',
 					instagram:'@casabrota',
@@ -1116,8 +1127,8 @@ export default{
 					categoria:'Serviços',
 					subcategoria:'Dança',
 					tag:['Serviços', 'Dança'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/dancecia - D.jpg',
+					imageMob:'../../static/assets/dancecia - M.jpg',
 					facebook:'/dancaeciaart',
 					faceLink:'https://www.facebook.com/dancaeciaart',
 					instagram:'@dancaeciaart',
@@ -1184,8 +1195,8 @@ export default{
 					categoria:'Serviços',
 					subcategoria:'Gráfica',
 					tag:['Serviços', 'Gráfica'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/Muniz artes - D.jpg',
+					imageMob:'../../static/assets/Muniz artes - M.jpg',
 					facebook:'/contatoagenciamuniz',
 					faceLink:'https://www.facebook.com/contatoagenciamuniz',
 					instagram:'@contatoagenciamuniz',
@@ -1338,11 +1349,13 @@ export default{
 			const list = this.atividades
 			let result
 
-
 			if (this.category) {
 				result = list.filter(atividade => atividade.tag.find(value => value === this.category))
 				if (this.subCategory) {
 					result = result.filter(atividade => atividade.tag.find(value => value === this.subCategory))
+				}
+				if (this.activityName) {
+					result = list.filter(atividade => atividade.name.toLowerCase().indexOf(this.activityName.toLowerCase()) >= 0)
 				}
 				if (this.selectActivity) {
 					result = list.find(atividade => atividade.name === this.selectActivity)
@@ -1351,7 +1364,10 @@ export default{
 			}
 
 			if (this.activityName) {
-				result = list.filter(atividade => atividade.name.indexOf(this.activityName) >= 0)
+				result = list.filter(atividade => atividade.name.toLowerCase().indexOf(this.activityName.toLowerCase()) >= 0)
+				if (this.selectActivity) {
+					result = list.find(atividade => atividade.name === this.selectActivity)
+				}
 
 				return result
 			}
@@ -1401,7 +1417,7 @@ export default{
 			this.change = !this.change
 		},
 		hideActivity(){
-			if (this.change === false) {
+			if (this.change === false){
 				this.change = true
 			}
 
@@ -1411,6 +1427,15 @@ export default{
 			this.activityName = this.filterName
 			this.transition = true
 			this.filterName = ''
+		},
+		clearAll(){
+			this.activityName = ''
+			this.category = ''
+			this.filterName = ''
+			this.selectActivity = ''
+			this.subCategory = ''
+			this.category = ''
+			this.change = true
 		}
 	},
 	components: {
@@ -1428,8 +1453,9 @@ header{
 	background-size: 100%;
 	display: flex;
 	justify-content: flex-start;
+	align-items: flex-start;
 }
-@media (max-width: 640px){
+@media (max-width: 768px){
 	header{
 		min-height: 165vh;
 		display: flex;
@@ -1450,7 +1476,7 @@ header{
 	flex-direction: column;
 	justify-content: flex-start;
 }
-@media (max-width: 640px){
+@media (max-width: 768px){
 	.header__aside{
 		display: none;
 	}
@@ -1458,19 +1484,10 @@ header{
 .header__logo{
 	width: 100%;
 	margin: 3% 0;
-}
-@media (max-width: 360px){
-	.header__logo{
-		width: 90%;
-	}
+	cursor: pointer;
 }
 .header__nav{
 	width: 100%;
-}
-@media (max-width: 360px){
-	.header__nav{
-		width: 90%;
-	}
 }
 .headerNav__box{
 	width: 100%;
@@ -1491,19 +1508,24 @@ header{
 	font-style: normal;
 	font-weight: 400;
 }
+.navBox__input:focus{
+	outline: none;
+}
 .navBox__button{
 	width: 10%;
 	height: 6vh;
 	background: #fff;
 	border: none;
+	cursor: pointer;
+}
+.navBox__button:focus{
+	outline: none;
 }
 .boxButton__logo{
-	width: 70%;
+	height: 100%;
 }
 .header__aside--mobile{
-	width: 100%;
-	max-width: 500px;
-	min-width: 350px;
+	width: 90%;
 	height: 110vh;
 	padding: 1%;
 	display: none;
@@ -1511,7 +1533,7 @@ header{
 	justify-content: flex-start;
 	align-items: center;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.header__aside--mobile{
 		display: flex;
 	}
@@ -1533,12 +1555,12 @@ header{
 .headerNav__list--mobile{
 	width: 95%;
 	min-height: 70vh; 
-	margin: 2% 0;
 	display: none;
+	align-items: center;
 	justify-content: space-between;
 	flex-flow: row wrap;
 }
-@media (max-width: 640px){
+@media (max-width: 768px){
 	.headerNav__list--mobile{
 		display: flex;
 	}
@@ -1558,13 +1580,17 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	cursor: pointer;
+}
+.navList__item:focus{
+	outline: none;
 }
 .navList__item--mobile{
 	width: 45%;
 	background-color: transparent;
 	border: none;
 	color: #fff;
-	font-size: 1.2em;
+	font-size: 2.5vw;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -1573,10 +1599,8 @@ header{
 	justify-content: space-between;
 	align-items: center;
 }
-@media (max-width: 360px){
-	.navList__item--mobile{
-		font-size: 1em;
-	}
+.navList__item--mobile:focus{
+	outline: none;
 }
 .listItem__box{
 	width: 50px;
@@ -1591,32 +1615,30 @@ header{
 	height: 5vh;
 }
 .header__quadro{
-	width: 20%;
-	min-width: 30px;
-	min-height: 100px;
+	width: 18%;
+	min-height: 50px;
+	margin: 0 auto;
+	margin-top: 10%;
 	padding: 0.4%;
 	border-radius: 15px;
 	background-color: #fff;
-	position: absolute;
 	right: 10px;
 	top: 150px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	align-items: flex-start;
+	justify-content: flex-end;
 }
-@media (max-width: 640px){
+@media (max-width: 768px){
 	.header__quadro{
 		display: none;
 	}
 }
 .headerQuadro__subcategoria{
-	/*width: 50%;*/
-	min-width: 100px;
-	min-height: 30px;
-	margin: 1% 0;
-	padding: 0 1% 0 3%;
+	width: 50%;
+	padding: 2%;
 	border-radius: inherit;
-	font-size: 1em;
+	font-size: 1.2vw;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -1645,9 +1667,10 @@ main{
 	width: 33%;
 	min-width: 350px;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.main__section{
 		width: 90%;
+		min-width: 50px;
 		margin: 2% 0;
 	}
 }
@@ -1667,14 +1690,14 @@ main{
 	text-align: left;
 	text-transform: uppercase;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainSection__title{
-		font-size: 1.6em;
+		font-size: 3.5vw;
 	}
 }
-@media(max-width: 360px){
+@media(max-width: 578px){
 	.mainSection__title{
-		font-size: 1.4em;
+		font-size: 4vw;
 	}
 }
 .mainSection__paragraph{
@@ -1686,20 +1709,15 @@ main{
 	font-weight: 300;
 	text-align: left;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainSection__paragraph{
-		font-size: 1em;
-	}
-}
-@media(max-width: 360px){
-	.mainSection__paragraph{
-		font-size: .85em;
+		font-size: 3vw;
 	}
 }
 .mainSection__paragraph--last{
 	margin-bottom: 10%;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainSection__paragraph--last{
 		margin-bottom: 0;
 	}
@@ -1713,12 +1731,12 @@ main{
 	width: 54%;
 	margin-bottom: 3%;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainSection__logo{
-		width: 41%;
+		width: 40%;
 	}
 }
-@media(max-width: 360px){
+@media(max-width: 578px){
 	.mainSection__logo{
 		width: 35%;
 	}
@@ -1738,35 +1756,28 @@ main{
 	color: #fff;
 	text-decoration: none;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainSection__button{
 		display: none;
 	}
 }
 .mainSection__button--mobile{
-	width: 45%;
+	width: 47%;
 	padding: 3% 6%;
 	margin: 5% 0;
 	background-color: #f26522;
-	border: solid 5px #fff;
+	border: solid 4px #fff;
 	border-radius: 40px;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 1.3em;
+	font-size: 3vw;
 	color: #fff;
 	text-decoration: none;
 	display: none;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainSection__button--mobile{
-		display: block;
-	}
-}
-@media(max-width: 360px){
-	.mainSection__button--mobile{
-		width: 53%;
-		font-size: .88em;
 		display: block;
 	}
 }
@@ -1779,7 +1790,7 @@ main{
 	align-items: center;
 	justify-content: flex-end;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.main__footer{
 		width: 100%;
 		height: 25vh;
@@ -1796,7 +1807,7 @@ main{
 	width: 55%;
 	margin-top: 40%;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainFooter__logo{
 		width: 22%;
 		margin: 3%;
@@ -1805,7 +1816,7 @@ main{
 .mainFooter__logo1{
 	width: 30%;
 }
-@media(max-width: 640px){
+@media(max-width: 768px){
 	.mainFooter__logo1{
 		width: 10%;
 	}
