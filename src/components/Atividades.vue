@@ -6,6 +6,8 @@
 				<button class="cabecalho__barra--close material-icons" @click="hideActivity()">close</button>
 			</div>
 			<img class="cabecalho__barra--imagem" :src="filterActivity.imageDesk">
+			<img class="cabecalho__barra--imagem cabecalho__barra--imagemMob" :src="filterActivity.imageMob">
+
 		</header>
 		<div class="info">
 			<h2 class="info__tag info__tag--about"
@@ -120,7 +122,7 @@ export default{
 .cabecalho{
 	width: 100%;
 	min-height: 15vh;
-}
+	}
 .cabecalho__barra{
 	width: 100%;
 	height: 55px;
@@ -138,7 +140,7 @@ export default{
 .cabecalho__barra--titulo{
 	color: #fff;
 	margin-left: 2%;
-	font-size: 3vw;
+	font-size: 2.7vw;
 	font-family:"ministry";
 	font-style:normal;
 	font-weight:500;
@@ -176,11 +178,28 @@ export default{
 .cabecalho__barra--imagem{
 	width: 100%;
 }
+.cabecalho__barra--imagemMob{
+	width: 100%;
+	display: none;
+}
 @media(max-width: 768px){
 	.cabecalho__barra--imagem{
 		width: 80%;
 		margin: 0 10%;
 		margin-top: 55px;
+	}	
+}
+@media(max-width: 360px){
+	.cabecalho__barra--imagem{
+		display: none;
+	}	
+}
+@media(max-width: 360px){
+	.cabecalho__barra--imagemMob{
+		width: 80%;
+		margin: 0 10%;
+		margin-top: 55px;
+		display: flex;
 	}	
 }
 .info{

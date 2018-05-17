@@ -155,6 +155,7 @@
 				:filterCategory="filterCategory"
 				:hideMenu="hideMenu"
 				:setFilter="setFilter"
+				:erro="erro"
 				@selectActivity="value => {selectActivity = value}"
 				@change="setActivity"
 				@transition="transition=!transition"
@@ -323,6 +324,7 @@ export default{
 			selectActivity:'',
 			change: true,
 			transition: false,
+			erro: false,
 			groups: [
 				{
 					category: 'Alimentação',
@@ -969,7 +971,7 @@ export default{
 					]
 				},
 				{
-					name:'EDUCAP - Espaço Democrático de União, Convivência e Aprendizagem',
+					name:'EDUCAP',
 					categoria:'ONG',
 					subcategoria:'Cidadania e Desenvolvimento',
 					tag:['ONG', 'Educação', 'Arte e Cultura', 'Cidadania', 'Desenvolvimento', 'Cultura', 'Grafite', 'Dança'],
@@ -986,7 +988,7 @@ export default{
 					telefone:'21 98832-3246',
 					endereço:'Rua Canitar - Campo do Sargento, s/n° - Complexo do Alemão ',
 					description:[
-						null
+						'EDUCAP - Espaço Democrático de União, Convivência e Aprendizagem'
 					]
 				},
 				{
@@ -1360,6 +1362,12 @@ export default{
 				if (this.selectActivity) {
 					result = list.find(atividade => atividade.name === this.selectActivity)
 				}
+				if (result.length == 0){
+					this.erro = true
+				}else{
+					this.erro = false
+				}
+
 				return result
 			}
 
@@ -1403,6 +1411,7 @@ export default{
 			}
 
 			this.hideActivity()
+			this.test()
 		},
 		hideMenu(){
 			var el = document.getElementById('hideMenu')
@@ -1436,6 +1445,9 @@ export default{
 			this.subCategory = ''
 			this.category = ''
 			this.change = true
+		},
+		test(){
+			console.log('test',this.filterActivity.length)
 		}
 	},
 	components: {
@@ -1522,7 +1534,7 @@ header{
 	outline: none;
 }
 .boxButton__logo{
-	height: 100%;
+	height: 90%;
 }
 .header__aside--mobile{
 	width: 90%;
@@ -1569,7 +1581,7 @@ header{
 	width: 100%;
 	height: 8vh;
 	padding: 0 3%;
-	border: solid 8px #fcae1b;
+	border: solid 6px #fcae1b;
 	border-radius: 30px;
 	background-color: #f26522;
 	color: #fff;
@@ -1584,6 +1596,10 @@ header{
 }
 .navList__item:focus{
 	outline: none;
+	background-color: #2e3192;
+}
+.navList__item:hover{
+	background-color: #2e3192;
 }
 .navList__item--mobile{
 	width: 45%;
@@ -1615,7 +1631,8 @@ header{
 	height: 5vh;
 }
 .header__quadro{
-	width: 18%;
+	width: 18.8%;
+	/*min-width: 230px;*/
 	min-height: 50px;
 	margin: 0 auto;
 	margin-top: 10%;
@@ -1629,6 +1646,13 @@ header{
 	align-items: flex-start;
 	justify-content: flex-end;
 }
+@media (max-width: 1100px){
+	.header__quadro{
+		/*width: auto;*/
+		max-width: 150px;
+		justify-content: flex-start;
+	}
+}
 @media (max-width: 768px){
 	.header__quadro{
 		display: none;
@@ -1636,9 +1660,10 @@ header{
 }
 .headerQuadro__subcategoria{
 	width: 50%;
+	min-width: 40%;
 	padding: 2%;
 	border-radius: inherit;
-	font-size: 1.2vw;
+	font-size: 1.1vw;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -1648,13 +1673,21 @@ header{
 	display: flex;
 	align-items: center;
 }
+@media (max-width: 1100px){
+	.headerQuadro__subcategoria{
+		width: auto;
+		min-width: 60%;
+		max-width: 100%;
+		font-size: 1em;
+	}
+}
 .headerQuadro__subcategoria:hover{
 	background-color: #f26522;
 	color: #fff;
 }
 main{
 	width: 100%;
-	min-height: 95vh;
+	min-height: 92vh;
 	margin-top: -1%;
 	padding: 2% 0 3% 2%;
 	background-color: #f26522;
@@ -1662,6 +1695,11 @@ main{
 	justify-content: space-around;
 	align-items: flex-start;
 	flex-wrap: wrap;
+}
+@media(max-width: 1250px){
+	main{
+		min-height: 90vh;
+	}
 }
 .main__section{
 	width: 33%;
@@ -1773,6 +1811,7 @@ main{
 	font-weight: 700;
 	font-size: 3vw;
 	color: #fff;
+	text-align: center;
 	text-decoration: none;
 	display: none;
 }
@@ -1790,12 +1829,18 @@ main{
 	align-items: center;
 	justify-content: flex-end;
 }
-@media(max-width: 768px){
+@media(max-width: 1250px){
 	.main__footer{
 		width: 100%;
-		height: 25vh;
+		height: 30vh;
+		margin-top: 5%;
 		flex-direction: row;
 		justify-content: center;
+	}
+}
+@media(max-width: 768px){
+	.main__footer{
+		height: 20vh;
 	}
 }
 @media(max-width: 360px){
@@ -1807,7 +1852,7 @@ main{
 	width: 55%;
 	margin-top: 40%;
 }
-@media(max-width: 768px){
+@media(max-width: 1250px){
 	.mainFooter__logo{
 		width: 22%;
 		margin: 3%;
@@ -1816,7 +1861,7 @@ main{
 .mainFooter__logo1{
 	width: 30%;
 }
-@media(max-width: 768px){
+@media(max-width: 1250px){
 	.mainFooter__logo1{
 		width: 10%;
 	}

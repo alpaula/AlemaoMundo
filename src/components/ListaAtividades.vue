@@ -16,7 +16,13 @@
 			</div>
 		</div>
 		<VuePerfectScrollbar class="scroll-area" @ps-scroll-y="scrollHanle">
-			<section class="container" v-for="atividade in filterActivity" @click="setActivity(atividade.name)">
+			<section class="container container--false" v-if="erro">
+				<img class="image" src="../../static/assets/x.png">
+				<div class="container-texts">
+					<h3 class="title">Não há atividade nessa categoria</h3>
+				</div>
+			</section>
+			<section class="container" v-else v-for="atividade in filterActivity" @click="setActivity(atividade.name)">
 				<img class="image" :src="atividade.imageDesk">
 				<img class="image imageMob" :src="atividade.imageMob">
 				<div class="container-texts">
@@ -33,9 +39,7 @@ import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 export default{
 	name: 'ListaAtividades',
 	props:{
-		filterActivity:{
-			type: Array
-		},
+		filterActivity: Array,
 		category:{
 			type: String
 		},
@@ -48,16 +52,14 @@ export default{
 		},
 		setFilter:{
 			type: Function
-		}
+		},
+		erro:Boolean
 	},
 	data(){
 		return{
 			hamburguer: '',
 			filterName: ''
 		}
-	},
-	computed:{
-
 	},
 	methods:{
 		scrollHanle(evt){
@@ -66,6 +68,7 @@ export default{
 		setActivity(value){
 			this.$emit('change')
 			this.$emit('selectActivity', value)
+			this.test()
 		},
 		setTransition(){
 			this.$emit('transition')
@@ -256,6 +259,8 @@ export default{
 	height: 38%;
 	margin: 0 auto;
 	margin-bottom: 1%;
+	background: url('../../static/assets/fundoatividades.jpg') center no-repeat;
+	background-size: cover;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -268,7 +273,9 @@ export default{
 		margin-bottom: 2%;
 	}
 }
-
+.container--false{
+	background: #df4433;
+}
 .image{
 	height: 100%;
 	object-fit: cover;
