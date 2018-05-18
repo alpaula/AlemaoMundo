@@ -217,6 +217,8 @@ import AbracoCampeaoD from '../../static/assets/abracocampeao - D.jpg'
 import AbracoCampeaoM from '../../static/assets/abracocampeao - M.jpg'
 import AfroLajeD from '../../static/assets/afrolaje - D.jpg'
 import AfroLajeM from '../../static/assets/afrolaje - M.jpg'
+import AlemaoMundoD from '../../static/assets/alemaomundo - D.jpg'
+import AlemaoMundoM from '../../static/assets/alemaomundo - M.jpg'
 import AlexandreSilvaD from '../../static/assets/AlexandreSilva - D.jpg'
 import AlexandreSilvaM from '../../static/assets/AlexandreSilva - M.jpg'
 import AliancaD from '../../static/assets/Aliança - D.jpg'
@@ -307,6 +309,8 @@ import ThiaguinhoD from '../../static/assets/thiaguinho - D.jpg'
 import ThiaguinhoM from '../../static/assets/thiaguinho - M.jpg'
 import TocaLoboD from '../../static/assets/tocadolobo - D.jpg'
 import TocaLoboM from '../../static/assets/tocadolobo - M.jpg'
+import VnWD from '../../static/assets/vnw - D.jpg'
+import VnWM from '../../static/assets/vnw - M.jpg'
 import VidancarD from '../../static/assets/vidancar - D.jpg'
 import VidancarM from '../../static/assets/vidancar - M.jpg'
 
@@ -531,8 +535,8 @@ export default{
 					categoria:'Arte e Cultura',
 					subcategoria:'Dança',
 					tag:['Arte e Cultura', 'Educação', 'Dança'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/alemaomundo - D.jpg',
+					imageMob:'../../static/assets/alemaomundo - M.jpg',
 					facebook:'/futuroemmovimento',
 					faceLink:'https://www.facebook.com/groups/1740561566261151/about/',
 					instagram:null,
@@ -866,8 +870,8 @@ export default{
 					categoria:'Educação',
 					subcategoria:'Tecnologia',
 					tag:['Educação', 'Tecnologia'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/vnw - D.jpg',
+					imageMob:'../../static/assets/vnw - M.jpg',
 					facebook:'/vainaweb',
 					faceLink:'https://www.facebook.com/vainaweb/',
 					instagram:null,
@@ -1284,8 +1288,8 @@ export default{
 					categoria:'Transporte',
 					subcategoria:'Moto Táxi',
 					tag:['Transporte', 'Moto Táxi'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/alemaomundo - D.jpg',
+					imageMob:'../../static/assets/alemaomundo - M.jpg',
 					facebook:'/cezarandrade',
 					faceLink:'https://www.facebook.com/cezar.andrade.7967',
 					instagram:null,
@@ -1306,8 +1310,8 @@ export default{
 					categoria:'Beleza e Estética',
 					subcategoria:'Cabelo',
 					tag:['Beleza e Estética', 'Cabelo'],
-					imageDesk:'',
-					imageMob:'',
+					imageDesk:'../../static/assets/alemaomundo - D.jpg',
+					imageMob:'../../static/assets/alemaomundo - M.jpg',
 					facebook:'/marcieleperfeito',
 					faceLink:'https://www.facebook.com/marciele.Perfeito',
 					instagram:null,
@@ -1474,9 +1478,14 @@ header{
 		justify-content: center;
 	}
 }
-@media (max-width: 360px){
+@media (max-width: 520px){
 	header{
 		min-height: 110vh;
+	}
+}
+@media (max-width: 360px){
+	header{
+		height: 120vh;
 	}
 }
 .header__aside{
@@ -1602,11 +1611,11 @@ header{
 	background-color: #2e3192;
 }
 .navList__item--mobile{
-	width: 45%;
+	width: 40%;
 	background-color: transparent;
 	border: none;
 	color: #fff;
-	font-size: 2.5vw;
+	font-size: 2.7vw;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;

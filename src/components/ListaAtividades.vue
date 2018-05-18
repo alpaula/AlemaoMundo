@@ -274,7 +274,8 @@ export default{
 	}
 }
 .container--false{
-	background: #df4433;
+	padding: 0;
+	background: #de3b38;
 }
 .image{
 	height: 100%;
