@@ -256,6 +256,7 @@ export default{
 }
 .container{
 	width: 100%;
+	max-width: 510px;
 	height: 38%;
 	margin: 0 auto;
 	margin-bottom: 1%;
@@ -275,7 +276,7 @@ export default{
 }
 .container--false{
 	padding: 0;
-	background: #de3b38;
+	background: #de2729;
 }
 .image{
 	height: 100%;

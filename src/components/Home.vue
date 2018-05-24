@@ -202,9 +202,9 @@
 				<a class="mainSection__button" href="http://www.vainaweb.com.br/" target=“_blank”>fique por dentro</a>
 			</section>
 			<footer class="main__footer">
-				<img class="mainFooter__logo mainFooter__logo1" src="../../static/assets/1sti_logo.svg">
-				<img class="mainFooter__logo mainFooter__logo2" src="../../static/assets/educap_logo.svg">
-				<img class="mainFooter__logo mainFooter__logo3" src="../../static/assets/precisa-ser_logo.svg">
+				<img class="mainFooter__logo mainFooter__logo--1sti" src="../../static/assets/1sti_logo.svg">
+				<img class="mainFooter__logo" src="../../static/assets/educap_logo.svg">
+				<img class="mainFooter__logo" src="../../static/assets/precisa-ser_logo.svg">
 			</footer>
 		</main>
 	</div>
@@ -1491,6 +1491,7 @@ header{
 .header__aside{
 	width: 31vw;
 	min-width: 350px;
+	max-width: 600px;
 	min-height: 110vh;
 	padding: 1%;
 	display: flex;
@@ -1513,6 +1514,8 @@ header{
 .headerNav__box{
 	width: 100%;
 	height: 8vh;
+	padding: 5px;
+	padding-right: 0;
 	border-radius: 30px;
 	background-color: #fff;
 	display: flex;
@@ -1543,7 +1546,8 @@ header{
 	outline: none;
 }
 .boxButton__logo{
-	height: 90%;
+	height: 80%;
+	max-height:40px; 
 }
 .header__aside--mobile{
 	width: 90%;
@@ -1672,7 +1676,7 @@ header{
 	min-width: 40%;
 	padding: 2%;
 	border-radius: inherit;
-	font-size: 1.1vw;
+	font-size: 1.1vmin;
 	font-family: ministry, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -1696,7 +1700,7 @@ header{
 }
 main{
 	width: 100%;
-	min-height: 92vh;
+	min-height: 62vh;
 	margin-top: -1%;
 	padding: 2% 0 3% 2%;
 	background-color: #f26522;
@@ -1776,6 +1780,7 @@ main{
 }
 .mainSection__logo{
 	width: 54%;
+	max-width: 400px;
 	margin-bottom: 3%;
 }
 @media(max-width: 768px){
@@ -1836,7 +1841,7 @@ main{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: flex-start;
 }
 @media(max-width: 1250px){
 	.main__footer{
@@ -1859,7 +1864,7 @@ main{
 }
 .mainFooter__logo{
 	width: 55%;
-	margin-top: 40%;
+	margin-top: 20%;
 }
 @media(max-width: 1250px){
 	.mainFooter__logo{
@@ -1867,11 +1872,11 @@ main{
 		margin: 3%;
 	}
 }
-.mainFooter__logo1{
-	width: 30%;
+.mainFooter__logo--1sti{
+	width: 20%;
 }
 @media(max-width: 1250px){
-	.mainFooter__logo1{
+	.mainFooter__logo--1sti{
 		width: 10%;
 	}
 }
